@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 const CATEGORY_COLORS = {
   dev_call: { bg: "rgba(123, 94, 167, 0.15)", text: "#7B5EA7", label: "Community Call" },
@@ -9,7 +9,7 @@ const CATEGORY_COLORS = {
 
 function generatePlaceholderEvents() {
   const events = [];
-  const start = new Date(2026, 4, 16); // May 16, 2026 (Friday)
+  const start = new Date(2026, 4, 16);
   for (let i = 0; i < 7; i++) {
     const date = new Date(start);
     date.setDate(start.getDate() + i * 28);
@@ -29,7 +29,7 @@ function generatePlaceholderEvents() {
   return events;
 }
 
-const EVENTS = generatePlaceholderEvents();
+const API_URL = import.meta.env.VITE_CHATBOT_API || "";
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MONTHS = [
@@ -54,22 +54,30 @@ function isSameDay(d1, d2) {
 export default function CommunityCalendar() {
   const today = new Date();
   const [viewYear, setViewYear] = useState(2026);
-  const [viewMonth, setViewMonth] = useState(4); // May
+  const [viewMonth, setViewMonth] = useState(4);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState(generatePlaceholderEvents());
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/community-calls`)
+      .then((r) => r.ok ? r.json() : Promise.reject())
+      .then((data) => { if (data.length) setEvents(data); })
+      .catch(() => {});
+  }, []);
 
   const daysInMonth = getDaysInMonth(viewYear, viewMonth);
   const firstDay = getFirstDayOfWeek(viewYear, viewMonth);
 
   const eventsByDate = useMemo(() => {
     const map = {};
-    EVENTS.forEach((evt) => {
+    events.forEach((evt) => {
       const d = new Date(evt.date);
       const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
       if (!map[key]) map[key] = [];
       map[key].push(evt);
     });
     return map;
-  }, []);
+  }, [events]);
 
   function prevMonth() {
     if (viewMonth === 0) { setViewMonth(11); setViewYear(viewYear - 1); }
@@ -120,7 +128,7 @@ export default function CommunityCalendar() {
               >
                 <span className={`cc-day-num${isToday ? " cc-today-num" : ""}`}>{day}</span>
                 {dayEvents.map((evt) => {
-                  const cat = CATEGORY_COLORS[evt.category];
+                  const cat = CATEGORY_COLORS[evt.category] || CATEGORY_COLORS.dev_call;
                   return (
                     <div
                       key={evt.id}
@@ -145,11 +153,11 @@ export default function CommunityCalendar() {
               <span
                 className="cc-badge"
                 style={{
-                  backgroundColor: CATEGORY_COLORS[selectedEvent.category].bg,
-                  color: CATEGORY_COLORS[selectedEvent.category].text,
+                  backgroundColor: (CATEGORY_COLORS[selectedEvent.category] || CATEGORY_COLORS.dev_call).bg,
+                  color: (CATEGORY_COLORS[selectedEvent.category] || CATEGORY_COLORS.dev_call).text,
                 }}
               >
-                {CATEGORY_COLORS[selectedEvent.category].label}
+                {(CATEGORY_COLORS[selectedEvent.category] || CATEGORY_COLORS.dev_call).label}
               </span>
             </div>
             <h3 className="cc-detail-title">{selectedEvent.title}</h3>
@@ -166,7 +174,7 @@ export default function CommunityCalendar() {
             </p>
             <p className="cc-detail-desc">{selectedEvent.description}</p>
             <a href={selectedEvent.meeting_link} className="cc-join-btn" target="_blank" rel="noopener noreferrer">
-              {selectedEvent.meeting_link_label} →
+              {selectedEvent.meeting_link_label || "Join"} →
             </a>
           </div>
         </div>
