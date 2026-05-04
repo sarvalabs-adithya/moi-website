@@ -844,6 +844,185 @@ body {
   flex-wrap: wrap;
 }
 
+/* ── Admin Calendar Page ── */
+.admin-page {
+  min-height: 100vh;
+  background: var(--cream);
+}
+.admin-login {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+}
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.admin-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+.admin-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+.admin-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid rgba(26, 26, 26, .06);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.admin-form-row {
+  display: flex;
+  gap: 1rem;
+}
+.admin-form-row > * {
+  flex: 1;
+}
+.admin-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(26, 26, 26, .5);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.admin-input {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  padding: 10px 12px;
+  border: 1px solid rgba(26, 26, 26, .1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .8);
+  outline: none;
+  transition: border-color .2s;
+}
+.admin-input:focus {
+  border-color: rgba(123, 94, 167, .4);
+}
+.admin-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.admin-form-actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+.admin-btn-primary {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: #fff;
+  background: var(--purple);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.admin-btn-primary:hover { background: #6B4E97; }
+.admin-btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+.admin-btn-ghost {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: rgba(26, 26, 26, .5);
+  background: transparent;
+  border: 1px solid rgba(26, 26, 26, .1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.admin-btn-ghost:hover { border-color: rgba(26, 26, 26, .25); color: var(--ink); }
+.admin-error {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #c0392b;
+}
+.admin-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.admin-event-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid rgba(26, 26, 26, .06);
+  border-radius: 12px;
+}
+.admin-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.admin-event-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.admin-event-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(26, 26, 26, .45);
+}
+.admin-event-actions {
+  display: flex;
+  gap: 6px;
+}
+.admin-btn-sm {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(26, 26, 26, .1);
+  background: transparent;
+  color: rgba(26, 26, 26, .5);
+  cursor: pointer;
+  transition: all .15s;
+}
+.admin-btn-sm:hover { border-color: rgba(26, 26, 26, .25); color: var(--ink); }
+.admin-btn-danger:hover { border-color: #c0392b; color: #c0392b; }
+.admin-empty {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(26, 26, 26, .35);
+  text-align: center;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .admin-form-row { flex-direction: column; }
+  .admin-event-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
 /* ── Home responsive ── */
 @media (max-width: 768px) {
   .home-hero { padding: 5rem 1.25rem; min-height: 100vh; }
