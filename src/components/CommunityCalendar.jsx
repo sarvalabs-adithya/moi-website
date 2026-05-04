@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 
 const CATEGORY_COLORS = {
-  dev_call: { bg: "rgba(123, 94, 167, 0.15)", text: "#7B5EA7", label: "Dev Call" },
+  dev_call: { bg: "rgba(123, 94, 167, 0.15)", text: "#7B5EA7", label: "Community Call" },
   office_hours: { bg: "rgba(184, 212, 227, 0.3)", text: "#4A8BAF", label: "Office Hours" },
   workshop: { bg: "rgba(247, 209, 186, 0.3)", text: "#B87A4F", label: "Workshop" },
   announcement: { bg: "rgba(240, 217, 160, 0.3)", text: "#9A8135", label: "Announcement" },
@@ -17,7 +17,7 @@ function generatePlaceholderEvents() {
       id: `evt-${i}`,
       title: i % 2 === 0 ? "MOI Community Call" : "MOI Office Hours",
       description: i % 2 === 0
-        ? "Weekly community sync — protocol updates, ecosystem demos, and open Q&A."
+        ? "Monthly sync — protocol updates, ecosystem demos, and open Q&A."
         : "Drop in with questions about building on MOI. Core team available.",
       date: date.toISOString(),
       duration_minutes: 60,
