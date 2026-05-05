@@ -13,7 +13,7 @@ const MONTH_ABBR = [
   "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
 ];
 
-const MAX_EVENTS = 8;
+const MAX_EVENTS = 16;
 
 const SCHEDULE_YEAR = 2026;
 
@@ -29,14 +29,14 @@ const COMMUNITY_CALL_DATES = [
 ];
 
 const TWITTER_AMA_DATES = [
-  [4, 15], [4, 20],
-  [5, 12], [5, 17],
-  [6, 17], [6, 22],
-  [7, 14], [7, 19],
-  [8, 11], [8, 16],
-  [9, 17], [9, 22],
-  [10, 13], [10, 18],
-  [11, 11], [11, 16],
+  [4, 15],
+  [5, 12],
+  [6, 17],
+  [7, 14],
+  [8, 11],
+  [9, 17],
+  [10, 13],
+  [11, 11],
 ];
 
 function buildScheduledEvents() {
