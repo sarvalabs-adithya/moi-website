@@ -5,10 +5,8 @@ export default function Navbar({ activePage = "home" }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass = (page) =>
-    `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] ${
-      activePage === page
-        ? "text-[#4B17E5] bg-[#4B17E5]/10"
-        : "text-[#0A051A]/75 hover:text-[#4B17E5]"
+    `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] text-[#4B17E5] hover:text-[#320F99] ${
+      activePage === page ? "bg-[#4B17E5]/10" : ""
     }`;
 
   return (
