@@ -869,8 +869,15 @@ body {
   pointer-events: none;
   animation: hero-softstar-pulse 6s ease-in-out infinite alternate;
 }
-.validators-softstar-tr { top: 16%; right: 8%; }
-.validators-softstar-br { bottom: 12%; right: 16%; width: 48px; height: 48px; animation-delay: 1.2s; }
+.validators-softstar-tr { top: 14%; right: 6%; opacity: 0.4; }
+.validators-softstar-br {
+  bottom: 7%;
+  right: 5%;
+  width: 36px;
+  height: 36px;
+  opacity: 0.32;
+  animation-delay: 1.2s;
+}
 .validators-orb {
   position: absolute;
   width: 360px;
@@ -957,6 +964,30 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  transition: transform 200ms ease, border-color 200ms ease,
+              box-shadow 200ms ease;
+  cursor: default;
+}
+
+/* Indigo group — white cards with indigo/lilac chips */
+.stat-card:not(.stat-card--filled):has(.stat-chip--indigo):hover,
+.stat-card:not(.stat-card--filled):has(.stat-chip--lilac):hover {
+  transform: translateY(-3px);
+  border: 1.5px solid #4B17E5;
+  box-shadow: 0 8px 28px rgba(75, 23, 229, 0.22);
+}
+
+/* Mint group — white cards with mint chip (the <100ms card) */
+.stat-card:not(.stat-card--filled):has(.stat-chip--mint):hover {
+  transform: translateY(-3px);
+  border: 1.5px solid rgba(77, 219, 151, 0.5);
+  box-shadow: 0 8px 28px rgba(77, 219, 151, 0.22);
+}
+
+/* Filled focal card — mint glow on hover */
+.stat-card--filled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(77, 219, 151, 0.30);
 }
 
 /* Icon chip — top-left, tinted by accent */
