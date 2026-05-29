@@ -79,7 +79,7 @@ export default function LandingFooter() {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-left">
-            <img src="/brand/logos/SVG/default-dark.svg" alt="MOI" className="footer-logo-img" />
+            <img src="/brand/logos/SVG/default-light.svg" alt="MOI" className="footer-logo-img" />
             <span className="footer-divider" />
             <span className="footer-copy">&copy; 2026 MOI Network Inc. All rights reserved.</span>
           </div>
