@@ -969,25 +969,17 @@ body {
   cursor: default;
 }
 
-/* Indigo group — white cards with indigo/lilac chips */
-.stat-card:not(.stat-card--filled):has(.stat-chip--indigo):hover,
-.stat-card:not(.stat-card--filled):has(.stat-chip--lilac):hover {
+/* White cards — indigo border + purple glow on hover */
+.stat-card:not(.stat-card--filled):hover {
   transform: translateY(-3px);
   border: 1.5px solid #4B17E5;
   box-shadow: 0 8px 28px rgba(75, 23, 229, 0.22);
 }
 
-/* Mint group — white cards with mint chip (the <100ms card) */
-.stat-card:not(.stat-card--filled):has(.stat-chip--mint):hover {
-  transform: translateY(-3px);
-  border: 1.5px solid rgba(77, 219, 151, 0.5);
-  box-shadow: 0 8px 28px rgba(77, 219, 151, 0.22);
-}
-
-/* Filled focal card — mint glow on hover */
+/* Filled (purple) cards — deeper purple glow on hover */
 .stat-card--filled:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(77, 219, 151, 0.30);
+  box-shadow: 0 12px 36px rgba(75, 23, 229, 0.45);
 }
 
 /* Icon chip — top-left, tinted by accent */
@@ -1009,13 +1001,10 @@ body {
   background: rgba(188, 166, 255, 0.28);
   color: #4B17E5;
 }
-.stat-chip--mint {
-  background: rgba(77, 219, 151, 0.14);
-  color: #1FAE6B;
-}
-.stat-chip--mint-on-dark {
-  background: rgba(77, 219, 151, 0.20);
-  color: #4DDB97;
+/* On the filled (purple) cards: light tint + white icon */
+.stat-chip--on-dark {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
 }
 
 .stat-num {
@@ -1026,7 +1015,6 @@ body {
   letter-spacing: -0.028em;
   color: #4B17E5;       /* unified indigo across all white cards */
 }
-.stat-num--mint { color: #1FAE6B; }
 
 .stat-label {
   display: inline-flex;
@@ -1050,19 +1038,6 @@ body {
 .stat-card--filled .stat-num { color: #FFFFFF; }
 .stat-card--filled .stat-label { color: rgba(255, 255, 255, 0.85); }
 
-/* Live pulsing dot for the focal card's "Nodes live" label */
-.stat-live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #4DDB97;
-  box-shadow: 0 0 10px rgba(77, 219, 151, 0.7);
-  animation: stat-live-pulse 1.6s ease-in-out infinite;
-}
-@keyframes stat-live-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.85); }
-}
 
 .works-with {
   display: flex;
