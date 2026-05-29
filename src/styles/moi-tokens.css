@@ -343,4 +343,12 @@ a {
 }
 a:hover { border-bottom-color: currentColor; }
 
+/* CTA opt-out from global link styling — keeps Tailwind utilities (text-white,
+   bg-…) in charge of color, and suppresses the hover underline. */
+a.nav-cta,
+a.nav-cta:hover {
+  color: #FFFFFF;
+  border-bottom-color: transparent;
+}
+
 ::selection { background: var(--moi-main); color: var(--moi-haze); }
