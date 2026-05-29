@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const CATEGORY_COLORS = {
-  dev_call: { bg: "rgba(123, 94, 167, 0.15)", text: "#7B5EA7", label: "Community Call" },
+  dev_call: { bg: "rgba(75, 23, 229, 0.15)", text: "#4B17E5", label: "Community Call" },
   twitter_ama: { bg: "rgba(45, 45, 50, 0.10)", text: "#2D2D32", label: "Twitter AMA" },
   office_hours: { bg: "rgba(184, 212, 227, 0.3)", text: "#4A8BAF", label: "Office Hours" },
   workshop: { bg: "rgba(247, 209, 186, 0.3)", text: "#B87A4F", label: "Workshop" },

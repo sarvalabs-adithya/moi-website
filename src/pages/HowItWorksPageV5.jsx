@@ -786,7 +786,7 @@ function Permissions() {
 /* ContextSuperstate UI lives in Act2RevealSection; classical vs contextual formulas sit under the superstate grid */
 
 const ARCH_P = [
-  { name: "Alice", color: "#7B5EA7", speed: 0.6 },
+  { name: "Alice", color: "#4B17E5", speed: 0.6 },
   { name: "Bob", color: "#3A8F6E", speed: 0.8 },
   { name: "Charlie", color: "#C47A2D", speed: 0.5 },
   { name: "Diana", color: "#2D7EC4", speed: 0.7 },
@@ -870,7 +870,7 @@ function ArchitectureSection() {
         ctx.globalAlpha = 0.85;
         ctx.fill();
         ctx.globalAlpha = 1;
-        ctx.font = '300 9px "DM Mono", monospace';
+        ctx.font = '300 9px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = "rgba(26,26,26,0.45)";
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
@@ -878,7 +878,7 @@ function ArchitectureSection() {
         ctx.beginPath();
         ctx.moveTo(pLeft + 38, py);
         ctx.quadraticCurveTo(W * 0.35, py, neckX, neckY + (i - 2) * 3);
-        ctx.strokeStyle = "rgba(26, 26, 26, 0.08)";
+        ctx.strokeStyle = "rgba(10, 5, 26, 0.08)";
         ctx.lineWidth = 1;
         ctx.stroke();
       });
@@ -901,7 +901,7 @@ function ArchitectureSection() {
       ctx.lineWidth = 1;
       ctx.fill();
       ctx.stroke();
-      ctx.font = '400 8px "DM Mono", monospace';
+      ctx.font = '400 8px "Poppins", system-ui, sans-serif';
       ctx.fillStyle = "rgba(26,26,26,0.4)";
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
@@ -959,18 +959,18 @@ function ArchitectureSection() {
       }
 
       if (bottleneckCount > 3) {
-        ctx.font = '400 9px "DM Mono", monospace';
+        ctx.font = '400 9px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = "rgba(196, 77, 90, 0.45)";
         ctx.textAlign = "center";
         ctx.textBaseline = "alphabetic";
         ctx.fillText(bottleneckCount + " txns waiting...", neckX, neckY + 36);
-        ctx.font = '500 7px "DM Mono", monospace';
+        ctx.font = '500 7px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = "rgba(196, 77, 90, 0.3)";
         ctx.fillText("⚠ HIGH CONTENTION", neckX, neckY + 48);
       }
 
-      ctx.font = '300 8px "DM Mono", monospace';
-      ctx.fillStyle = "rgba(26, 26, 26, 0.3)";
+      ctx.font = '300 8px "Poppins", system-ui, sans-serif';
+      ctx.fillStyle = "rgba(10, 5, 26, 0.3)";
       ctx.textAlign = "center";
       ctx.textBaseline = "alphabetic";
       ctx.fillText("one block at a time →", blockX + blockW / 2, neckY + blockH / 2 + 16);
@@ -1002,7 +1002,7 @@ function ArchitectureSection() {
         ctx.fill();
         ctx.globalAlpha = 1;
 
-        ctx.font = '400 9px "DM Mono", monospace';
+        ctx.font = '400 9px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = p.color;
         ctx.globalAlpha = 0.65;
         ctx.textAlign = "right";
@@ -1031,7 +1031,7 @@ function ArchitectureSection() {
         ctx.lineWidth = 0.5;
         ctx.fill();
         ctx.stroke();
-        ctx.font = '400 8px "DM Mono", monospace';
+        ctx.font = '400 8px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = "rgba(26,26,26,0.4)";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -1056,7 +1056,7 @@ function ArchitectureSection() {
         ctx.arc(bx, ty, 3.5, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(123,94,167,0.5)";
         ctx.fill();
-        ctx.font = '300 7px "DM Mono", monospace';
+        ctx.font = '300 7px "Poppins", system-ui, sans-serif';
         ctx.fillStyle = "rgba(123,94,167,0.3)";
         ctx.textAlign = "center";
         ctx.textBaseline = "alphabetic";

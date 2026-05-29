@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { WHITEPAPER_URL } from "../phases/constants.js";
-
 export default function Navbar({ activePage = "home" }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass = (page) =>
-    `font-mono text-[11px] tracking-[0.12em] uppercase transition-colors duration-300 ${
+    `text-[11px] tracking-[0.12em] uppercase font-semibold transition-colors duration-300 ${
       activePage === page
-        ? "text-[#1A1A1A] bg-[#7B5EA7]/8 rounded-full px-[14px] py-[6px]"
-        : "text-[#1A1A1A]/45 hover:text-[#1A1A1A] px-[14px] py-[6px]"
+        ? "text-[#0A051A] bg-[#4B17E5]/10 rounded-full px-[14px] py-[6px]"
+        : "text-[#0A051A]/55 hover:text-[#0A051A] px-[14px] py-[6px]"
     }`;
 
   return (
@@ -21,22 +19,23 @@ export default function Navbar({ activePage = "home" }) {
           background: "rgba(255,255,255,0.72)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          border: "1px solid rgba(26,26,26,0.06)",
-          boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
+          border: "1px solid rgba(217,204,255,0.5)",
+          boxShadow: "0 2px 12px rgba(50,15,153,0.06)",
         }}
       >
-        {/* Logo */}
+        {/* Logo lockup — planetoid + MOI wordmark side-by-side */}
         <Link to="/" className="flex items-center gap-3 no-underline shrink-0">
-          <img src="/logo-moi-mark.png" alt="MOI" className="h-9 w-9" />
-          <span className="font-mono text-xs tracking-[0.3em] uppercase font-medium text-[#1A1A1A]">
-            MOI
-          </span>
+          <img
+            src="/brand/logos/SVG/default-dark.svg"
+            alt="MOI"
+            className="h-7 w-auto"
+          />
         </Link>
 
         {/* Center links — desktop */}
         <div className="hidden md:flex items-center gap-1">
-          <Link to="/" className={linkClass("home")}>Home</Link>
-          <Link to="/why-moi" className={linkClass("why-moi")}>The Shift</Link>
+          <Link to="/" className={linkClass("home")}>Participants</Link>
+          <Link to="/why-moi" className={linkClass("why-moi")}>Validators</Link>
           <a
             href="https://docs.moi.technology"
             target="_blank"
@@ -45,24 +44,18 @@ export default function Navbar({ activePage = "home" }) {
           >
             Docs
           </a>
+          <Link to="/manifesto" className={linkClass("manifesto")}>Manifesto</Link>
         </div>
 
-        {/* Right CTAs — desktop */}
+        {/* Right CTA — desktop */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
-          <a
-            href={WHITEPAPER_URL}
-            className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] border border-[#1A1A1A]/15 hover:border-[#1A1A1A]/30 rounded-full px-5 py-2 transition-all duration-300"
+          <Link
+            to="/manifesto"
+            className="text-[11px] tracking-[0.04em] font-semibold text-[#0A051A] bg-white hover:shadow-[0_0_24px_rgba(255,255,255,0.4)] rounded-full px-5 py-2 transition-all duration-300"
+            style={{ boxShadow: "inset 0 1.45px 33px rgba(255,255,255,0.25)" }}
           >
-            Whitepaper
-          </a>
-          <a
-            href="https://voyage.moi.technology"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#F5F3EE] bg-[#1A1A1A] hover:bg-[#7B5EA7] rounded-full px-5 py-2 transition-all duration-300"
-          >
-            Get Started
-          </a>
+            Become a participant
+          </Link>
         </div>
 
         {/* Hamburger — mobile */}
@@ -72,15 +65,15 @@ export default function Navbar({ activePage = "home" }) {
           aria-label="Toggle menu"
         >
           <span
-            className="block w-5 h-[1.5px] bg-[#1A1A1A] transition-transform duration-300"
+            className="block w-5 h-[1.5px] bg-[#0A051A] transition-transform duration-300"
             style={menuOpen ? { transform: "rotate(45deg) translate(2px, 2px)" } : {}}
           />
           <span
-            className="block w-5 h-[1.5px] bg-[#1A1A1A] transition-opacity duration-300"
+            className="block w-5 h-[1.5px] bg-[#0A051A] transition-opacity duration-300"
             style={menuOpen ? { opacity: 0 } : {}}
           />
           <span
-            className="block w-5 h-[1.5px] bg-[#1A1A1A] transition-transform duration-300"
+            className="block w-5 h-[1.5px] bg-[#0A051A] transition-transform duration-300"
             style={menuOpen ? { transform: "rotate(-45deg) translate(2px, -2px)" } : {}}
           />
         </button>
@@ -94,23 +87,23 @@ export default function Navbar({ activePage = "home" }) {
             background: "rgba(255,255,255,0.9)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
-            border: "1px solid rgba(26,26,26,0.06)",
-            boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+            border: "1px solid rgba(217,204,255,0.5)",
+            boxShadow: "0 4px 24px rgba(50,15,153,0.08)",
           }}
         >
-          <Link to="/" className={linkClass("home")} onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/why-moi" className={linkClass("why-moi")} onClick={() => setMenuOpen(false)}>The Shift</Link>
+          <Link to="/" className={linkClass("home")} onClick={() => setMenuOpen(false)}>Participants</Link>
+          <Link to="/why-moi" className={linkClass("why-moi")} onClick={() => setMenuOpen(false)}>Validators</Link>
           <a href="https://docs.moi.technology" target="_blank" rel="noopener noreferrer" className={linkClass("docs")}>Docs</a>
-          <hr className="border-[#1A1A1A]/8" />
-          <a href={WHITEPAPER_URL} className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#1A1A1A]/60">Whitepaper</a>
-          <a
-            href="https://voyage.moi.technology"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#F5F3EE] bg-[#1A1A1A] rounded-full px-5 py-2.5 text-center"
+          <Link to="/manifesto" className={linkClass("manifesto")} onClick={() => setMenuOpen(false)}>Manifesto</Link>
+          <hr className="border-[#0A051A]/8" />
+          <Link
+            to="/manifesto"
+            className="text-[11px] font-semibold text-[#0A051A] bg-white rounded-full px-5 py-2.5 text-center"
+            style={{ boxShadow: "inset 0 1.45px 33px rgba(255,255,255,0.25)" }}
+            onClick={() => setMenuOpen(false)}
           >
-            Get Started
-          </a>
+            Become a participant
+          </Link>
         </div>
       )}
     </nav>

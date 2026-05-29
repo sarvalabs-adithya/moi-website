@@ -27,3 +27,6 @@ dist-ssr
 *.sw?
 *.backup.*
 .vercel
+
+# Claude Code local config
+.claude/
