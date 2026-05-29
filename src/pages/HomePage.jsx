@@ -565,9 +565,9 @@ export default function HomePage() {
                 Onchain authority for the agentic economy.
               </h1>
               <p className="hero-sub">
-                The missing primitive every agent assumes someone else solved.
-                You exist once, on-chain — monitor, scope, and revoke your AI
-                agents in real time.
+                Your AI agents act for you at machine speed. MOI keeps your
+                authority on-chain — so you can scope, monitor, and revoke
+                what they do in real time.
               </p>
               <div className="hero-ctas">
                 <Link to="/manifesto" className="hero-btn hero-btn-primary">
@@ -951,7 +951,7 @@ me.agent("claw-12")
             <h2 className="kitcta-hl">
               Not your Context,
               <br />
-              Not your KitKat.
+              Not your Agent.
             </h2>
             <p className="kitcta-sub">
               Identity, not intelligence, is the bottleneck. Anchor yours.
