@@ -67,6 +67,7 @@ const SOCIAL_LINKS = [
 const FOOTER_NAV = [
   { label: "Docs", href: "https://docs.moi.technology", external: true },
   { label: "Whitepaper", href: "/MOILitePaper.pdf", external: false },
+  { label: "Manifesto", href: "/manifesto", external: false },
   { label: "Why MOI", href: "/why-moi", external: false },
   { label: "GitHub", href: "https://github.com/sarvalabs", external: true },
   { label: "Community", href: "https://discord.gg/ytQGU7ZP", external: true },
@@ -78,7 +79,7 @@ export default function LandingFooter() {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-left">
-            <img src="/logo-moi-dark.svg" alt="MOI" className="footer-logo-img" />
+            <img src="/brand/logos/SVG/default-dark.svg" alt="MOI" className="footer-logo-img" />
             <span className="footer-divider" />
             <span className="footer-copy">&copy; 2026 Sarva Labs. All rights reserved.</span>
           </div>
