@@ -468,36 +468,39 @@ function AskChat() {
     }
   };
 
+  const empty = messages.length === 0;
+
   return (
-    <div className="ask-container">
-      <div className="ask-msgs" ref={msgsRef}>
-        {messages.length === 0 && (
-          <div className="ask-welcome">
-            Ask me anything about MOI — Contextual Compute, KRAMA, the Context Superstate, or the
-            litepaper.
-          </div>
-        )}
-        {messages.map((msg, i) =>
-          msg.role === "user" ? (
-            <div key={i} className="ask-msg-user">
-              {msg.content}
-            </div>
-          ) : (
-            <div key={i} className="ask-msg-bot">
-              <span className="ask-msg-psi">ψ</span>
-              {msg.content ? (
-                <span style={{ whiteSpace: "pre-wrap" }}>{msg.content}</span>
-              ) : loading && i === messages.length - 1 ? (
-                <span className="ask-typing">
-                  <span />
-                  <span />
-                  <span />
-                </span>
-              ) : null}
-            </div>
-          )
-        )}
-      </div>
+    <div className={`ask-container${empty ? " ask-container--empty" : ""}`}>
+      {empty ? (
+        <div className="ask-welcome">
+          Ask me anything about MOI — Contextual Compute, KRAMA, the Context
+          Superstate, or the litepaper.
+        </div>
+      ) : (
+        <div className="ask-msgs" ref={msgsRef}>
+          {messages.map((msg, i) =>
+            msg.role === "user" ? (
+              <div key={i} className="ask-msg-user">
+                {msg.content}
+              </div>
+            ) : (
+              <div key={i} className="ask-msg-bot">
+                <span className="ask-msg-psi">ψ</span>
+                {msg.content ? (
+                  <span style={{ whiteSpace: "pre-wrap" }}>{msg.content}</span>
+                ) : loading && i === messages.length - 1 ? (
+                  <span className="ask-typing">
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                ) : null}
+              </div>
+            )
+          )}
+        </div>
+      )}
 
       <div className="ask-bar">
         <input
