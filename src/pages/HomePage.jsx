@@ -571,16 +571,8 @@ export default function HomePage() {
               </p>
               <div className="hero-ctas">
                 <Link to="/manifesto" className="hero-btn hero-btn-primary">
-                  Become a participant <span aria-hidden="true">→</span>
+                  Read our manifesto <span aria-hidden="true">→</span>
                 </Link>
-                <a
-                  href="https://docs.moi.technology"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hero-btn hero-btn-ghost"
-                >
-                  Watch the demo
-                </a>
               </div>
             </div>
 

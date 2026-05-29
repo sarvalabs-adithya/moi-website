@@ -53,13 +53,15 @@ export default function Navbar({ activePage = "home" }) {
 
         {/* Right CTA — desktop */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
-          <Link
-            to="/manifesto"
+          <a
+            href="https://voyage.moi.technology"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-cta text-[12px] tracking-[-0.005em] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-[9px] transition-colors duration-200"
             style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
           >
-            Become a participant
-          </Link>
+            Explore the network
+          </a>
         </div>
 
         {/* Hamburger — mobile */}
@@ -99,14 +101,16 @@ export default function Navbar({ activePage = "home" }) {
           <a href="https://docs.moi.technology" target="_blank" rel="noopener noreferrer" className={linkClass("docs")}>Docs</a>
           <Link to="/manifesto" className={linkClass("manifesto")} onClick={() => setMenuOpen(false)}>Manifesto</Link>
           <hr className="border-[#0A051A]/8" />
-          <Link
-            to="/manifesto"
+          <a
+            href="https://voyage.moi.technology"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-cta text-[12px] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-2.5 text-center transition-colors duration-200"
             style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
             onClick={() => setMenuOpen(false)}
           >
-            Become a participant
-          </Link>
+            Explore the network
+          </a>
         </div>
       )}
     </nav>
