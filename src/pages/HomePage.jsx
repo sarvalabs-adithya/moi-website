@@ -553,15 +553,15 @@ export default function HomePage() {
             <div ref={heroRef} className="hero-copy fade-slide-up">
               <p className="hero-eyebrow">
                 <span className="hero-eyebrow-dot" />
-                The participant layer · v0.9
+                MOI · The participant layer
               </p>
               <h1 className="hero-headline">
-                You haven't met the participant yet.
+                Onchain authority for the agentic economy.
               </h1>
               <p className="hero-sub">
-                You exist once, on chain, as a coherent participant. Your
-                authority stays anchored to you, wherever your agents go.
-                Monitor, scope and revoke AI agents in real time.
+                The missing primitive every agent assumes someone else solved.
+                You exist once, on-chain — monitor, scope, and revoke your AI
+                agents in real time.
               </p>
               <div className="hero-ctas">
                 <Link to="/manifesto" className="hero-btn hero-btn-primary">
@@ -772,41 +772,28 @@ me.agent("claw-12")
             <div className="validators-stats">
               <article className="stat-card">
                 <div className="stat-num">2,100+</div>
-                <div className="stat-label">Validators</div>
+                <div className="stat-label">Nodes live</div>
               </article>
               <article className="stat-card">
-                <div className="stat-num">7 yrs</div>
-                <div className="stat-label">Building the participant layer</div>
+                <div className="stat-num">$500K+</div>
+                <div className="stat-label">ARR</div>
               </article>
               <article className="stat-card">
-                <div className="stat-num">9 ms</div>
-                <div className="stat-label">Median revoke latency</div>
+                <div className="stat-num">50+</div>
+                <div className="stat-label">Adopters</div>
               </article>
-            </div>
-
-            <div className="works-with">
-              <span className="works-with-label">
-                <span className="works-with-line" />
-                <span className="works-with-dot" />
-                Works with
-              </span>
-              <ul className="works-with-pills">
-                <li className="ww-pill">
-                  <span className="ww-pill-dot ww-pill-dot--live" />
-                  @openclaw <span className="ww-pill-sep">·</span>{" "}
-                  <span className="ww-pill-status">LIVE</span>
-                </li>
-                <li className="ww-pill">
-                  <span className="ww-pill-dot ww-pill-dot--next" />
-                  @LangChain <span className="ww-pill-sep">·</span>{" "}
-                  <span className="ww-pill-status">NEXT</span>
-                </li>
-                <li className="ww-pill">
-                  <span className="ww-pill-dot ww-pill-dot--aligned" />
-                  @a16zcrypto <span className="ww-pill-sep">·</span>{" "}
-                  <span className="ww-pill-status">ALIGNED</span>
-                </li>
-              </ul>
+              <article className="stat-card">
+                <div className="stat-num">250K+</div>
+                <div className="stat-label">On-chain interactions</div>
+              </article>
+              <article className="stat-card">
+                <div className="stat-num">35K+</div>
+                <div className="stat-label">Community builders</div>
+              </article>
+              <article className="stat-card">
+                <div className="stat-num">&lt;100ms</div>
+                <div className="stat-label">Authority issuance</div>
+              </article>
             </div>
           </div>
         </section>
@@ -862,9 +849,9 @@ me.agent("claw-12")
               </Link>
             </div>
           </div>
-
-          <LandingFooter />
         </section>
+
+        <LandingFooter />
       </div>
     </>
   );
