@@ -582,10 +582,6 @@ export default function HomePage() {
                   Watch the demo
                 </a>
               </div>
-              <div className="hero-validators">
-                <span className="hero-validators-dot" />
-                2,100+ Validators
-              </div>
             </div>
 
             <div className="hero-pip-wrap">
