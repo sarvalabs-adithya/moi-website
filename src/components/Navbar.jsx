@@ -32,7 +32,8 @@ export default function Navbar({ activePage = "home" }) {
           <img
             src="/brand/logos/SVG/default-light.svg"
             alt="MOI"
-            className="h-7 w-auto"
+            className="w-auto"
+            style={{ height: "36px" }}
           />
         </Link>
 
