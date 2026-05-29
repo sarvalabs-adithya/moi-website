@@ -80,9 +80,11 @@ function hasUsableLink(link) {
 
 const API_URL = import.meta.env.VITE_CHATBOT_API || "";
 
-export default function CommunityCalendar() {
+export default function CommunityCalendar({ variant = "list", limit }) {
   const [events, setEvents] = useState(buildScheduledEvents());
   const [expanded, setExpanded] = useState(false);
+  const isCompact = variant === "compact";
+  const collapsedCount = limit ?? (isCompact ? 3 : COLLAPSED_COUNT);
 
   useEffect(() => {
     fetch(`${API_URL}/api/community-calls`)
@@ -97,13 +99,26 @@ export default function CommunityCalendar() {
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .slice(0, MAX_EVENTS);
 
-  const visible = expanded ? upcoming : upcoming.slice(0, COLLAPSED_COUNT);
-  const hiddenCount = Math.max(0, upcoming.length - COLLAPSED_COUNT);
+  // Prefer confirmed (link present) over "Link TBA" in compact mode
+  const ranked = isCompact
+    ? [...upcoming].sort((a, b) => {
+        const aHas = hasUsableLink(a.meeting_link) ? 0 : 1;
+        const bHas = hasUsableLink(b.meeting_link) ? 0 : 1;
+        return aHas - bHas;
+      })
+    : upcoming;
+
+  const visible = expanded ? upcoming : ranked.slice(0, collapsedCount);
+  const hiddenCount = Math.max(0, upcoming.length - collapsedCount);
 
   return (
-    <div className="cc-wrap">
-      <h2 className="cc-title">Community Calendar</h2>
-      <p className="cc-sub">Upcoming calls, AMAs, and ecosystem events.</p>
+    <div className={`cc-wrap${isCompact ? " cc-wrap--compact" : ""}`}>
+      {!isCompact && (
+        <>
+          <h2 className="cc-title">Community Calendar</h2>
+          <p className="cc-sub">Upcoming calls, AMAs, and ecosystem events.</p>
+        </>
+      )}
 
       <div className="cc-list">
         {visible.length === 0 ? (
