@@ -1,8 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar({ activePage = "home" }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // When the logo is clicked while already on "/", scroll to top
+  // instead of being a no-op router link.
+  const handleLogoClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const linkClass = (page) =>
     `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] text-[#4B17E5] hover:text-[#320F99] ${
@@ -25,6 +35,7 @@ export default function Navbar({ activePage = "home" }) {
         <Link
           to="/"
           aria-label="MOI — home"
+          onClick={handleLogoClick}
           className="nav-logo flex items-center no-underline shrink-0"
         >
           <img
