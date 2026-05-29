@@ -1809,3 +1809,157 @@ body {
   .footer-divider { display: none; }
 }
 
+/* ──────────────────────────────────────────────────────────────────────
+   Full-screen scroll-snap deck — desktop only
+   Sections fill the viewport (100dvh, 100vh fallback). Content is
+   distributed via flex space-between so it occupies 75–85% of screen
+   height instead of clustering centered. Cards/tiles grow to fill the
+   space.
+
+   Disabled on mobile (<769px) or short viewports (<700px) so content
+   never clips — natural-flow scroll there.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 769px) and (min-height: 700px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 88px;
+    scroll-behavior: smooth;
+  }
+
+  .home-hero,
+  .s-promise,
+  .s-matters,
+  .s-validators,
+  .s-ask,
+  .cc-wrap,
+  .s-kitcta {
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Hero keeps its own grid layout — just center it vertically */
+  .home-hero { display: flex; flex-direction: column; justify-content: center; }
+
+  /* Other sections: inner wrapper grows to fill vertical space */
+  .s-promise,
+  .s-matters,
+  .s-validators,
+  .s-ask,
+  .cc-wrap,
+  .s-kitcta {
+    display: flex;
+    flex-direction: column;
+  }
+  .s-promise > .promise-inner,
+  .s-matters > .matters-inner,
+  .s-validators > .validators-inner,
+  .s-ask > .ask-center,
+  .s-kitcta > .kitcta-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* ── .s-promise: 4 tall cards spanning full width ── */
+  .s-promise > .promise-inner {
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .s-promise .promise-grid {
+    flex: 1;
+    align-items: stretch;
+  }
+  .s-promise .promise-card {
+    height: 100%;
+    min-height: 48vh;
+    padding: 2.5rem 2rem;
+  }
+  .s-promise .promise-header {
+    margin-bottom: 0;
+  }
+  .s-promise .promise-headline {
+    font-size: clamp(2.5rem, 4.2vw, 3.75rem);
+    line-height: 1.05;
+  }
+
+  /* ── .s-matters: scale story copy ── */
+  .s-matters .matters-headline {
+    font-size: clamp(2.25rem, 3.8vw, 3.25rem);
+  }
+  .s-matters .matters-callout {
+    padding: 2rem 2rem 2.25rem;
+  }
+
+  /* ── .s-validators: 6 large stat tiles in 3×2 filling the screen ── */
+  .s-validators > .validators-inner {
+    justify-content: center;
+    gap: 32px;
+  }
+  .s-validators .validators-stats {
+    flex: 1;
+    align-content: stretch;
+    gap: 28px;
+  }
+  .s-validators .stat-card {
+    min-height: 30vh;
+    padding: 3rem 2.25rem;
+    justify-content: center;
+    gap: 16px;
+  }
+  .s-validators .stat-num {
+    font-size: clamp(3rem, 5.5vw, 4.5rem);
+  }
+  .s-validators .stat-label {
+    font-size: 17px;
+  }
+
+  /* ── .s-ask: chat anchored center, sub above ── */
+  .s-ask > .ask-center {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .s-ask .ask-hl {
+    font-size: clamp(2.25rem, 3.6vw, 3rem);
+  }
+
+  /* ── Community calendar slide ── */
+  .cc-wrap {
+    justify-content: center;
+  }
+  .cc-list {
+    flex: 0 1 auto;
+  }
+
+  /* ── Last slide: kitcta with footer at bottom ── */
+  .s-kitcta {
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+  .s-kitcta > .kitcta-inner {
+    align-items: center;
+    flex: 1;
+  }
+  .s-kitcta .kitcta-hl {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+  }
+  .s-kitcta > .site-footer {
+    width: 100%;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .s-kitcta > .site-footer .footer-nav-link,
+  .s-kitcta > .site-footer .footer-copy,
+  .s-kitcta > .site-footer .footer-socials a {
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .s-kitcta > .site-footer .footer-nav-link:hover,
+  .s-kitcta > .site-footer .footer-socials a:hover {
+    color: #FFFFFF;
+  }
+}
+
