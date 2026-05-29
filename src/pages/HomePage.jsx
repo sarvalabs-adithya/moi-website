@@ -553,7 +553,10 @@ export default function HomePage() {
             <div ref={heroRef} className="hero-copy fade-slide-up">
               <p className="hero-eyebrow">
                 <span className="hero-eyebrow-dot" />
-                MOI · The participant layer
+                <span className="hero-eyebrow-brand">MOI</span>
+                <span className="hero-eyebrow-rest">
+                  · The participant layer
+                </span>
               </p>
               <h1 className="hero-headline">
                 Onchain authority for the agentic economy.
@@ -635,10 +638,6 @@ export default function HomePage() {
                 </p>
                 <h2 className="promise-title">Your authority, four ways.</h2>
               </div>
-              <p className="promise-blurb">
-                Information about your authority is not your authority.
-                Anywhere. Ever. So we stopped passing it around.
-              </p>
             </div>
 
             <div className="promise-grid">
@@ -701,6 +700,12 @@ export default function HomePage() {
                 </p>
               </article>
             </div>
+
+            <p className="promise-closer">
+              Information about your authority{" "}
+              <em>is not your authority</em>. Anywhere. Ever. So we stopped
+              passing it around.
+            </p>
           </div>
         </section>
 
@@ -769,6 +774,17 @@ me.agent("claw-12")
           <div className="validators-orb" aria-hidden="true" />
 
           <div className="validators-inner">
+            <div className="validators-header">
+              <p className="validators-eyebrow">
+                <span className="validators-eyebrow-dot" />
+                Traction
+              </p>
+              <h2 className="validators-title">Live network. Live proof.</h2>
+              <p className="validators-sub">
+                Real adoption, not token speculation.
+              </p>
+            </div>
+
             <div className="validators-stats">
               <article className="stat-card">
                 <div className="stat-num">2,100+</div>
