@@ -862,9 +862,9 @@ me.agent("claw-12")
               </Link>
             </div>
           </div>
-        </section>
 
-        <LandingFooter />
+          <LandingFooter />
+        </section>
       </div>
     </>
   );

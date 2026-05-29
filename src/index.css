@@ -1807,3 +1807,61 @@ body {
   .footer-left { flex-direction: column; gap: 6px; }
   .footer-divider { display: none; }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   Full-screen scroll-snap deck — desktop only
+   Sections fill the viewport (100dvh, 100vh fallback) and snap on the
+   document scroller. Account for the fixed pill nav via scroll-padding.
+   Disabled on mobile (<769px) and short viewports (<700px) so content
+   never gets clipped — those just get normal-flow sections.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 769px) and (min-height: 700px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 88px;   /* fixed nav: 16px top + 56px height + 16px breathing room */
+    scroll-behavior: smooth;
+  }
+
+  .home-hero,
+  .s-promise,
+  .s-matters,
+  .s-validators,
+  .s-ask,
+  .cc-wrap,
+  .s-kitcta {
+    min-height: 100vh;          /* legacy fallback */
+    min-height: 100dvh;         /* mobile-chrome-safe */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Last slide holds the footer at its bottom; centered content stays middle */
+  .s-kitcta {
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+  .s-kitcta > .kitcta-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .s-kitcta > .site-footer {
+    width: 100%;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  .s-kitcta > .site-footer .footer-nav-link,
+  .s-kitcta > .site-footer .footer-copy,
+  .s-kitcta > .site-footer .footer-socials a {
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .s-kitcta > .site-footer .footer-nav-link:hover,
+  .s-kitcta > .site-footer .footer-socials a:hover {
+    color: #FFFFFF;
+  }
+}
