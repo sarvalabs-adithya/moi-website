@@ -790,7 +790,7 @@ me.agent("claw-12")
 
             <div className="validators-stats">
               <article className="stat-card stat-card--filled">
-                <div className="stat-chip stat-chip--mint-on-dark" aria-hidden="true">
+                <div className="stat-chip stat-chip--on-dark" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="6" cy="6" r="2.5" />
                     <circle cx="18" cy="6" r="2.5" />
@@ -804,10 +804,7 @@ me.agent("claw-12")
                   </svg>
                 </div>
                 <div className="stat-num">2,100+</div>
-                <div className="stat-label">
-                  <span className="stat-live-dot" />
-                  Nodes live
-                </div>
+                <div className="stat-label">Nodes live</div>
               </article>
 
               <article className="stat-card">
@@ -821,8 +818,8 @@ me.agent("claw-12")
                 <div className="stat-label">ARR</div>
               </article>
 
-              <article className="stat-card">
-                <div className="stat-chip stat-chip--lilac" aria-hidden="true">
+              <article className="stat-card stat-card--filled">
+                <div className="stat-chip stat-chip--on-dark" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="9" cy="9" r="3.5" />
                     <path d="M3 20c0-3 3-5 6-5s6 2 6 5" />
@@ -844,8 +841,8 @@ me.agent("claw-12")
                 <div className="stat-label">On-chain interactions</div>
               </article>
 
-              <article className="stat-card">
-                <div className="stat-chip stat-chip--lilac" aria-hidden="true">
+              <article className="stat-card stat-card--filled">
+                <div className="stat-chip stat-chip--on-dark" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="8" r="3" />
                     <circle cx="5" cy="11" r="2" />
@@ -860,12 +857,12 @@ me.agent("claw-12")
               </article>
 
               <article className="stat-card">
-                <div className="stat-chip stat-chip--mint" aria-hidden="true">
+                <div className="stat-chip stat-chip--lilac" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2" />
                   </svg>
                 </div>
-                <div className="stat-num stat-num--mint">&lt;100ms</div>
+                <div className="stat-num">&lt;100ms</div>
                 <div className="stat-label">Authority issuance</div>
               </article>
             </div>
