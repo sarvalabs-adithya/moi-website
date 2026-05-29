@@ -945,29 +945,92 @@ body {
   .validators-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .stat-card {
+  position: relative;
   background: #FFFFFF;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(188, 166, 255, 0.45);
   border-radius: 24px;
-  padding: 2.5rem 2rem;
-  box-shadow: var(--shadow-card-sm);
+  padding: 2rem 1.75rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 4px 14px rgba(50, 15, 153, 0.07),
+    0 12px 32px rgba(50, 15, 153, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
+
+/* Icon chip — top-left, tinted by accent */
+.stat-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  margin-bottom: 4px;
+}
+.stat-chip svg { width: 22px; height: 22px; }
+.stat-chip--indigo {
+  background: rgba(75, 23, 229, 0.12);
+  color: #4B17E5;
+}
+.stat-chip--lilac {
+  background: rgba(188, 166, 255, 0.28);
+  color: #4B17E5;
+}
+.stat-chip--mint {
+  background: rgba(77, 219, 151, 0.14);
+  color: #1FAE6B;
+}
+.stat-chip--mint-on-dark {
+  background: rgba(77, 219, 151, 0.20);
+  color: #4DDB97;
+}
+
 .stat-num {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(2.5rem, 4.5vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.028em;
-  color: var(--moi-main);
+  color: #4B17E5;       /* unified indigo across all white cards */
 }
+.stat-num--mint { color: #1FAE6B; }
+
 .stat-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 15px;
   line-height: 1.4;
   color: var(--fg-2);
+}
+
+/* Filled focal card — deep indigo → violet gradient */
+.stat-card--filled {
+  background: linear-gradient(135deg, #320F99 0%, #4B17E5 100%);
+  border-color: transparent;
+  box-shadow:
+    0 10px 30px rgba(50, 15, 153, 0.30),
+    0 2px 6px rgba(50, 15, 153, 0.18);
+}
+.stat-card--filled .stat-num { color: #FFFFFF; }
+.stat-card--filled .stat-label { color: rgba(255, 255, 255, 0.85); }
+
+/* Live pulsing dot for the focal card's "Nodes live" label */
+.stat-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #4DDB97;
+  box-shadow: 0 0 10px rgba(77, 219, 151, 0.7);
+  animation: stat-live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes stat-live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
 }
 
 .works-with {
@@ -1941,9 +2004,9 @@ body {
     gap: 24px;
   }
   .s-validators .stat-card {
-    min-height: 200px;
-    padding: 2rem 1.75rem;
-    justify-content: center;
+    min-height: 220px;
+    padding: 1.75rem 1.75rem 1.875rem;
+    justify-content: flex-start;
     gap: 14px;
   }
   .s-validators .stat-num {

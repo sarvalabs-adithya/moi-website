@@ -786,28 +786,83 @@ me.agent("claw-12")
             </div>
 
             <div className="validators-stats">
-              <article className="stat-card">
+              <article className="stat-card stat-card--filled">
+                <div className="stat-chip stat-chip--mint-on-dark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="6" cy="6" r="2.5" />
+                    <circle cx="18" cy="6" r="2.5" />
+                    <circle cx="6" cy="18" r="2.5" />
+                    <circle cx="18" cy="18" r="2.5" />
+                    <circle cx="12" cy="12" r="2.5" />
+                    <line x1="8.1" y1="7.1" x2="10.5" y2="10.5" />
+                    <line x1="15.9" y1="7.1" x2="13.5" y2="10.5" />
+                    <line x1="8.1" y1="16.9" x2="10.5" y2="13.5" />
+                    <line x1="15.9" y1="16.9" x2="13.5" y2="13.5" />
+                  </svg>
+                </div>
                 <div className="stat-num">2,100+</div>
-                <div className="stat-label">Nodes live</div>
+                <div className="stat-label">
+                  <span className="stat-live-dot" />
+                  Nodes live
+                </div>
               </article>
+
               <article className="stat-card">
+                <div className="stat-chip stat-chip--indigo" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="3 17 9 11 13 15 21 7" />
+                    <polyline points="15 7 21 7 21 13" />
+                  </svg>
+                </div>
                 <div className="stat-num">$500K+</div>
                 <div className="stat-label">ARR</div>
               </article>
+
               <article className="stat-card">
+                <div className="stat-chip stat-chip--lilac" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="9" r="3.5" />
+                    <path d="M3 20c0-3 3-5 6-5s6 2 6 5" />
+                    <circle cx="17" cy="8" r="2.5" />
+                    <path d="M21 18c0-2.2-1.8-4-4-4" />
+                  </svg>
+                </div>
                 <div className="stat-num">50+</div>
                 <div className="stat-label">Adopters</div>
               </article>
+
               <article className="stat-card">
+                <div className="stat-chip stat-chip--indigo" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="3 12 7 12 10 4 14 20 17 12 21 12" />
+                  </svg>
+                </div>
                 <div className="stat-num">250K+</div>
                 <div className="stat-label">On-chain interactions</div>
               </article>
+
               <article className="stat-card">
+                <div className="stat-chip stat-chip--lilac" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="3" />
+                    <circle cx="5" cy="11" r="2" />
+                    <circle cx="19" cy="11" r="2" />
+                    <path d="M4 20c0-2.5 1.5-4 4-4" />
+                    <path d="M20 20c0-2.5-1.5-4-4-4" />
+                    <path d="M7 21c0-3 2.2-5 5-5s5 2 5 5" />
+                  </svg>
+                </div>
                 <div className="stat-num">35K+</div>
                 <div className="stat-label">Community builders</div>
               </article>
+
               <article className="stat-card">
-                <div className="stat-num">&lt;100ms</div>
+                <div className="stat-chip stat-chip--mint" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2" />
+                  </svg>
+                </div>
+                <div className="stat-num stat-num--mint">&lt;100ms</div>
                 <div className="stat-label">Authority issuance</div>
               </article>
             </div>
