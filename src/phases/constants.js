@@ -5,7 +5,7 @@ export const WHITEPAPER_SITE_URL = "https://moi.technology/whitepaper";
 export const NAV_H = 72;
 
 export const PARTICIPANTS = [
-  { name: "Alice", color: "#7B5EA7" },
+  { name: "Alice", color: "#4B17E5" },
   { name: "Bob", color: "#3A8F6E" },
   { name: "Charlie", color: "#C47A2D" },
   { name: "Diana", color: "#2D7EC4" },

@@ -21,8 +21,8 @@ const API_URL = "";
 const SPACING = 85;
 const AMBIENT_HIGHLIGHT_MS = 2500;
 const AMBIENT_GLOW_MS = 2000;
-const PURPLE = { r: 123, g: 94, b: 167 };
-const DEFAULT_COLOR = { r: 26, g: 26, b: 26 };
+const PURPLE = { r: 75, g: 23, b: 229 };
+const DEFAULT_COLOR = { r: 10, g: 5, b: 26 };
 
 const ACTIVITY_LABELS = {
   programming: "Programming", trading: "Trading", cooking: "Cooking",
@@ -276,7 +276,7 @@ function ParticipantCanvas({ parentRef }) {
           const label = `${n.id} · ${n.context}`;
           ctx.save();
           ctx.globalAlpha = n.labelOpacity;
-          ctx.font = "300 9px 'DM Mono', monospace";
+          ctx.font = "600 9px 'Poppins', system-ui, sans-serif";
           const tw = ctx.measureText(label).width;
           const px = 20, rX = n.x + 16, lX = n.x - 16;
           const fitsR = rX + tw + px <= W;
@@ -544,28 +544,210 @@ export default function HomePage() {
       <Navbar activePage="home" />
 
       <div className="home-page">
-        {/* Hero */}
+        {/* Hero — cosmic dark with Pip */}
         <section className="home-hero" ref={heroSectionRef}>
-          <ParticipantCanvas parentRef={heroSectionRef} />
-          <div ref={heroRef} className="home-hero-inner fade-slide-up">
-            <p className="home-hero-tag">Powered by Contextual Compute</p>
-            <h1 className="home-hero-hl">
-              The Participant Layer
-              <br />
-              of the Internet
-            </h1>
-            <p className="home-hero-sub">
-              MOI gives every participant — human or agent — persistent, portable
-              existence in computation.
-            </p>
-            <p className="home-hero-layer">The <span className="purple">context infrastructure</span> for the AI economy</p>
-            <div className="home-hero-ctas">
-              <a href={WHITEPAPER_URL} className="btn-primary">
-                Read the whitepaper →
-              </a>
-              <Link to="/why-moi" className="btn-ghost">
-                The Shift →
-              </Link>
+          <div className="hero-orb hero-orb-tl" aria-hidden="true" />
+          <div className="hero-orb hero-orb-br" aria-hidden="true" />
+
+          <div className="hero-grid">
+            <div ref={heroRef} className="hero-copy fade-slide-up">
+              <p className="hero-eyebrow">
+                <span className="hero-eyebrow-dot" />
+                The participant layer · v0.9
+              </p>
+              <h1 className="hero-headline">
+                You haven't met the participant yet.
+              </h1>
+              <p className="hero-sub">
+                You exist once, on chain, as a coherent participant. Your
+                authority stays anchored to you, wherever your agents go.
+                Monitor, scope and revoke AI agents in real time.
+              </p>
+              <div className="hero-ctas">
+                <Link to="/manifesto" className="hero-btn hero-btn-primary">
+                  Become a participant <span aria-hidden="true">→</span>
+                </Link>
+                <a
+                  href="https://docs.moi.technology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-btn hero-btn-ghost"
+                >
+                  Watch the demo
+                </a>
+              </div>
+              <div className="hero-validators">
+                <span className="hero-validators-dot" />
+                2,100+ Validators
+              </div>
+            </div>
+
+            <div className="hero-pip-wrap">
+              <img
+                className="hero-softstar hero-softstar-tr"
+                src="/brand/icons/soft-star.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <img
+                className="hero-softstar hero-softstar-br"
+                src="/brand/icons/soft-star.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <div className="hero-pip">
+                <img
+                  className="hero-pip-img"
+                  src="/brand/mascot/pip-smile.png"
+                  alt="Pip — the MOI participant"
+                />
+                <svg
+                  className="hero-pip-ring"
+                  viewBox="0 0 600 600"
+                  aria-hidden="true"
+                >
+                  <ellipse
+                    cx="300"
+                    cy="300"
+                    rx="280"
+                    ry="78"
+                    fill="none"
+                    stroke="rgba(217,204,255,0.55)"
+                    strokeWidth="1.5"
+                    transform="rotate(-22 300 300)"
+                  />
+                  <circle cx="50" cy="370" r="6" fill="#D9CCFF" />
+                  <circle cx="555" cy="240" r="9" fill="#FFFFFF" opacity="0.85" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Four-way authority model */}
+        <section className="s-promise">
+          <div className="promise-inner">
+            <div className="promise-header">
+              <div className="promise-header-left">
+                <p className="promise-eyebrow">
+                  <span className="promise-eyebrow-dot" />
+                  The four-way authority model
+                </p>
+                <h2 className="promise-title">Your authority, four ways.</h2>
+              </div>
+              <p className="promise-blurb">
+                Information about your authority is not your authority.
+                Anywhere. Ever. So we stopped passing it around.
+              </p>
+            </div>
+
+            <div className="promise-grid">
+              <article className="promise-card">
+                <div className="promise-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="4" />
+                    <line x1="12" y1="2" x2="12" y2="5" />
+                    <line x1="12" y1="19" x2="12" y2="22" />
+                    <line x1="2" y1="12" x2="5" y2="12" />
+                    <line x1="19" y1="12" x2="22" y2="12" />
+                  </svg>
+                </div>
+                <p className="promise-num">01 · Exist on-chain</p>
+                <h3 className="promise-name">One coherent participant.</h3>
+                <p className="promise-body">
+                  Agents plug into you. You don't get cloned across credentials.
+                </p>
+              </article>
+
+              <article className="promise-card">
+                <div className="promise-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="3 12 7 12 10 4 14 20 17 12 21 12" />
+                  </svg>
+                </div>
+                <p className="promise-num">02 · Monitor</p>
+                <h3 className="promise-name">See every action in real time.</h3>
+                <p className="promise-body">
+                  Every call, every scope check — streamed to you, not after the fact.
+                </p>
+              </article>
+
+              <article className="promise-card">
+                <div className="promise-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <polyline points="12 7 12 12 15 14" />
+                  </svg>
+                </div>
+                <p className="promise-num">03 · Scope</p>
+                <h3 className="promise-name">Choose what they can touch.</h3>
+                <p className="promise-body">
+                  Per-agent, per-resource, per-call. Standing scope replaces borrowed keys.
+                </p>
+              </article>
+
+              <article className="promise-card">
+                <div className="promise-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12a9 9 0 1 0 3-6.7" />
+                    <polyline points="3 4 3 9 8 9" />
+                  </svg>
+                </div>
+                <p className="promise-num">04 · Revoke</p>
+                <h3 className="promise-name">Cut access at machine speed.</h3>
+                <p className="promise-body">
+                  One call. Globally enforced. No long-lived token left holding the bag.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Why it matters — cosmic story band */}
+        <section className="s-matters">
+          <div className="matters-orb" aria-hidden="true" />
+          <img
+            className="matters-softstar"
+            src="/brand/icons/soft-star.svg"
+            alt=""
+            aria-hidden="true"
+          />
+
+          <div className="matters-inner">
+            <div className="matters-copy">
+              <p className="matters-eyebrow">
+                <span className="matters-eyebrow-dot" />
+                Why it matters
+              </p>
+              <h2 className="matters-headline">
+                A month ago, a coding agent found an admin token in a file
+                system. Used it and deleted a production database in{" "}
+                <em>9 seconds</em>. Wrote an apology after.
+              </h2>
+              <p className="matters-sub">
+                It's not the agent's fault. Architecture broke the agent and
+                left it no other choice. MOI doesn't replace your AI stack. It
+                makes it trustworthy.
+              </p>
+            </div>
+
+            <div className="matters-callout">
+              <div className="matters-callout-head">
+                <span className="matters-callout-title">MOI · PARTICIPANT.REVOKE()</span>
+                <span className="matters-callout-status">
+                  <span className="matters-callout-status-dot" />
+                  OK · 9ms
+                </span>
+              </div>
+              <pre className="matters-code">
+{`const me = moi.participant("0x4b17e5…320f99");
+
+me.agent("claw-12")
+  .scope({ read: true, write: false })
+  .revoke();
+// → cut at machine speed`}
+              </pre>
             </div>
           </div>
         </section>
@@ -573,8 +755,8 @@ export default function HomePage() {
         {/* Ask chatbot */}
         <section className="s-ask">
           <div ref={askRef} className="ask-center fade-slide-up">
-            <h2 className="ask-hl">What can MOI help with?</h2>
-            <p className="ask-sub">Ask the protocol.</p>
+            <h2 className="ask-hl">Ask the protocol.</h2>
+            <p className="ask-sub">MOI answers, in its own voice.</p>
             <AskChat />
           </div>
         </section>
@@ -585,9 +767,9 @@ export default function HomePage() {
         {/* Closing CTA */}
         <section className="s-home-cta">
           <div ref={ctaRef} className="home-cta-inner fade-slide-up">
-            <h2 className="home-cta-hl">Ready to build?</h2>
+            <h2 className="home-cta-hl">Become a participant.</h2>
             <p className="home-cta-sub">
-              Explore the docs, read the whitepaper, or join the community.
+              Read the docs. Run an agent. Revoke it when you're done.
             </p>
             <div className="home-cta-links">
               <a
@@ -596,7 +778,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Start Building →
+                Read the docs
               </a>
               <a
                 href="https://discord.gg/QX3Y3zYWf8"
@@ -604,7 +786,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-ghost"
               >
-                Join the Community →
+                Join the community
               </a>
             </div>
           </div>
