@@ -770,7 +770,7 @@ me.agent("claw-12")
                 <span className="validators-eyebrow-dot" />
                 Traction
               </p>
-              <h2 className="validators-title">Proof, not promises.</h2>
+              <h2 className="validators-title">Live network.</h2>
             </div>
 
             <div className="validators-stats">
