@@ -5,10 +5,10 @@ export default function Navbar({ activePage = "home" }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass = (page) =>
-    `text-[11px] tracking-[0.12em] uppercase font-semibold transition-colors duration-300 ${
+    `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] ${
       activePage === page
-        ? "text-[#0A051A] bg-[#4B17E5]/10 rounded-full px-[14px] py-[6px]"
-        : "text-[#0A051A]/55 hover:text-[#0A051A] px-[14px] py-[6px]"
+        ? "text-[#4B17E5] bg-[#4B17E5]/10"
+        : "text-[#0A051A]/75 hover:text-[#4B17E5]"
     }`;
 
   return (
@@ -24,12 +24,18 @@ export default function Navbar({ activePage = "home" }) {
         }}
       >
         {/* Logo lockup — planetoid + MOI wordmark side-by-side */}
-        <Link to="/" className="flex items-center gap-3 no-underline shrink-0">
+        <Link to="/" className="flex items-center gap-[10px] no-underline shrink-0">
           <img
-            src="/brand/logos/SVG/default-dark.svg"
-            alt="MOI"
-            className="h-7 w-auto"
+            src="/brand/logos/SVG/default-light.svg"
+            alt=""
+            aria-hidden="true"
+            className="h-6 w-auto"
           />
+          <span
+            className="text-[14px] font-semibold tracking-[-0.01em] text-[#0A051A]"
+          >
+            moi.technology
+          </span>
         </Link>
 
         {/* Center links — desktop */}
@@ -51,8 +57,8 @@ export default function Navbar({ activePage = "home" }) {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <Link
             to="/manifesto"
-            className="text-[11px] tracking-[0.04em] font-semibold text-[#0A051A] bg-white hover:shadow-[0_0_24px_rgba(255,255,255,0.4)] rounded-full px-5 py-2 transition-all duration-300"
-            style={{ boxShadow: "inset 0 1.45px 33px rgba(255,255,255,0.25)" }}
+            className="text-[12px] tracking-[-0.005em] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-[9px] transition-colors duration-200"
+            style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
           >
             Become a participant
           </Link>
@@ -98,8 +104,8 @@ export default function Navbar({ activePage = "home" }) {
           <hr className="border-[#0A051A]/8" />
           <Link
             to="/manifesto"
-            className="text-[11px] font-semibold text-[#0A051A] bg-white rounded-full px-5 py-2.5 text-center"
-            style={{ boxShadow: "inset 0 1.45px 33px rgba(255,255,255,0.25)" }}
+            className="text-[12px] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-2.5 text-center transition-colors duration-200"
+            style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
             onClick={() => setMenuOpen(false)}
           >
             Become a participant
