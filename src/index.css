@@ -1963,7 +1963,7 @@ body {
    ────────────────────────────────────────────────────────────────────── */
 @media (min-width: 769px) and (min-height: 700px) {
   html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 88px;
     scroll-behavior: smooth;
   }
@@ -1974,18 +1974,25 @@ body {
   .home-hero,
   .s-promise,
   .s-matters,
-  .s-validators,
-  .s-kitcta {
+  .s-validators {
     min-height: 100vh;
     min-height: 100dvh;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  /* .s-ask and .s-community ride normal flow — no 100vh, no snap. */
+  /* .s-ask, .s-community, .s-kitcta ride normal flow — no 100vh,
+     no snap — so the page can scroll cleanly to the footer. */
+  .s-kitcta {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   /* ── .s-promise: heading + card cluster, cards content-height ── */
   .s-promise > .promise-inner {
