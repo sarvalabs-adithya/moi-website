@@ -752,6 +752,65 @@ me.agent("claw-12")
           </div>
         </section>
 
+        {/* Validators band */}
+        <section className="s-validators">
+          <img
+            className="validators-softstar validators-softstar-tr"
+            src="/brand/icons/soft-star.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            className="validators-softstar validators-softstar-br"
+            src="/brand/icons/soft-star.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <div className="validators-orb" aria-hidden="true" />
+
+          <div className="validators-inner">
+            <div className="validators-stats">
+              <article className="stat-card">
+                <div className="stat-num">2,100+</div>
+                <div className="stat-label">Validators</div>
+              </article>
+              <article className="stat-card">
+                <div className="stat-num">7 yrs</div>
+                <div className="stat-label">Building the participant layer</div>
+              </article>
+              <article className="stat-card">
+                <div className="stat-num">9 ms</div>
+                <div className="stat-label">Median revoke latency</div>
+              </article>
+            </div>
+
+            <div className="works-with">
+              <span className="works-with-label">
+                <span className="works-with-line" />
+                <span className="works-with-dot" />
+                Works with
+              </span>
+              <ul className="works-with-pills">
+                <li className="ww-pill">
+                  <span className="ww-pill-dot ww-pill-dot--live" />
+                  @openclaw <span className="ww-pill-sep">·</span>{" "}
+                  <span className="ww-pill-status">LIVE</span>
+                </li>
+                <li className="ww-pill">
+                  <span className="ww-pill-dot ww-pill-dot--next" />
+                  @LangChain <span className="ww-pill-sep">·</span>{" "}
+                  <span className="ww-pill-status">NEXT</span>
+                </li>
+                <li className="ww-pill">
+                  <span className="ww-pill-dot ww-pill-dot--aligned" />
+                  @a16zcrypto <span className="ww-pill-sep">·</span>{" "}
+                  <span className="ww-pill-status">ALIGNED</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* Ask chatbot */}
         <section className="s-ask">
           <div ref={askRef} className="ask-center fade-slide-up">
@@ -764,30 +823,43 @@ me.agent("claw-12")
         {/* Community Calendar */}
         <CommunityCalendar />
 
-        {/* Closing CTA */}
-        <section className="s-home-cta">
-          <div ref={ctaRef} className="home-cta-inner fade-slide-up">
-            <h2 className="home-cta-hl">Become a participant.</h2>
-            <p className="home-cta-sub">
-              Read the docs. Run an agent. Revoke it when you're done.
+        {/* Closing CTA — "Not your Context, Not your KitKat." */}
+        <section className="s-kitcta">
+          <img
+            className="kitcta-softstar kitcta-softstar-tl"
+            src="/brand/icons/soft-star.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            className="kitcta-softstar kitcta-softstar-br"
+            src="/brand/icons/soft-star.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <div className="kitcta-orb kitcta-orb-l" aria-hidden="true" />
+          <div className="kitcta-orb kitcta-orb-r" aria-hidden="true" />
+
+          <div ref={ctaRef} className="kitcta-inner fade-slide-up">
+            <span className="kitcta-pill">
+              <span className="kitcta-pill-dot" />
+              Official statement
+            </span>
+            <h2 className="kitcta-hl">
+              Not your Context,
+              <br />
+              Not your KitKat.
+            </h2>
+            <p className="kitcta-sub">
+              Identity, not intelligence, is the bottleneck. Anchor yours.
             </p>
-            <div className="home-cta-links">
-              <a
-                href="https://docs.moi.technology"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Read the docs
-              </a>
-              <a
-                href="https://discord.gg/ytQGU7ZP"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost"
-              >
-                Join the community
-              </a>
+            <div className="kitcta-ctas">
+              <Link to="/manifesto" className="kitcta-btn kitcta-btn-primary">
+                Become a participant <span aria-hidden="true">→</span>
+              </Link>
+              <Link to="/manifesto" className="kitcta-btn kitcta-btn-ghost">
+                Read the manifesto
+              </Link>
             </div>
           </div>
         </section>
