@@ -23,19 +23,17 @@ export default function Navbar({ activePage = "home" }) {
           boxShadow: "0 2px 12px rgba(50,15,153,0.06)",
         }}
       >
-        {/* Logo lockup — planetoid + MOI wordmark side-by-side */}
-        <Link to="/" className="flex items-center gap-[10px] no-underline shrink-0">
+        {/* Logo — MOI planetoid mark */}
+        <Link
+          to="/"
+          aria-label="MOI — home"
+          className="nav-logo flex items-center no-underline shrink-0"
+        >
           <img
             src="/brand/logos/SVG/default-light.svg"
-            alt=""
-            aria-hidden="true"
-            className="h-6 w-auto"
+            alt="MOI"
+            className="h-7 w-auto"
           />
-          <span
-            className="text-[14px] font-semibold tracking-[-0.01em] text-[#0A051A]"
-          >
-            moi.technology
-          </span>
         </Link>
 
         {/* Center links — desktop */}
@@ -57,7 +55,7 @@ export default function Navbar({ activePage = "home" }) {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <Link
             to="/manifesto"
-            className="text-[12px] tracking-[-0.005em] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-[9px] transition-colors duration-200"
+            className="nav-cta text-[12px] tracking-[-0.005em] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-[9px] transition-colors duration-200"
             style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
           >
             Become a participant
@@ -104,7 +102,7 @@ export default function Navbar({ activePage = "home" }) {
           <hr className="border-[#0A051A]/8" />
           <Link
             to="/manifesto"
-            className="text-[12px] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-2.5 text-center transition-colors duration-200"
+            className="nav-cta text-[12px] font-semibold text-white bg-[#4B17E5] hover:bg-[#320F99] rounded-full px-5 py-2.5 text-center transition-colors duration-200"
             style={{ boxShadow: "0 4px 14px rgba(75, 23, 229, 0.28)" }}
             onClick={() => setMenuOpen(false)}
           >
