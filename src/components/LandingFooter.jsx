@@ -81,7 +81,7 @@ export default function LandingFooter() {
           <div className="footer-left">
             <img src="/brand/logos/SVG/default-dark.svg" alt="MOI" className="footer-logo-img" />
             <span className="footer-divider" />
-            <span className="footer-copy">&copy; 2026 Sarva Labs. All rights reserved.</span>
+            <span className="footer-copy">&copy; 2026 MOI Network Inc. All rights reserved.</span>
           </div>
           <div className="footer-socials">
             {SOCIAL_LINKS.map(({ href, label, svg }) => (
