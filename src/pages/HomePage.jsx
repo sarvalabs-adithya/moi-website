@@ -770,10 +770,7 @@ me.agent("claw-12")
                 <span className="validators-eyebrow-dot" />
                 Traction
               </p>
-              <h2 className="validators-title">Live network. Live proof.</h2>
-              <p className="validators-sub">
-                Real adoption, not token speculation.
-              </p>
+              <h2 className="validators-title">Proof, not promises.</h2>
             </div>
 
             <div className="validators-stats">
