@@ -22,6 +22,18 @@
   --purple: var(--moi-main);
   --cream:  var(--bg-almost-lavender);
   --ink:    #0A051A;
+
+  /* ── Section rhythm — single spacing scale ── */
+  --section-py: 5.5rem;   /* desktop top/bottom */
+  --section-px: 1.5rem;   /* horizontal gutter */
+  --container-max: 1200px;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --section-py: 3.5rem;
+    --section-px: 1.25rem;
+  }
 }
 
 body {
@@ -213,7 +225,7 @@ body {
 .home-hero {
   position: relative;
   min-height: 100vh;
-  padding: 9rem 2rem 4rem;
+  padding: 8rem var(--section-px) var(--section-py);
   background:
     radial-gradient(70% 60% at 75% 25%, rgba(75, 23, 229, 0.40), transparent 60%),
     radial-gradient(45% 35% at 10% 80%, rgba(111, 69, 234, 0.30), transparent 65%),
@@ -255,13 +267,13 @@ body {
 .hero-grid {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   align-items: center;
   gap: 48px;
-  min-height: calc(100vh - 13rem);
+  min-height: calc(100vh - 14rem);
 }
 
 .hero-copy {
@@ -502,14 +514,11 @@ body {
 
 /* ── Four-way authority model ── */
 .s-promise {
-  min-height: 100vh;
-  padding: 7rem 2rem 5rem;
+  padding: var(--section-py) var(--section-px);
   background: var(--bg-almost-lavender);
-  display: flex;
-  align-items: center;
 }
 .promise-inner {
-  max-width: 1280px;
+  max-width: var(--container-max);
   width: 100%;
   margin: 0 auto;
 }
@@ -660,16 +669,13 @@ body {
 /* ── Why it matters — cosmic story band ── */
 .s-matters {
   position: relative;
-  min-height: 100vh;
-  padding: 7rem 2rem 6rem;
+  padding: var(--section-py) var(--section-px);
   background:
     radial-gradient(60% 50% at 5% 30%, rgba(111, 69, 234, 0.30), transparent 65%),
     radial-gradient(45% 40% at 95% 80%, rgba(75, 23, 229, 0.25), transparent 65%),
     var(--grad-cosmos);
   color: var(--fg-on-dark-1);
   overflow: hidden;
-  display: flex;
-  align-items: center;
 }
 .s-matters::before {
   content: "";
@@ -706,7 +712,7 @@ body {
 .matters-inner {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  max-width: var(--container-max);
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -827,17 +833,13 @@ body {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .s-matters { padding: 4.5rem 1.5rem; }
 }
 
 /* ── Validators band ── */
 .s-validators {
   position: relative;
-  min-height: 100vh;
-  padding: 7rem 2rem 6rem;
+  padding: var(--section-py) var(--section-px);
   background: var(--bg-almost-lavender);
-  display: flex;
-  align-items: center;
   overflow: hidden;
 }
 .s-validators::before {
@@ -874,12 +876,12 @@ body {
 .validators-inner {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  max-width: var(--container-max);
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 48px;
 }
 
 .validators-stats {
@@ -984,21 +986,16 @@ body {
 
 @media (max-width: 760px) {
   .validators-stats { grid-template-columns: 1fr; }
-  .s-validators { padding: 5rem 1.5rem; }
 }
 
 /* ── Closing CTA — "Not your Context, Not your KitKat." ── */
 .s-kitcta {
   position: relative;
-  min-height: 100vh;
-  padding: 7rem 2rem 6rem;
+  padding: var(--section-py) var(--section-px);
   background:
     radial-gradient(50% 60% at 10% 30%, rgba(217, 204, 255, 0.25), transparent 60%),
     radial-gradient(50% 60% at 95% 80%, rgba(75, 23, 229, 0.40), transparent 60%),
     linear-gradient(135deg, var(--moi-main) 0%, #320F99 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   overflow: hidden;
   color: var(--fg-on-dark-1);
@@ -1053,7 +1050,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
+  opacity: 1;
 }
 .kitcta-pill {
   display: inline-flex;
@@ -1130,18 +1128,15 @@ body {
 }
 .kitcta-btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
 
-@media (max-width: 600px) {
-  .s-kitcta { padding: 5rem 1.5rem; }
-}
 
 /* ── Ask Chat (home) — hardcoded light; no system dark mode bleed ── */
 .s-ask {
-  padding: 5rem 1.5rem 1.75rem;
+  padding: var(--section-py) var(--section-px);
   background: var(--bg-almost-lavender);
   text-align: center;
 }
 .ask-center {
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto;
 }
 .ask-hl {
@@ -1335,7 +1330,7 @@ body {
 
 /* ── Community Calendar ── */
 .cc-wrap {
-  padding: 5rem 1.5rem;
+  padding: var(--section-py) var(--section-px);
   background: var(--cream);
   text-align: center;
 }
@@ -1361,6 +1356,28 @@ body {
   flex-direction: column;
   gap: 10px;
   text-align: left;
+}
+.cc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 1.5rem auto 0;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: var(--moi-main);
+  cursor: pointer;
+  transition: background 160ms cubic-bezier(0.22,0.61,0.36,1),
+              border-color 160ms cubic-bezier(0.22,0.61,0.36,1);
+}
+.cc-toggle:hover {
+  background: rgba(75, 23, 229, 0.06);
+  border-color: var(--moi-main);
 }
 .cc-row {
   display: flex;
@@ -1488,10 +1505,10 @@ body {
 /* ── Footer (single compact row) ── */
 .site-footer {
   background: var(--bg-certainly-lavender);
-  padding: 2rem 2.5rem 2.25rem;
+  padding: 2.5rem var(--section-px);
 }
 .footer-inner {
-  max-width: 1100px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1775,12 +1792,11 @@ body {
 
 /* ── Home responsive ── */
 @media (max-width: 768px) {
-  .home-hero { padding: 5rem 1.25rem; min-height: 100vh; }
+  .home-hero { padding: 7rem var(--section-px) var(--section-py); min-height: 100vh; }
   .ask-container { border-radius: 14px; max-height: 420px; padding-bottom: 20px; }
   .ask-msgs { padding: 16px 16px 28px; max-height: 260px; }
   .ask-bar { margin: 16px 12px 0; }
   .ask-pills { padding: 10px 14px 0; }
-  .cc-wrap { padding: 3rem 1rem; }
   .cc-row { padding: .85rem; gap: .85rem; flex-wrap: wrap; }
   .cc-date-chip { width: 50px; }
   .cc-row-title { font-size: 1rem; }

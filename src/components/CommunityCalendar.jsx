@@ -14,6 +14,7 @@ const MONTH_ABBR = [
 ];
 
 const MAX_EVENTS = 16;
+const COLLAPSED_COUNT = 4;
 
 const SCHEDULE_YEAR = 2026;
 
@@ -81,6 +82,7 @@ const API_URL = import.meta.env.VITE_CHATBOT_API || "";
 
 export default function CommunityCalendar() {
   const [events, setEvents] = useState(buildScheduledEvents());
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     fetch(`${API_URL}/api/community-calls`)
@@ -95,16 +97,19 @@ export default function CommunityCalendar() {
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .slice(0, MAX_EVENTS);
 
+  const visible = expanded ? upcoming : upcoming.slice(0, COLLAPSED_COUNT);
+  const hiddenCount = Math.max(0, upcoming.length - COLLAPSED_COUNT);
+
   return (
     <div className="cc-wrap">
       <h2 className="cc-title">Community Calendar</h2>
       <p className="cc-sub">Upcoming calls, AMAs, and ecosystem events.</p>
 
       <div className="cc-list">
-        {upcoming.length === 0 ? (
+        {visible.length === 0 ? (
           <div className="cc-empty">No upcoming events scheduled. Check back soon.</div>
         ) : (
-          upcoming.map((evt) => {
+          visible.map((evt) => {
             const d = new Date(evt.date);
             const cat = CATEGORY_COLORS[evt.category] || CATEGORY_COLORS.dev_call;
             const weekday = d.toLocaleDateString("en-US", { weekday: "short" });
@@ -154,6 +159,16 @@ export default function CommunityCalendar() {
           })
         )}
       </div>
+
+      {hiddenCount > 0 && (
+        <button
+          type="button"
+          className="cc-toggle"
+          onClick={() => setExpanded((v) => !v)}
+        >
+          {expanded ? "Show less" : `View all (${upcoming.length})`}
+        </button>
+      )}
     </div>
   );
 }

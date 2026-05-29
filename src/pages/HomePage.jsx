@@ -840,7 +840,7 @@ me.agent("claw-12")
           <div className="kitcta-orb kitcta-orb-l" aria-hidden="true" />
           <div className="kitcta-orb kitcta-orb-r" aria-hidden="true" />
 
-          <div ref={ctaRef} className="kitcta-inner fade-slide-up">
+          <div className="kitcta-inner">
             <span className="kitcta-pill">
               <span className="kitcta-pill-dot" />
               Official statement
