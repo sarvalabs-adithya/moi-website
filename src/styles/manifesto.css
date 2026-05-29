@@ -1,353 +1,153 @@
-/* ── Manifesto page — editorial serif on deep ink-plum ── */
-@import "@fontsource/fraunces/300.css";
-@import "@fontsource/fraunces/400.css";
-@import "@fontsource/fraunces/500.css";
-@import "@fontsource/fraunces/600.css";
-@import "@fontsource/fraunces/400-italic.css";
-@import "@fontsource/fraunces/500-italic.css";
+/* ── Manifesto — simple light reading page ── */
 
 /* Restore conventional 16px root on /manifesto so the rem-based
-   reading measure (~38rem) hits the intended 600px column. */
+   reading measure (~40rem) hits the intended ~640px column.
+   Site root is 10px (Tailwind reset); this is route-scoped. */
 html.manifesto-root { font-size: 16px; }
 
 .manifesto-page {
-  --ink:        #0B0617;
-  --ink-2:      #110A22;
-  --paper:      #EDE9F5;
-  --paper-dim:  rgba(237, 233, 245, 0.66);
-  --lilac:      #BCA6FF;
-  --mint:       #4DDB97;
-  --indigo:     #7C53F5;
-  --hairline:   rgba(237, 233, 245, 0.12);
+  --m-bg:       #FCFBFF;
+  --m-text:     #15102B;
+  --m-muted:    #5B5570;
+  --m-accent:   #4B17E5;
+  --m-rule:     rgba(21, 16, 43, 0.08);
 
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--m-bg);
+  color: var(--m-text);
   min-height: 100vh;
-  font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-feature-settings: "ss01", "ss02";
-  font-optical-sizing: auto;
+  font-family: var(--font-sans), "Poppins", system-ui, -apple-system, sans-serif;
 }
 
-/* Body bg follows the page in case anything bleeds through */
-.manifesto-page,
-body:has(.manifesto-page) {
-  background-color: var(--ink, #0B0617);
-}
-
-/* ── Scroll-progress bar (indigo → lilac) ── */
-.m-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: calc(var(--m-scroll, 0) * 100%);
-  background: linear-gradient(to right, #7C53F5, #BCA6FF);
-  z-index: 100;
-  pointer-events: none;
-  transition: width 60ms linear;
-}
+body:has(.manifesto-page) { background-color: #FCFBFF; }
 
 /* ── Main column ── */
 .m-main {
-  position: relative;
-  padding: 6.5rem 1.5rem 4rem;
-  background:
-    radial-gradient(40% 30% at 88% 8%, rgba(124, 83, 245, 0.10), transparent 70%),
-    radial-gradient(40% 30% at 6% 70%, rgba(188, 166, 255, 0.06), transparent 70%),
-    var(--ink);
+  padding: 7rem 1.5rem 5rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
-/* ── Eyebrow (chrome — Poppins) ── */
+/* ── Eyebrow + title ── */
+.m-header { margin-bottom: 2.5rem; }
 .m-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--lilac);
-  margin: 0 0 2rem;
-}
-.m-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--mint);
-}
-
-/* ── Masthead ── */
-.m-masthead {
-  max-width: 56rem;
-  margin: 0 auto 2.75rem;
+  color: var(--m-accent);
+  margin: 0 0 1rem;
 }
 .m-title {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(3.2rem, 9vw, 8rem);
-  line-height: 0.98;
-  letter-spacing: -0.024em;
-  color: var(--paper);
-  margin: 0 0 2rem;
-}
-.m-title em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--lilac);
-}
-.m-dek {
   font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
-  line-height: 1.55;
-  color: var(--paper-dim);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  color: var(--m-text);
   margin: 0;
-  max-width: 56ch;
 }
 
-/* ── Reading column ── */
+/* ── Column body ── */
 .m-column {
-  position: relative;
-  max-width: 56rem;       /* wider container so statements can breathe */
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
+
+/* Prose paragraphs (regular body) */
 .m-prose {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-sans);
   font-weight: 400;
-  font-size: clamp(1.18rem, 1.55vw, 1.38rem);
-  line-height: 1.65;
-  color: var(--paper-dim);
-  margin: 0 auto 1.1em;
-  max-width: 38rem;
-  width: 100%;
-}
-.m-prose.m-lead {
-  color: var(--paper);
-  font-weight: 500;
-}
-.m-prose em {
-  font-style: italic;
-  color: var(--lilac);
-}
-.m-prose small {
-  font-size: 0.8em;
-  color: var(--paper-dim);
+  font-size: 1.075rem;
+  line-height: 1.75;
+  color: var(--m-muted);
+  margin: 0 0 1.25rem;
 }
 
-/* Drop cap on first body paragraph */
-.m-prose.m-dropcap::first-letter {
-  float: left;
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
-  font-size: 4.4em;
-  line-height: 0.86;
-  margin: 0.06em 0.08em 0 -0.04em;
-  color: var(--paper);
-}
-
-/* ── Statement breakout ── */
-.m-statement {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(1.85rem, 4.4vw, 3.25rem);
-  line-height: 1.1;
-  letter-spacing: -0.018em;
-  color: var(--paper);
-  margin: 1.5em auto;
-  max-width: 56rem;
-  width: 100%;
-}
-.m-statement em {
-  font-style: italic;
-  color: var(--lilac);
-  font-weight: 400;
-}
-.m-statement small {
-  display: block;
-  margin-top: 0.5em;
-  font-size: 0.45em;
+/* Load-bearing standalone lines */
+.m-line {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.2rem;
   line-height: 1.4;
-  font-style: italic;
-  color: var(--paper-dim);
-  letter-spacing: 0;
+  letter-spacing: -0.005em;
+  color: var(--m-text);
+  margin: 0.5rem 0 1.5rem;
 }
-.m-statement--right {
-  margin-left: auto;
-  margin-right: 0;
-  text-align: right;
-  max-width: 50rem;
-}
-.m-dim-italic {
-  font-style: italic;
-  color: var(--paper-dim);
-}
-.m-mint {
-  color: var(--mint);
-  font-style: italic;
-}
+.m-line--accent { color: var(--m-accent); }
 
-/* ── Hairline rule ── */
+/* ── Hairline divider ── */
 .m-hr {
   border: 0;
   height: 1px;
-  background: var(--hairline);
-  max-width: 38rem;
-  width: 100%;
-  margin: 3.5rem auto;
+  background: var(--m-rule);
+  margin: 2.25rem 0;
 }
 
-/* ── Declaration block ── */
+/* ── Declaration ── */
 .m-declaration {
-  margin: 2.25rem auto 2rem;
-  max-width: 48rem;
-  width: 100%;
+  margin: 2.25rem 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  font-family: "Fraunces", Georgia, serif;
+  gap: 0.4rem;
 }
-.m-decl-lead {
-  font-style: italic;
-  color: var(--lilac);
-  font-weight: 500;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 1.2;
-  margin: 0 0 0.5em;
-}
-.m-decl-lead em { font-style: italic; }
 .m-decl-line {
-  font-weight: 400;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 1.2;
-  color: var(--paper);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--m-text);
   margin: 0;
 }
+.m-decl-line--accent { color: var(--m-accent); }
 
-/* ── Whisper (sans, mint, small) ── */
-.m-whisper {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
-  letter-spacing: -0.005em;
-  color: var(--mint);
-  text-align: left;
-  margin: 1.25rem auto 1.5rem;
-  max-width: 38rem;
-  width: 100%;
-}
-
-/* ── Close line ── */
-.m-close-line {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(2rem, 3.6vw, 2.75rem);
-  line-height: 1.14;
-  letter-spacing: -0.018em;
-  color: var(--paper);
-  margin: 2rem auto 1.5rem;
-  max-width: 50rem;
-  width: 100%;
-}
-.m-close-line em {
-  font-style: italic;
-  color: var(--lilac);
-  font-weight: 500;
-}
-
-/* ── CTAs (chrome — Poppins, reuse site button feel) ── */
+/* ── Close CTAs ── */
 .m-close-ctas {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
-  max-width: 50rem;
-  margin: 0 auto 2rem;
-  width: 100%;
+  margin: 2.5rem 0 0;
 }
 .m-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 13px 24px;
   border-radius: 999px;
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: -0.005em;
   text-decoration: none;
-  transition: transform 200ms cubic-bezier(0.22,0.61,0.36,1),
-              background 200ms cubic-bezier(0.22,0.61,0.36,1),
-              color 200ms cubic-bezier(0.22,0.61,0.36,1);
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              background 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              border-color 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              color 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .m-cta:hover { transform: translateY(-1px); }
 .m-cta-primary {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--m-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(75, 23, 229, 0.22);
 }
-.m-cta-primary:hover { background: #FFFFFF; }
+.m-cta-primary:hover { background: #320F99; }
 .m-cta-ghost {
   background: transparent;
-  border: 1px solid rgba(237, 233, 245, 0.22);
-  color: var(--paper);
+  border: 1px solid rgba(21, 16, 43, 0.18);
+  color: var(--m-text);
 }
 .m-cta-ghost:hover {
-  background: rgba(237, 233, 245, 0.06);
-  border-color: rgba(237, 233, 245, 0.4);
+  border-color: var(--m-accent);
+  color: var(--m-accent);
 }
 
-/* ── Footer adapted for dark bg on this route ── */
-.manifesto-page ~ footer.site-footer,
-.manifesto-page + footer.site-footer {
-  background: var(--ink-2);
-  border-top: 1px solid var(--hairline);
-}
-.manifesto-page + footer.site-footer .footer-copy { color: var(--paper-dim); }
-.manifesto-page + footer.site-footer .footer-divider { background: var(--hairline); }
-.manifesto-page + footer.site-footer .footer-nav { border-top-color: var(--hairline); }
-.manifesto-page + footer.site-footer .footer-nav-link { color: var(--paper-dim); }
-.manifesto-page + footer.site-footer .footer-nav-link:hover { color: var(--lilac); }
-.manifesto-page + footer.site-footer .footer-socials a { color: var(--paper-dim); }
-.manifesto-page + footer.site-footer .footer-socials a:hover {
-  color: var(--paper);
-  background: rgba(237, 233, 245, 0.08);
-}
-
-/* ── Reveal animation ── */
-.m-reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.m-reveal.is-in {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .m-reveal, .m-reveal.is-in {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .m-progress { transition: none; }
-}
-
-/* ── Mobile ── */
-@media (max-width: 760px) {
-  .m-main { padding: 7rem 1.25rem 4rem; }
-  .m-masthead { margin-bottom: 4rem; }
-  .m-prose { margin-bottom: 1.4em; }
-  .m-statement { margin: 2rem auto; }
-  .m-statement--right { text-align: left; }
-  .m-hr { margin: 2.5rem auto; }
-  .m-declaration { margin: 3rem auto 2.5rem; gap: 0.35rem; }
-  .m-prose.m-dropcap::first-letter {
-    font-size: 3.4em;
-    line-height: 0.9;
-    margin-right: 0.06em;
-  }
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .m-main { padding: 5.5rem 1.25rem 3.5rem; }
+  .m-header { margin-bottom: 1.75rem; }
+  .m-prose { font-size: 1.025rem; }
+  .m-line, .m-decl-line { font-size: 1.125rem; }
+  .m-hr { margin: 1.75rem 0; }
+  .m-declaration { margin: 1.75rem 0 1.5rem; }
+  .m-close-ctas { margin-top: 2rem; }
 }
