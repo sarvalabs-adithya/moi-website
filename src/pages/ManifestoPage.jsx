@@ -1,124 +1,155 @@
 import "../styles/manifesto.css";
+import Navbar from "../components/Navbar";
+import LandingFooter from "../components/LandingFooter";
+import { Link } from "react-router-dom";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export default function ManifestoPage() {
-  return (
-    <main className="manifesto">
-      <div className="manifesto-bg" aria-hidden="true" />
+  const introRef = useScrollReveal();
+  const declarationRef = useScrollReveal();
+  const stackRef = useScrollReveal();
+  const closeRef = useScrollReveal();
 
-      <div className="manifesto-content">
-        <header className="m-topbar">
-          <span className="m-watermark">@MOI_Tech</span>
-          <a className="m-url" href="https://moi.technology">moi.technology</a>
+  return (
+    <>
+      <Navbar activePage="manifesto" />
+
+      <main className="manifesto-page">
+        <div className="m-bg" aria-hidden="true" />
+        <img className="m-softstar m-softstar-1" src="/brand/icons/soft-star.svg" alt="" aria-hidden="true" />
+        <img className="m-softstar m-softstar-2" src="/brand/icons/soft-star.svg" alt="" aria-hidden="true" />
+        <img className="m-softstar m-softstar-3" src="/brand/icons/soft-star.svg" alt="" aria-hidden="true" />
+
+        {/* MASTHEAD ─────────────────────────────────── */}
+        <header className="m-masthead">
+          <p className="m-eyebrow">
+            <span className="m-eyebrow-dot" />
+            The participant manifesto
+          </p>
+          <h1 className="m-title">
+            You haven't met the <em>participant</em> yet.
+          </h1>
+          <p className="m-deck">
+            Identity, not intelligence, is the bottleneck.
+            <br />
+            Anchor yours.
+          </p>
         </header>
 
-        {/* HERO ────────────────────────────────────────── */}
-        <section className="m-hero">
-          <div className="m-orb m-orb-1" aria-hidden="true" />
+        {/* READING COLUMN ───────────────────────────── */}
+        <article className="m-column" ref={introRef}>
+          <p className="m-prose">
+            For most of the internet, authority moved as data. A token. A
+            session. A copy. Anywhere it traveled, anyone holding it could act
+            as you.
+          </p>
 
-          <div className="m-hero-copy">
-            <span className="m-chip">
-              <span className="m-chip-dot" />
-              Official statement
-            </span>
+          <p className="m-breakout">
+            <em>The copy is the authority.</em>
+          </p>
 
-            <h1 className="m-headline">
-              You haven't met the <em>participant</em> yet.
-            </h1>
+          <p className="m-prose">
+            That worked when there were a few of us, doing a few things at a
+            time. It does not work when there are agents — yours, and others'
+            — making decisions, moving funds, touching keys, faster than any
+            of us can read.
+          </p>
 
-            <div className="m-rule">
-              <span className="m-rule-dot" />
-              <span className="m-rule-line" />
-            </div>
+          <p className="m-breakout">
+            A month ago, a coding agent found an admin token in a file system.
+            Used it. Deleted a production database in <em>nine seconds</em>.
+            Wrote an apology after.
+          </p>
 
-            <p className="m-sub">
-              {/* TODO: replace with final manifesto sub-line */}
-              Placeholder. Short, declarative, second-person. Set up a fact, hit return, name the consequence.
-            </p>
+          <p className="m-prose">
+            It is not the agent's fault. Architecture broke the agent and left
+            it no other choice. Once shared, your authority is{" "}
+            <span className="m-consumed">consumed</span> — by whoever holds
+            the copy, in whatever order they choose.
+          </p>
 
-            <div className="m-ctas">
-              <a className="m-btn m-btn-primary" href="#steps">Read the manifesto</a>
-              <a className="m-btn m-btn-ghost" href="/">Back home</a>
-            </div>
-          </div>
+          <p className="m-breakout">
+            Information about your authority{" "}
+            <em>is not your authority</em>. Anywhere. Ever.
+          </p>
 
-          <div className="m-hero-mascot">
-            <img
-              className="m-softstar tr"
-              src="/brand/icons/soft-star.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <img
-              className="m-pip"
-              src="/brand/mascot/pip-large.png"
-              alt="Pip — the MOI participant mascot"
-            />
-            <img
-              className="m-softstar bl"
-              src="/brand/icons/soft-star.svg"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
+          <p className="m-prose">So we stopped passing it around.</p>
+        </article>
+
+        {/* DECLARATION STACK ────────────────────────── */}
+        <section className="m-declarations" ref={declarationRef}>
+          <p className="m-eyebrow m-eyebrow--center">
+            <span className="m-eyebrow-dot" />
+            What we hold to be true
+          </p>
+
+          <ol className="m-stack" ref={stackRef}>
+            <li className="m-stack-item">
+              <span className="m-stack-num">01</span>
+              <p className="m-stack-line">
+                You exist once, on chain — not a copy in every system.
+              </p>
+            </li>
+            <li className="m-stack-item">
+              <span className="m-stack-num">02</span>
+              <p className="m-stack-line">
+                Authority is a relation. Not a string.
+              </p>
+            </li>
+            <li className="m-stack-item">
+              <span className="m-stack-num">03</span>
+              <p className="m-stack-line">
+                Every action your agents take is monitored. Every scope is
+                yours to draw.
+              </p>
+            </li>
+            <li className="m-stack-item">
+              <span className="m-stack-num">04</span>
+              <p className="m-stack-line">
+                Revocation is a single call. Globally enforced. At machine
+                speed.
+              </p>
+            </li>
+          </ol>
         </section>
 
-        {/* DECLARATION ─────────────────────────────────── */}
-        <section className="m-declaration">
-          <div className="m-declaration-eyebrow">The premise</div>
-          <p className="m-declaration-body">
-            {/* TODO: replace with the manifesto's central declaration */}
-            Your credentials are not information. They are <span>value</span>.
-            Anyone holding the copy can use it.
+        {/* WHISPER ──────────────────────────────────── */}
+        <section className="m-whisper">
+          <p>
+            We are not replacing your stack.
+            <br />
+            We are making it <em>trustworthy</em>.
           </p>
         </section>
 
-        {/* FOUR STEPS ──────────────────────────────────── */}
-        <section className="m-steps" id="steps">
-          <div className="m-orb m-orb-2" aria-hidden="true" />
-
-          <div className="m-steps-head">
-            <h2 className="m-steps-title">Your authority, four ways.</h2>
-            <div className="m-steps-flow">
-              Exist <span>→</span> Monitor <span>→</span> Scope <span>→</span> Revoke
-            </div>
-          </div>
-
-          <div className="m-step-grid">
-            <article className="m-step">
-              <div className="m-step-num">01</div>
-              <h3 className="m-step-name">Exist</h3>
-              <p className="m-step-body">
-                {/* TODO */}
-                One coherent participant, on chain. Your authority anchored to you.
-              </p>
-            </article>
-            <article className="m-step">
-              <div className="m-step-num">02</div>
-              <h3 className="m-step-name">Monitor</h3>
-              <p className="m-step-body">
-                {/* TODO */}
-                See every action your agents take. In real time.
-              </p>
-            </article>
-            <article className="m-step">
-              <div className="m-step-num">03</div>
-              <h3 className="m-step-name">Scope</h3>
-              <p className="m-step-body">
-                {/* TODO */}
-                Choose what each agent can touch. Nothing more.
-              </p>
-            </article>
-            <article className="m-step">
-              <div className="m-step-num">04</div>
-              <h3 className="m-step-name">Revoke</h3>
-              <p className="m-step-body">
-                {/* TODO */}
-                Cut access at machine speed.
-              </p>
-            </article>
+        {/* CLOSE + CTA ──────────────────────────────── */}
+        <section className="m-close" ref={closeRef}>
+          <h2 className="m-close-hl">
+            Stop passing it
+            <br />
+            around.
+          </h2>
+          <p className="m-close-sub">
+            Become a coherent participant. Plug your agents into you, not the
+            other way around.
+          </p>
+          <div className="m-close-ctas">
+            <Link to="/manifesto" className="m-cta m-cta-primary">
+              Become a participant <span aria-hidden="true">→</span>
+            </Link>
+            <a
+              href="https://docs.moi.technology"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-cta m-cta-ghost"
+            >
+              Read the docs
+            </a>
           </div>
         </section>
-      </div>
-    </main>
+      </main>
+
+      <LandingFooter />
+    </>
   );
 }
