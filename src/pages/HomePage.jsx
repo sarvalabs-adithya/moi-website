@@ -912,9 +912,14 @@ me.agent("claw-12")
               Identity, not intelligence, is the bottleneck. Anchor yours.
             </p>
             <div className="kitcta-ctas">
-              <Link to="/manifesto" className="kitcta-btn kitcta-btn-primary">
-                Become a participant <span aria-hidden="true">→</span>
-              </Link>
+              <a
+                href="https://voyage.moi.technology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="kitcta-btn kitcta-btn-primary"
+              >
+                Explore the network <span aria-hidden="true">→</span>
+              </a>
               <Link to="/manifesto" className="kitcta-btn kitcta-btn-ghost">
                 Read the manifesto
               </Link>
