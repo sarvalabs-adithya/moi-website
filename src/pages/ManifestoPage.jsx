@@ -2,7 +2,6 @@ import "../styles/manifesto.css";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import LandingFooter from "../components/LandingFooter";
-import { Link } from "react-router-dom";
 
 export default function ManifestoPage() {
   // Restore standard 16px root for this route so rem-based reading
@@ -237,20 +236,6 @@ export default function ManifestoPage() {
           <p className="m-line m-line--accent">You are the participant.</p>
 
           <p className="m-line">And the machine needs to know that.</p>
-
-          <div className="m-close-ctas">
-            <Link to="/" className="m-cta m-cta-primary">
-              Become a participant <span aria-hidden="true">→</span>
-            </Link>
-            <a
-              href="/MOILitePaper.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="m-cta m-cta-ghost"
-            >
-              Read the litepaper
-            </a>
-          </div>
         </article>
       </main>
 
