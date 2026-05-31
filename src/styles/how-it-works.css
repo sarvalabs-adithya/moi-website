@@ -121,9 +121,11 @@
   padding: 5rem 1.5rem;
   position: relative;
 }
-/* First section = Act 1; tight to navbar, no tagline block above */
+/* First section = Act 1; clear the fixed nav pill (16px top + 56px nav
+   + breathing room). Site root font is 10px so rem values are 60% of
+   the standard scale — 11rem ≈ 110px. */
 .how-it-works-page > section:first-of-type {
-  padding-top: 5.5rem;
+  padding-top: 11rem;
 }
 /* Scoped delegation — sits right after Act 2; tighter seam than default section rhythm */
 .how-it-works-page section.s6 {
