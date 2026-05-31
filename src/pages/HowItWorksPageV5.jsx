@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar.jsx";
@@ -9,6 +9,61 @@ import "../styles/how-it-works.css";
 gsap.registerPlugin(ScrollTrigger);
 
 /* ────────────────────────────────────────────────
+   Sticky act rail (left, desktop only)
+   ──────────────────────────────────────────────── */
+const SHIFT_RAIL_ITEMS = [
+  { id: "s1",           label: "Problem" },
+  { id: "act2Section",  label: "Missing dimension" },
+  { id: "archSection",  label: "Architecture" },
+  { id: "liveSection",  label: "Live" },
+];
+
+function ShiftActRail() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const fold = window.innerHeight * 0.4;
+      let next = 0;
+      SHIFT_RAIL_ITEMS.forEach((it, i) => {
+        const el = document.getElementById(it.id);
+        if (el && el.getBoundingClientRect().top <= fold) next = i;
+      });
+      setActiveIdx(next);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const jump = (id) => (e) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 88;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  return (
+    <nav className="shift-rail" aria-label="The Shift — acts">
+      {SHIFT_RAIL_ITEMS.map((it, i) => (
+        <a
+          key={it.id}
+          href={`#${it.id}`}
+          onClick={jump(it.id)}
+          className={`shift-rail-item${i === activeIdx ? " is-active" : ""}`}
+        >
+          <span className="shift-rail-num">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span>{it.label}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+/* ────────────────────────────────────────────────
    Section sub-components (no special JS)
    ──────────────────────────────────────────────── */
 
@@ -16,7 +71,7 @@ function TrustChain() {
   return (
     <section className="s1" id="s1">
       <div className="sec-inner">
-        <div className="pill gs">Act 1 — The Problem</div>
+        <div className="pill gs">Act 01 — The Problem</div>
         <h2 className="headline gs">
           When agents delegate,
           <br />
@@ -452,9 +507,9 @@ function RootCauseSection() {
 /** Act 2 — WHO as a primitive + Context Superstate reveal */
 function Act2RevealSection() {
   return (
-    <section className="s-act2-reveal">
+    <section className="s-act2-reveal" id="act2Section">
       <div className="sec-inner" style={{ textAlign: "center" }}>
-        <div className="pill gs">Act 2 — The Missing Dimension</div>
+        <div className="pill gs">Act 02 — The Missing Dimension</div>
 
         <h2 className="headline gs" style={{ textAlign: "center" }}>
           What if <em>who</em> was a
@@ -552,7 +607,7 @@ function ScopedDelegation() {
   return (
     <section className="s6" id="scopedSection">
       <div className="sec-inner">
-        <div className="pill gs">Act 3 — The Solution</div>
+        <div className="pill gs">Scoped Delegation</div>
         <h2 className="headline gs">
           Delegation is scoped
           <br />
@@ -1073,7 +1128,7 @@ function ArchitectureSection() {
   return (
     <section className="s10 s-arch" id="archSection">
       <div className="sec-inner">
-        <div className="pill gs">Act 4 — The Architecture</div>
+        <div className="pill gs">Act 03 — The Architecture</div>
         <h2 className="headline gs">
           Independent. Parallel.
           <br />
@@ -1117,9 +1172,9 @@ function ArchitectureSection() {
 
 function CallToAction() {
   return (
-    <section className="s11">
+    <section className="s11" id="liveSection">
       <div className="sec-inner">
-        <div className="pill gs">Act 5</div>
+        <div className="pill gs">Live</div>
         <blockquote className="closing-quote gs">
           <p>You are no longer a row in a database,<br />a wallet in a contract,<br />or a profile in an app.</p>
           <p className="closing-em">You have independent existence.</p>
@@ -1131,24 +1186,40 @@ function CallToAction() {
           is live.
         </h2>
         <p className="cta-sub gs">
-          Read the full thesis. Or start building today.
+          Real network. Real adoption. Anchor yourself in.
         </p>
+
+        <div className="shift-stat-row gs">
+          <div className="shift-stat">
+            <span className="shift-stat-num">2,100+</span>
+            <span className="shift-stat-label">Nodes live</span>
+          </div>
+          <div className="shift-stat">
+            <span className="shift-stat-num">50+</span>
+            <span className="shift-stat-label">Adopters</span>
+          </div>
+          <div className="shift-stat">
+            <span className="shift-stat-num">&lt;100ms</span>
+            <span className="shift-stat-label">Authority issuance</span>
+          </div>
+        </div>
+
         <div className="cta-btns gs">
           <a
-            href={WHITEPAPER_SITE_URL}
+            href="https://voyage.moi.technology"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Read the whitepaper →
+            Explore the network <span aria-hidden="true">→</span>
           </a>
           <a
-            href="https://docs.moi.technology"
+            href={WHITEPAPER_SITE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"
           >
-            Start Building →
+            Read the whitepaper
           </a>
         </div>
       </div>
@@ -1239,6 +1310,7 @@ export default function HowItWorksPageV5() {
   return (
     <>
       <Navbar activePage="why-moi" />
+      <ShiftActRail />
       <div ref={pageRef} className="how-it-works-page">
         <TrustChain />
         <div className="section-divider" />
