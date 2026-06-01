@@ -2416,6 +2416,22 @@
   .how-it-works-page section.s11 .cta-hl {
     max-width: 22ch;
   }
+
+  /* Center the constrained statement billboards (and their inner spans)
+     within their flex column. Without these the max-width on the block
+     leaves it stranded against the left edge. */
+  .how-it-works-page section.s-act2-reveal .headline,
+  .how-it-works-page section.s-act2-reveal .act2-hl,
+  .how-it-works-page section.s-root-cause .act2-hl,
+  .how-it-works-page section.s11 .cta-hl {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  .how-it-works-page section.s-root-cause .act2-hl-l1,
+  .how-it-works-page section.s-root-cause .act2-hl-l2 {
+    text-align: center;
+  }
 }
 
 .how-it-works-page .subline {
