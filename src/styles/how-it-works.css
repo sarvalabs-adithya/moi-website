@@ -1342,28 +1342,38 @@
   .act2-cards { grid-template-columns: 1fr; max-width: 300px; }
 }
 
-/* Card frame wrapping the diagram so it reads as its own object */
-.hub-frame {
-  width: 100%;
-  max-width: 560px;
-  margin: 2rem auto 0;
-  padding: 2.5rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
-              0 14px 32px rgba(0, 0, 0, 0.28);
-  display: flex;
-  align-items: center;
+/* s6: clean centered composition — no frame, just space */
+.how-it-works-page section.s6 .s6-inner {
+  text-align: center;
+}
+.how-it-works-page section.s6 .s6-inner .pill,
+.how-it-works-page section.s6 .s6-inner .headline,
+.how-it-works-page section.s6 .s6-inner .subline {
+  margin-left: auto;
+  margin-right: auto;
+}
+.how-it-works-page section.s6 .s6-inner .pill {
   justify-content: center;
+}
+.how-it-works-page section.s6 .s6-inner .subline {
+  max-width: 56ch;
+}
+.how-it-works-page section.s6 .s6-impact {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* Diagram floats on the page — no card frame */
+.hub-stage {
+  margin: 4rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hub-wrap {
   position: relative;
   width: 480px;
   height: 400px;
-  margin: 0 auto;
   max-width: 100%;
 }
 .hub-center {
@@ -1371,13 +1381,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: rgba(124, 108, 232, 0.20);
-  backdrop-filter: blur(16px);
-  border: 2px solid rgba(200, 191, 239, 0.40);
-  box-shadow: 0 0 40px rgba(124, 108, 232, 0.35);
+  background: radial-gradient(circle at 50% 40%,
+    rgba(188, 166, 255, 0.22) 0%,
+    rgba(124, 108, 232, 0.10) 60%,
+    transparent 100%);
+  border: 1px solid rgba(200, 191, 239, 0.28);
+  box-shadow: 0 0 60px rgba(124, 108, 232, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1385,13 +1397,13 @@
   z-index: 3;
 }
 .hub-center-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: #FFFFFF;
-  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.45;
 }
 .hub-ring {
   position: absolute;
@@ -1418,17 +1430,19 @@
   width: 100px;
 }
 .spoke-circle {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(124, 108, 232, 0.18);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(200, 191, 239, 0.35);
+  background: radial-gradient(circle at 50% 40%,
+    rgba(188, 166, 255, 0.18) 0%,
+    rgba(124, 108, 232, 0.06) 65%,
+    transparent 100%);
+  border: 1px solid rgba(200, 191, 239, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  box-shadow: 0 0 16px rgba(124, 108, 232, 0.30);
+  font-size: 1.35rem;
+  box-shadow: 0 0 24px rgba(124, 108, 232, 0.18);
 }
 .spoke-name {
   font-size: 12px;
