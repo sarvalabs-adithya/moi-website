@@ -1736,29 +1736,29 @@
 }
 .formula-old {
   text-align: center;
-  opacity: .5;
+  opacity: .65;
 }
 .formula-old-label {
   font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .12em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(26, 26, 26, .5);
+  color: rgba(255, 255, 255, 0.55);
   margin-bottom: .75rem;
 }
 .formula-old-eq {
   font-family: var(--mono);
   font-size: 18px;
-  color: rgba(26, 26, 26, .6);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: .02em;
   text-decoration: line-through;
-  text-decoration-color: rgba(26, 26, 26, .2);
+  text-decoration-color: rgba(255, 255, 255, 0.25);
 }
 .formula-old-note {
   font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(26, 26, 26, .55);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
   margin-top: .5rem;
 }
 .formula-new {
@@ -1766,37 +1766,37 @@
 }
 .formula-new-label {
   font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .12em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--shift-lilac);
   margin-bottom: .75rem;
 }
 .formula-pill {
   display: inline-block;
   font-family: var(--mono);
   font-size: 20px;
-  color: var(--shift-ink);
+  color: #FFFFFF;
   letter-spacing: .04em;
   padding: 14px 32px;
-  background: rgba(255, 255, 255, .7);
+  background: rgba(124, 108, 232, 0.18);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(91, 71, 224, .15);
+  border: 1px solid rgba(124, 108, 232, 0.45);
   border-radius: 9999px;
   box-shadow:
-    0 0 20px rgba(91, 71, 224, .08),
-    0 0 60px rgba(91, 71, 224, .04);
+    0 0 24px rgba(91, 71, 224, 0.30),
+    0 0 60px rgba(91, 71, 224, 0.18);
 }
 .fp-highlight {
-  color: var(--purple);
-  font-weight: 500;
+  color: var(--shift-lilac);
+  font-weight: 600;
 }
 .formula-new-note {
   font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(26, 26, 26, .55);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
   margin-top: .75rem;
 }
 @media (max-width: 768px) {
