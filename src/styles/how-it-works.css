@@ -2554,3 +2554,52 @@
     max-width: 60ch !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   s-act2-reveal billboard deck: typographic statement under the H1
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-act2-reveal .act2-deck {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--shift-ink-on-dark);
+  max-width: 32ch;
+  margin: 1.75rem auto 0;
+  text-align: center;
+}
+.how-it-works-page section.s-act2-reveal .act2-deck em {
+  font-style: normal;
+  color: var(--shift-lilac);
+  font-weight: 700;
+}
+.how-it-works-page section.s-act2-reveal .act2-deck--lead {
+  font-weight: 500;
+  font-size: clamp(1.125rem, 1.6vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 44ch;
+  margin-top: 1.5rem;
+}
+.how-it-works-page section.s-act2-reveal .act2-traits {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 14px;
+  padding: 0;
+  margin: 1.75rem auto 0;
+  max-width: 56rem;
+}
+.how-it-works-page section.s-act2-reveal .act2-traits li {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
