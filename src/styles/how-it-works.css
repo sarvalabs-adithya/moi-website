@@ -1879,27 +1879,33 @@
   align-items: start;
 }
 .arch-side {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 228, 245, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 14px 32px rgba(0, 0, 0, 0.28);
 }
 .arch-today {
-  border-color: rgba(224, 123, 91, 0.12);
+  border-color: rgba(224, 123, 91, 0.28);
 }
 .arch-moi {
-  border-color: rgba(91, 71, 224, 0.12);
+  border-color: rgba(124, 108, 232, 0.30);
 }
 .arch-side-header {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(232, 228, 245, 0.65);
+  color: var(--shift-lilac);
   margin-bottom: 1.5rem;
+}
+.arch-side-caption {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-style: italic;
+  font-size: 13px;
 }
 .arch-divider {
   width: 1px;
