@@ -916,11 +916,11 @@
 }
 
 .custody-card-label {
-  font-size: 9px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .15em;
-  color: rgba(232, 228, 245, .6);
+  letter-spacing: .14em;
+  color: var(--shift-lilac);
   margin-bottom: 1.5rem;
   display: block;
 }
@@ -1600,15 +1600,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
-  background: rgba(232, 228, 245, .02);
-  border: 1px solid rgba(232, 228, 245, .04);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 10px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12.5px;
 }
-.assets-contract-name { color: rgba(232, 228, 245, .65) }
-.assets-contract-val { color: rgba(232, 228, 245, .7); font-weight: 500 }
+.assets-contract-name { color: rgba(255, 255, 255, 0.92); font-weight: 500 }
+.assets-contract-val { color: var(--shift-lilac); font-weight: 700 }
 .assets-context-label {
   font-family: var(--mono);
   font-size: 10px;
@@ -1631,11 +1631,11 @@
   text-align: center;
 }
 .assets-side-caption {
-  font-size: 11px;
-  color: rgba(232, 228, 245, .55);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
   margin-top: 1.25rem;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* ══════════════════════════════ */
