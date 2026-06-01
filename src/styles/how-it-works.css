@@ -254,9 +254,14 @@
    ────────────────────────────────────────────────────────────────────── */
 .how-it-works-page section.s-root-cause .act2-hl-l1 {
   color: var(--shift-ink-on-dark) !important;
+  font-style: normal !important;
+  display: block;
 }
 .how-it-works-page section.s-root-cause .act2-hl-l2 {
   color: var(--shift-lilac) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  display: block;
 }
 .how-it-works-page section.s-root-cause .act2-card-label {
   color: var(--shift-lilac) !important;
