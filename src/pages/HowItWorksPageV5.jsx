@@ -618,36 +618,40 @@ function ScopedDelegation() {
           doesn't degrade — it's verified at the source.
         </p>
 
-        <div className="hub-wrap gs" id="hubWrap">
-          <div className="hub-ring" />
-          <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
+        <div className="hub-frame">
+          <div className="hub-wrap gs" id="hubWrap">
+            <div className="hub-ring" />
+            <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
 
-          <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400">
-            <line x1="240" y1="200" x2="100" y2="75" stroke="var(--purple)" strokeWidth="1.5" strokeDasharray="4 4" opacity=".45" />
-            <line x1="240" y1="200" x2="380" y2="75" stroke="var(--purple)" strokeWidth="1.5" strokeDasharray="4 4" opacity=".45" />
-            <line x1="240" y1="200" x2="240" y2="355" stroke="var(--purple)" strokeWidth="1.5" strokeDasharray="4 4" opacity=".45" />
-            <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M100,75 L240,200" /></circle>
-            <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M380,75 L240,200" /></circle>
-            <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,355 L240,200" /></circle>
-          </svg>
+            <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400">
+              {/* Equilateral triangle: 3 spokes at distance 155 from center (240,200).
+                  Top-left (210°): (106,123). Top-right (330°): (374,123). Bottom (90°): (240,355). */}
+              <line x1="240" y1="200" x2="106" y2="123" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="240" y1="200" x2="374" y2="123" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="240" y1="200" x2="240" y2="355" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M106,123 L240,200" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M374,123 L240,200" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,355 L240,200" /></circle>
+            </svg>
 
-          <div className="spoke-agent" style={{ top: 25, left: 30 }}>
-            <div className="spoke-circle">✈️</div>
-            <span className="spoke-name">Flight Agent</span>
-            <span className="spoke-scope">book_flight: true</span>
-            <span className="spoke-check" id="ck1">✓ Verified</span>
-          </div>
-          <div className="spoke-agent" style={{ top: 25, right: 30 }}>
-            <div className="spoke-circle">💳</div>
-            <span className="spoke-name">Payment Agent</span>
-            <span className="spoke-scope">charge: $500 max</span>
-            <span className="spoke-check" id="ck2">✓ Verified</span>
-          </div>
-          <div className="spoke-agent" style={{ bottom: 0, left: "50%", transform: "translateX(-50%)" }}>
-            <div className="spoke-circle">🏦</div>
-            <span className="spoke-name">Bank Agent</span>
-            <span className="spoke-scope">confirm_payment</span>
-            <span className="spoke-check" id="ck3">✓ Verified</span>
+            <div className="spoke-agent" style={{ top: 73, left: 56 }}>
+              <div className="spoke-circle">✈️</div>
+              <span className="spoke-name">Flight Agent</span>
+              <span className="spoke-scope">book_flight: true</span>
+              <span className="spoke-check" id="ck1">✓ Verified</span>
+            </div>
+            <div className="spoke-agent" style={{ top: 73, right: 56 }}>
+              <div className="spoke-circle">💳</div>
+              <span className="spoke-name">Payment Agent</span>
+              <span className="spoke-scope">charge: $500 max</span>
+              <span className="spoke-check" id="ck2">✓ Verified</span>
+            </div>
+            <div className="spoke-agent" style={{ top: 305, left: "50%", transform: "translateX(-50%)" }}>
+              <div className="spoke-circle">🏦</div>
+              <span className="spoke-name">Bank Agent</span>
+              <span className="spoke-scope">confirm_payment</span>
+              <span className="spoke-check" id="ck3">✓ Verified</span>
+            </div>
           </div>
         </div>
 

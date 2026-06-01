@@ -1342,7 +1342,20 @@
   .act2-cards { grid-template-columns: 1fr; max-width: 300px; }
 }
 
-.hub-wrap { position: relative; width: 100%; max-width: 480px; height: 400px; margin: 2.5rem auto }
+/* Card frame wrapping the diagram so it reads as its own object */
+.hub-frame {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 14px 32px rgba(0, 0, 0, 0.28);
+}
+.hub-wrap { position: relative; width: 100%; max-width: 480px; height: 400px; margin: 0 auto }
 .hub-center {
   position: absolute;
   top: 50%;
@@ -1351,10 +1364,10 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .6);
+  background: rgba(124, 108, 232, 0.20);
   backdrop-filter: blur(16px);
-  border: 2px solid rgba(91, 71, 224, .2);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+  border: 2px solid rgba(200, 191, 239, 0.40);
+  box-shadow: 0 0 40px rgba(124, 108, 232, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1363,27 +1376,27 @@
 }
 .hub-center-label {
   font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .08em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: #FFFFFF;
   line-height: 1.4;
 }
 .hub-ring {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px solid rgba(91, 71, 224, .08);
+  border: 1px solid rgba(200, 191, 239, 0.18);
   animation: hubRingPulse 3s ease-in-out infinite;
 }
 @keyframes hubRingPulse {
-  0%, 100% { width: 170px; height: 170px; opacity: .3 }
-  50% { width: 195px; height: 195px; opacity: .15 }
+  0%, 100% { width: 200px; height: 200px; opacity: .45 }
+  50% { width: 230px; height: 230px; opacity: .22 }
 }
 .spoke-agent {
   position: absolute;
@@ -1392,32 +1405,45 @@
   align-items: center;
   gap: 4px;
   z-index: 2;
+  width: 100px;
 }
 .spoke-circle {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .8);
+  background: rgba(124, 108, 232, 0.18);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(26, 26, 26, .06);
+  border: 1px solid rgba(200, 191, 239, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .04);
+  font-size: 1.3rem;
+  box-shadow: 0 0 16px rgba(124, 108, 232, 0.30);
 }
-.spoke-name { font-size: 9px; font-weight: 500; color: var(--shift-ink); letter-spacing: .04em }
-.spoke-scope { font-size: 8px; color: rgba(26, 26, 26, .6) }
+.spoke-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: .02em;
+  margin-top: 4px;
+}
+.spoke-scope {
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--mono);
+  letter-spacing: .02em;
+}
 .spoke-check {
-  font-size: 10px;
-  color: var(--success);
-  font-weight: 500;
+  font-size: 11px;
+  color: var(--shift-lilac);
+  font-weight: 600;
   opacity: 0;
   transform: scale(0);
   transition: all .5s cubic-bezier(.25, .1, .25, 1);
+  margin-top: 2px;
 }
 .spoke-check.show { opacity: 1; transform: scale(1) }
-.pulse-dot { fill: var(--purple); opacity: .7 }
+.pulse-dot { fill: #BCA6FF; opacity: .9 }
 
 /* ══════════════════════════════ */
 /* S7 — PREFERENCES              */
