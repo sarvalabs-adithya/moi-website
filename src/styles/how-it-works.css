@@ -220,6 +220,35 @@
 }
 
 /* ──────────────────────────────────────────────────────────────────────
+   s-root-cause — fix dark-on-dark text inside the headline + cards
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-root-cause .act2-hl-l1 {
+  color: var(--shift-ink-on-dark) !important;
+}
+.how-it-works-page section.s-root-cause .act2-hl-l2 {
+  color: var(--shift-lilac) !important;
+}
+.how-it-works-page section.s-root-cause .act2-card-label {
+  color: var(--shift-lilac) !important;
+  font-size: 11px;
+  font-weight: 600;
+}
+.how-it-works-page section.s-root-cause .act2-card-text {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.how-it-works-page section.s-root-cause .act2-card-text em {
+  color: var(--shift-lilac) !important;
+  font-weight: 600;
+}
+.how-it-works-page section.s-root-cause .act2-cards {
+  max-width: 720px;
+  gap: 16px;
+  margin: 2rem auto;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
    s2 — Cold Start chat cards on the dark band: lift contrast
    ────────────────────────────────────────────────────────────────────── */
 .how-it-works-page section.s2 .chat-chrome {
