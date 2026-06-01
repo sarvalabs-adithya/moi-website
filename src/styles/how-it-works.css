@@ -450,26 +450,45 @@
 /* S1 — TRUST                    */
 /* ══════════════════════════════ */
 .chain-grid {
-  display: flex;
-  gap: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
   align-items: stretch;
-  margin: 2.5rem 0;
-  overflow-x: auto;
-  padding-bottom: .5rem;
+  gap: 0;
+  margin: 3.5rem auto 2rem;
+  max-width: 92rem;
+  width: 100%;
 }
 .agent-card {
   background: rgba(255, 255, 255, .7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(26, 26, 26, .06);
   border-radius: 16px;
-  padding: 1.25rem;
-  min-width: 210px;
-  flex: 1;
+  padding: 1.3rem;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: .65rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
 }
+/* Keep titles + value rows on a single line */
+.chain-grid .agent-name,
+.chain-grid .signal-row,
+.chain-grid .field-row,
+.chain-grid .field-val,
+.chain-grid .field-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* s1 needs wider gutter for the 4-card row */
+.how-it-works-page section.s1 .sec-inner { max-width: 92rem; }
+/* Caption below the cards */
+.how-it-works-page section.s1 .caption { margin-top: 1.5rem; }
+/* Tighten the gap above the 73% stat */
+.how-it-works-page section.s1 .stat-center { margin-top: 4rem; padding: 0; }
+/* Punchline below the stat */
+.how-it-works-page section.s1 .impact-line { margin-top: 3.5rem; }
 .agent-header {
   display: flex;
   align-items: center;
@@ -550,10 +569,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .25rem;
-  padding: 0 .1rem;
-  min-width: 32px;
+  gap: .35rem;
+  padding: 0 .5rem;
+  width: 48px;
   flex-shrink: 0;
+  align-self: center;
+}
+.chain-conn .conn-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  font-size: 8px;
+  line-height: 1.05;
+  text-align: center;
+  white-space: normal;
+  width: 100%;
+  letter-spacing: 0.04em;
 }
 .conn-line { width: 1px; height: 14px; background: rgba(224, 123, 91, .15) }
 .conn-chevron {
