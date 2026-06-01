@@ -540,8 +540,11 @@ function ContextSuperstateSection() {
   return (
     <section className="s-superstate" id="superstateSection">
       <div className="sec-inner" style={{ textAlign: "center" }}>
-        <div className="pill gs">The Context Superstate</div>
-        <p className="subline gs" style={{ margin: "0.75rem auto 0", textAlign: "center" }}>
+        <div className="pill gs">The participant primitive</div>
+        <h2 className="headline gs" style={{ textAlign: "center" }}>
+          The Context <em>Superstate</em>.
+        </h2>
+        <p className="subline gs" style={{ margin: "1rem auto 0", textAlign: "center" }}>
           The cryptographic data structure that represents your entire
           existence in computation. Always current. Always available. Always
           sovereign.
