@@ -2373,3 +2373,51 @@
     font-size: clamp(4rem, 9vw, 6.5rem);
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   Match the homepage hero's typography across /why-moi.
+   Same Poppins, same weights, same letter-spacing, same clamps.
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page .pill {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  font-size: clamp(14px, 1.1vw, 18px) !important;
+  letter-spacing: 0.12em !important;
+}
+
+.how-it-works-page .headline,
+.how-it-works-page .act2-hl,
+.how-it-works-page .cta-hl,
+.how-it-works-page .act2-hl-l1,
+.how-it-works-page .act2-hl-l2 {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.03em !important;
+}
+
+@media (min-width: 1100px) {
+  .how-it-works-page .headline,
+  .how-it-works-page .act2-hl,
+  .how-it-works-page .cta-hl,
+  .how-it-works-page .act2-hl-l1,
+  .how-it-works-page .act2-hl-l2 {
+    font-size: clamp(2.75rem, 6.5vw, 5.25rem) !important;
+    max-width: 16ch;
+  }
+  .how-it-works-page section.s-act2-reveal .headline,
+  .how-it-works-page section.s-act2-reveal .act2-hl,
+  .how-it-works-page section.s-root-cause .act2-hl,
+  .how-it-works-page section.s11 .cta-hl {
+    max-width: 22ch;
+  }
+}
+
+.how-it-works-page .subline {
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  font-size: clamp(15px, 1.1vw, 17px) !important;
+  line-height: 1.6 !important;
+  max-width: 48ch !important;
+  letter-spacing: 0 !important;
+}
