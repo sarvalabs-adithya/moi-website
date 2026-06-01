@@ -606,7 +606,7 @@ function Act2RevealSection() {
 function ScopedDelegation() {
   return (
     <section className="s6" id="scopedSection">
-      <div className="sec-inner">
+      <div className="sec-inner s6-inner">
         <div className="pill gs">Scoped Delegation</div>
         <h2 className="headline gs">
           Delegation is scoped
@@ -618,7 +618,7 @@ function ScopedDelegation() {
           doesn't degrade — it's verified at the source.
         </p>
 
-        <div className="hub-frame">
+        <div className="hub-stage">
           <div className="hub-wrap gs" id="hubWrap">
             <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
 
@@ -652,7 +652,7 @@ function ScopedDelegation() {
           </div>
         </div>
 
-        <p className="impact-line gs">Agents and apps log into <em>you</em>. Not the other way around.</p>
+        <p className="impact-line gs s6-impact">Agents and apps log into <em>you</em>. Not the other way around.</p>
       </div>
     </section>
   );
