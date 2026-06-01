@@ -75,34 +75,22 @@
    radial gradient over #0A0526.
    ────────────────────────────────────────────────────────────────────── */
 
-/* Held-act rhythm:
-   • DARK   — full Problem arc (s1, s2, s3, s-root-cause)
-   • HINGE  — bright pivot slide (s-act2-reveal)
-   • LIGHT  — full Solution arc (s6, s7, s8, s9, s10)
-   • DARK   — close (s11)
-   Acts hold long enough for the reader to settle in. */
-.how-it-works-page section.s1,
-.how-it-works-page section.s2,
-.how-it-works-page section.s3,
-.how-it-works-page section.s-root-cause,
-.how-it-works-page section.s11 {
+/* Seamless dark deck — one continuous deep-purple gradient on the
+   PAGE; every section is transparent and shares the same field, so
+   there is no visible seam where one slide ends and the next begins. */
+.how-it-works-page {
   background:
-    radial-gradient(60% 50% at 80% 18%, rgba(75, 23, 229, 0.38), transparent 60%),
-    radial-gradient(50% 55% at 8% 85%, rgba(111, 69, 234, 0.28), transparent 60%),
-    var(--shift-bg-dark) !important;
-  color: var(--shift-ink-on-dark);
+    radial-gradient(60% 40% at 80% 8%,  rgba(75, 23, 229, 0.32), transparent 60%),
+    radial-gradient(50% 35% at 8% 40%,  rgba(111, 69, 234, 0.22), transparent 60%),
+    radial-gradient(50% 40% at 92% 60%, rgba(75, 23, 229, 0.22), transparent 60%),
+    radial-gradient(60% 40% at 12% 92%, rgba(111, 69, 234, 0.28), transparent 60%),
+    linear-gradient(180deg, #0A0526 0%, #1B1148 50%, #0A0526 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--shift-ink-on-dark) !important;
 }
-.how-it-works-page section.s-act2-reveal,
-.how-it-works-page section.s6,
-.how-it-works-page section.s7,
-.how-it-works-page section.s8,
-.how-it-works-page section.s9,
-.how-it-works-page section.s10 {
-  background: var(--shift-bg) !important;
-  color: var(--shift-ink);
-}
+.how-it-works-page section { background: transparent !important; }
 
-/* ── Light bands — full-opacity dark text ── */
+/* Solution-arc sections — text on dark (same field, no seam) */
 .how-it-works-page section.s-act2-reveal .headline,
 .how-it-works-page section.s-act2-reveal h1, .how-it-works-page section.s-act2-reveal h2,
 .how-it-works-page section.s-act2-reveal .act2-hl, .how-it-works-page section.s-act2-reveal .impact-line,
@@ -112,7 +100,7 @@
 .how-it-works-page section.s8 .headline, .how-it-works-page section.s8 h2, .how-it-works-page section.s8 p,
 .how-it-works-page section.s9 .headline, .how-it-works-page section.s9 h2, .how-it-works-page section.s9 p,
 .how-it-works-page section.s10 .headline, .how-it-works-page section.s10 h2, .how-it-works-page section.s10 p {
-  color: var(--shift-ink) !important;
+  color: var(--shift-ink-on-dark) !important;
 }
 .how-it-works-page section.s-act2-reveal .subline,
 .how-it-works-page section.s-act2-reveal .caption,
@@ -121,9 +109,9 @@
 .how-it-works-page section.s8 .subline, .how-it-works-page section.s8 .caption,
 .how-it-works-page section.s9 .subline, .how-it-works-page section.s9 .caption,
 .how-it-works-page section.s10 .subline, .how-it-works-page section.s10 .caption {
-  color: var(--shift-muted) !important;
+  color: var(--shift-muted-on-dark) !important;
 }
-/* Light cards */
+/* Solution-arc cards — glass on dark, same treatment as Problem arc */
 .how-it-works-page section.s-act2-reveal .card-s,
 .how-it-works-page section.s6 .agent-card, .how-it-works-page section.s6 .card-s,
 .how-it-works-page section.s7 .agent-card, .how-it-works-page section.s7 .superstate-card,
@@ -132,12 +120,31 @@
 .how-it-works-page section.s9 .perm-card, .how-it-works-page section.s9 .agent-card,
 .how-it-works-page section.s10 .arch-panel, .how-it-works-page section.s10 .mdag-panel,
 .how-it-works-page section.s10 .agent-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--shift-card-bd) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: 0 1px 2px rgba(50, 15, 153, 0.04), 0 8px 24px rgba(50, 15, 153, 0.04) !important;
-  color: var(--shift-ink) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 14px 32px rgba(0, 0, 0, 0.28) !important;
+  color: var(--shift-ink-on-dark) !important;
+}
+/* Solution-arc eyebrows + italic-em → lilac like the rest */
+.how-it-works-page section.s-act2-reveal .pill,
+.how-it-works-page section.s6 .pill, .how-it-works-page section.s7 .pill,
+.how-it-works-page section.s8 .pill, .how-it-works-page section.s9 .pill,
+.how-it-works-page section.s10 .pill { color: var(--shift-lilac) !important; }
+.how-it-works-page section.s-act2-reveal .pill::before,
+.how-it-works-page section.s6 .pill::before, .how-it-works-page section.s7 .pill::before,
+.how-it-works-page section.s8 .pill::before, .how-it-works-page section.s9 .pill::before,
+.how-it-works-page section.s10 .pill::before {
+  background: var(--shift-lilac) !important;
+  box-shadow: 0 0 10px rgba(200, 191, 239, 0.6);
+}
+.how-it-works-page section.s-act2-reveal .headline em,
+.how-it-works-page section.s-act2-reveal .act2-hl em,
+.how-it-works-page section.s6 .headline em, .how-it-works-page section.s7 .headline em,
+.how-it-works-page section.s8 .headline em, .how-it-works-page section.s9 .headline em,
+.how-it-works-page section.s10 .headline em {
+  color: var(--shift-lilac) !important;
 }
 
 /* ── Dark bands (Problem arc + close) ── */
@@ -280,18 +287,25 @@
    • ARGUMENT slides (s2 / s3 / s6): readable column, ~80vh.
    ────────────────────────────────────────────────────────────────────── */
 @media (min-width: 769px) and (min-height: 700px) {
-  /* Statement — billboard pivots */
-  .how-it-works-page section.s-root-cause,
-  .how-it-works-page section.s-act2-reveal,
-  .how-it-works-page section.s11 {
+  /* Uniform slide rhythm — every section the same height,
+     content vertically centered, no visible seam between them. */
+  .how-it-works-page > section {
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 8rem 3rem;
+  }
+  /* First slide clears the fixed pill nav */
+  .how-it-works-page > section.s1 { padding-top: 11rem; }
+
+  /* Statement slides keep their centered billboard treatment */
+  .how-it-works-page section.s-root-cause,
+  .how-it-works-page section.s-act2-reveal,
+  .how-it-works-page section.s11 {
     align-items: center;
     text-align: center;
-    padding: 6rem 2rem;
   }
   .how-it-works-page section.s-root-cause .pill,
   .how-it-works-page section.s11 .pill { display: none; }
@@ -312,21 +326,7 @@
     margin: 1.5rem auto 0 !important;
   }
 
-  /* Demo — viz dominant, natural height with generous padding */
-  .how-it-works-page section.s1,
-  .how-it-works-page section.s7,
-  .how-it-works-page section.s8,
-  .how-it-works-page section.s9,
-  .how-it-works-page section.s10 {
-    min-height: auto !important;
-    padding: 8rem 3rem !important;
-    display: block !important;
-  }
-  .how-it-works-page section.s1 {
-    padding-top: 13rem !important;
-    padding-bottom: 9rem !important;
-  }
-  /* s1 subline sits further below the headline */
+  /* s1 subline */
   .how-it-works-page section.s1 .subline {
     font-size: 14px;
     line-height: 1.7;
@@ -334,16 +334,9 @@
     max-width: 64ch;
   }
 
-  /* Argument — readable column */
-  .how-it-works-page section.s2,
-  .how-it-works-page section.s3,
-  .how-it-works-page section.s6 {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 1.5rem;
-  }
+  /* The sec-inner wrapper inside flex-column sections needs to
+     fill the width so grids inside stay full-bleed. */
+  .how-it-works-page > section > .sec-inner { width: 100%; }
 }
 
 /* ──────────────────────────────────────────────────────────────────────
