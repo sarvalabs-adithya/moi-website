@@ -2129,3 +2129,23 @@
 
 /* (Slide rhythm now defined per-section above under
    "B — Three slide rhythms" — Statement / Demo / Argument.) */
+
+/* ──────────────────────────────────────────────────────────────────────
+   Scroll-snap deck — desktop only.
+   Each act snaps to start but snap is "proximity", not "mandatory",
+   so dense slides (s1 chain, s9 matrix, s10 MDAG) that overflow the
+   viewport stay freely scrollable past the next snap point.
+   The .section-divider hairlines were removed in the JSX too — sections
+   flow into each other now.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 769px) and (min-height: 700px) {
+  html:has(.how-it-works-page) {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 88px;
+    scroll-behavior: smooth;
+  }
+  .how-it-works-page > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}

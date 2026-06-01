@@ -1312,25 +1312,15 @@ export default function HowItWorksPageV5() {
       <Navbar activePage="why-moi" />
       <div ref={pageRef} className="how-it-works-page">
         <TrustChain />
-        <div className="section-divider" />
         <ColdStart />
-        <div className="section-divider" />
         <Custody />
-        <div className="section-divider" />
         <RootCauseSection />
-        <div className="section-divider" />
         <Act2RevealSection />
-        <div className="section-divider" />
         <ScopedDelegation />
-        <div className="section-divider" />
         <Preferences />
-        <div className="section-divider" />
         <Assets />
-        <div className="section-divider" />
         <Permissions />
-        <div className="section-divider" />
         <ArchitectureSection />
-        <div className="section-divider" />
         <CallToAction />
       </div>
       <LandingFooter />
