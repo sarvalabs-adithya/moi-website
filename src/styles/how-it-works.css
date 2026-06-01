@@ -2421,3 +2421,74 @@
   max-width: 48ch !important;
   letter-spacing: 0 !important;
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   Fit-one-screen pass: scope the homepage hero's huge clamp to the
+   STATEMENT billboards only. Demo + argument slides use a smaller
+   confident clamp so the visualization fits inside 100vh.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1100px) {
+  /* Tighter clamp for demo + argument slides */
+  .how-it-works-page section.s1  .headline,
+  .how-it-works-page section.s2  .headline,
+  .how-it-works-page section.s3  .headline,
+  .how-it-works-page section.s6  .headline,
+  .how-it-works-page section.s7  .headline,
+  .how-it-works-page section.s8  .headline,
+  .how-it-works-page section.s9  .headline,
+  .how-it-works-page section.s10 .headline {
+    font-size: clamp(2rem, 3.4vw, 3.25rem) !important;
+    line-height: 1.05 !important;
+    max-width: 22ch;
+  }
+
+  /* Smaller sub + caption on demo slides */
+  .how-it-works-page section.s1  .subline,
+  .how-it-works-page section.s2  .subline,
+  .how-it-works-page section.s3  .subline,
+  .how-it-works-page section.s7  .subline,
+  .how-it-works-page section.s8  .subline,
+  .how-it-works-page section.s9  .subline,
+  .how-it-works-page section.s10 .subline {
+    font-size: clamp(13px, 0.95vw, 15px) !important;
+    margin-top: 1rem !important;
+    max-width: 60ch !important;
+  }
+
+  /* Pull section padding back so the slide actually fits 100vh */
+  .how-it-works-page section.s1 {
+    padding: 9rem 3rem 5rem !important;
+  }
+  .how-it-works-page section.s2,
+  .how-it-works-page section.s3,
+  .how-it-works-page section.s6,
+  .how-it-works-page section.s7,
+  .how-it-works-page section.s8,
+  .how-it-works-page section.s9,
+  .how-it-works-page section.s10 {
+    padding: 7rem 3rem !important;
+  }
+
+  /* Tighten the gap between headline group and the visualization */
+  .how-it-works-page section.s1 .chain-grid { margin: 2rem auto 1.25rem; }
+  .how-it-works-page section.s1 .caption { margin-top: 1rem; font-size: 12.5px; }
+  .how-it-works-page section.s1 .stat-center { margin-top: 2.5rem; }
+  .how-it-works-page section.s1 .impact-line { margin-top: 2rem; font-size: clamp(1.25rem, 1.8vw, 1.6rem); }
+  .how-it-works-page section.s1 .stat-center-num,
+  .how-it-works-page section.s3 .stat-center-num {
+    font-size: clamp(3rem, 6vw, 4.5rem) !important;
+  }
+
+  /* Demo grids tighter top margin */
+  .how-it-works-page section.s2 .chat-cards-grid,
+  .how-it-works-page section.s2 .chat-grid,
+  .how-it-works-page section.s7 .pref-split,
+  .how-it-works-page section.s8 .assets-split,
+  .how-it-works-page section.s9 .perm-table-wrap,
+  .how-it-works-page section.s10 .arch-split,
+  .how-it-works-page section.s3 .custody-compare {
+    margin-top: 2.5rem !important;
+  }
+  .how-it-works-page section.s6 .hub-stage { margin-top: 2rem; }
+  .how-it-works-page section.s6 .s6-impact { margin-top: 2rem; }
+}
