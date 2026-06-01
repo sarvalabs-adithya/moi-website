@@ -1982,3 +1982,45 @@
   .shift-rail { display: none; }
 }
 
+
+/* ──────────────────────────────────────────────────────────────────────
+   Full-screen slides — every act ≥ 100vh, content centered.
+   Desktop only (>=769px width AND >=700px height).
+   Mobile / short viewports fall back to natural-flow heights.
+   min-height (not height) means denser sections grow past the viewport
+   instead of clipping.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 769px) and (min-height: 700px) {
+  .how-it-works-page section.s1,
+  .how-it-works-page section.s2,
+  .how-it-works-page section.s3,
+  .how-it-works-page section.s-root-cause,
+  .how-it-works-page section.s-act2-reveal,
+  .how-it-works-page section.s6,
+  .how-it-works-page section.s7,
+  .how-it-works-page section.s8,
+  .how-it-works-page section.s9,
+  .how-it-works-page section.s10,
+  .how-it-works-page section.s11 {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Inner wrapper keeps its own layout (the chain grid, the orb grid,
+     the perm table, etc.) — we only center it within the slide. */
+  .how-it-works-page section.s1 > .sec-inner,
+  .how-it-works-page section.s2 > .sec-inner,
+  .how-it-works-page section.s3 > .sec-inner,
+  .how-it-works-page section.s-root-cause > .sec-inner,
+  .how-it-works-page section.s-act2-reveal > .sec-inner,
+  .how-it-works-page section.s6 > .sec-inner,
+  .how-it-works-page section.s7 > .sec-inner,
+  .how-it-works-page section.s8 > .sec-inner,
+  .how-it-works-page section.s9 > .sec-inner,
+  .how-it-works-page section.s10 > .sec-inner,
+  .how-it-works-page section.s11 > .sec-inner {
+    width: 100%;
+  }
+}
