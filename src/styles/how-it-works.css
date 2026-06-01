@@ -1673,33 +1673,34 @@
   gap: 12px;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(26, 26, 26, .04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .ss-identity-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(91, 71, 224, .08);
-  border: 1px solid rgba(91, 71, 224, .15);
+  background: rgba(124, 108, 232, 0.20);
+  border: 1px solid rgba(200, 191, 239, 0.40);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
   font-size: 20px;
-  color: var(--purple);
+  color: var(--shift-lilac);
+  box-shadow: 0 0 24px rgba(124, 108, 232, 0.35);
 }
 .ss-identity-label {
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--purple);
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
   letter-spacing: .04em;
 }
-.ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
+.ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
 .ss-ctx {
-  padding: 14px;
-  background: rgba(255, 255, 255, .5);
-  border: 1px solid rgba(26, 26, 26, .04);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 12px;
   text-align: left;
 }
@@ -1707,23 +1708,29 @@
 .ss-ctx-name {
   font-family: var(--mono);
   font-size: 11px;
-  font-weight: 500;
-  color: var(--purple);
-  letter-spacing: .06em;
-  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--shift-lilac);
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
-.ss-ctx-desc { font-family: var(--mono); font-size: 10px; color: rgba(26, 26, 26, .65); line-height: 1.5 }
+.ss-ctx-desc {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
 .ss-footer {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(26, 26, 26, .04);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--mono);
-  font-size: 9px;
-  color: rgba(26, 26, 26, .5);
-  letter-spacing: .06em;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: .08em;
 }
 /* Classical (greyed) vs contextual (illuminated pill) */
 .formula-vs {
