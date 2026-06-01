@@ -1538,27 +1538,34 @@
 .pref-agent-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 228, 245, .06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  padding: 14px 18px;
+  padding: 18px 22px;
   min-width: 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 14px 32px rgba(0, 0, 0, 0.20);
 }
 .pref-agent-card h4 {
-  font-size: 12px;
-  font-weight: 500;
-  margin-bottom: 6px;
-  letter-spacing: .04em;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -.005em;
+  color: #FFFFFF;
 }
 .pref-field {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  color: rgba(232, 228, 245, .65);
-  padding: 2px 0;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 4px 0;
+  line-height: 1.4;
 }
-.pref-field .check { color: var(--success); font-weight: 500 }
+.pref-field .check {
+  color: var(--shift-lilac);
+  font-weight: 700;
+  font-size: 14px;
+}
 
 /* ══════════════════════════════ */
 /* S8 — ASSETS (split)           */
@@ -1610,25 +1617,26 @@
 .assets-contract-name { color: rgba(255, 255, 255, 0.92); font-weight: 500 }
 .assets-contract-val { color: var(--shift-lilac); font-weight: 700 }
 .assets-context-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  color: var(--purple);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  color: var(--shift-lilac);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.assets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem }
+.assets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem }
 .assets-item {
-  padding: 10px 14px;
-  background: rgba(91, 71, 224, .04);
-  border: 1px solid rgba(91, 71, 224, .1);
-  border-radius: 10px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--purple);
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
   text-align: center;
+  letter-spacing: .01em;
 }
 .assets-side-caption {
   font-size: 13px;
