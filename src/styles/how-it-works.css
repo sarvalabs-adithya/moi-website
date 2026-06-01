@@ -253,17 +253,27 @@
     margin: 1.5rem auto 0 !important;
   }
 
-  /* Demo — viz dominant, natural height (clear nav clearance) */
+  /* Demo — viz dominant, natural height with generous padding */
   .how-it-works-page section.s1,
   .how-it-works-page section.s7,
   .how-it-works-page section.s8,
   .how-it-works-page section.s9,
   .how-it-works-page section.s10 {
     min-height: auto !important;
-    padding: 6rem 1.5rem !important;
+    padding: 8rem 3rem !important;
     display: block !important;
   }
-  .how-it-works-page section.s1 { padding-top: 11rem !important; }
+  .how-it-works-page section.s1 {
+    padding-top: 13rem !important;
+    padding-bottom: 9rem !important;
+  }
+  /* s1 subline sits further below the headline */
+  .how-it-works-page section.s1 .subline {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 1.25rem;
+    max-width: 64ch;
+  }
 
   /* Argument — readable column */
   .how-it-works-page section.s2,
@@ -522,20 +532,20 @@
   grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
   align-items: stretch;
   gap: 0;
-  margin: 3.5rem auto 2rem;
-  max-width: 92rem;
+  margin: 4rem auto 2.5rem;
+  max-width: 130rem;
   width: 100%;
 }
 .agent-card {
   background: rgba(255, 255, 255, .7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(26, 26, 26, .06);
-  border-radius: 16px;
-  padding: 1.3rem;
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: .65rem;
+  gap: .9rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
 }
 /* Keep titles + value rows on a single line */
@@ -549,30 +559,36 @@
   text-overflow: ellipsis;
 }
 
-/* s1 needs wider gutter for the 4-card row */
-.how-it-works-page section.s1 .sec-inner { max-width: 92rem; }
+/* s1 spans full width for the 4-card row */
+.how-it-works-page section.s1 .sec-inner { max-width: 130rem; }
 /* Caption below the cards */
-.how-it-works-page section.s1 .caption { margin-top: 1.5rem; }
-/* Tighten the gap above the 73% stat */
-.how-it-works-page section.s1 .stat-center { margin-top: 4rem; padding: 0; }
+.how-it-works-page section.s1 .caption {
+  margin-top: 2rem;
+  font-size: 13px;
+}
+/* Breathe between the cards block and the stat */
+.how-it-works-page section.s1 .stat-center { margin-top: 6rem; padding: 0; }
 /* Punchline below the stat */
-.how-it-works-page section.s1 .impact-line { margin-top: 3.5rem; }
+.how-it-works-page section.s1 .impact-line {
+  margin-top: 5rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+}
 .agent-header {
   display: flex;
   align-items: center;
   gap: .5rem;
 }
-.agent-icon { font-size: 1.3rem }
+.agent-icon { font-size: 1.55rem }
 .agent-name {
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   flex: 1;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
 }
 .trust-badge {
-  font-size: 9px;
-  font-weight: 500;
-  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
   border-radius: 9999px;
   letter-spacing: .06em;
 }
@@ -580,16 +596,16 @@
 .trust-amber { background: rgba(224, 123, 91, .1); color: var(--charlie) }
 .trust-red { background: rgba(224, 123, 91, .1); color: var(--eve) }
 
-.signal-row { display: flex; align-items: center; gap: .5rem }
+.signal-row { display: flex; align-items: center; gap: .6rem }
 .signal-label {
-  font-size: 8px;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: .15em;
+  letter-spacing: .14em;
   color: rgba(26, 26, 26, .55);
-  font-weight: 500;
+  font-weight: 600;
 }
-.signal-bars { display: flex; gap: 2px; align-items: flex-end }
-.signal-bar { width: 4px; border-radius: 1px }
+.signal-bars { display: flex; gap: 3px; align-items: flex-end }
+.signal-bar { width: 5px; border-radius: 1.5px }
 .signal-bar.on-g { background: var(--bob) }
 .signal-bar.on-a { background: var(--charlie) }
 .signal-bar.off { background: rgba(26, 26, 26, .06) }
@@ -598,12 +614,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
 }
-.field-label { color: rgba(26, 26, 26, .55); font-weight: 400 }
-.field-val { font-weight: 500; color: rgba(26, 26, 26, .75) }
+.field-label { color: rgba(26, 26, 26, .55); font-weight: 500 }
+.field-val { font-weight: 600; color: rgba(26, 26, 26, .75) }
 .field-ok { background: rgba(91, 71, 224, .05) }
 .field-ok .field-val { color: var(--bob) }
 .field-deg { background: rgba(224, 123, 91, .06) }
@@ -640,9 +656,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .35rem;
-  padding: 0 .5rem;
-  width: 48px;
+  gap: .4rem;
+  padding: 0 .75rem;
+  width: 64px;
   flex-shrink: 0;
   align-self: center;
 }
@@ -651,13 +667,14 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 6px 4px;
-  font-size: 8px;
-  line-height: 1.05;
+  padding: 8px 6px;
+  font-size: 9.5px;
+  line-height: 1.1;
   text-align: center;
   white-space: normal;
   width: 100%;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 .conn-line { width: 1px; height: 14px; background: rgba(224, 123, 91, .15) }
 .conn-chevron {
