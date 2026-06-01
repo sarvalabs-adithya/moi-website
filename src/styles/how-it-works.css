@@ -220,6 +220,36 @@
 }
 
 /* ──────────────────────────────────────────────────────────────────────
+   WHO toggle (s-root-cause .act2-dims) — lift on dark
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-root-cause .act2-dim {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 18px;
+}
+.how-it-works-page section.s-root-cause .dim-check {
+  color: var(--shift-lilac) !important;
+  font-weight: 700;
+  margin-left: 6px;
+}
+.how-it-works-page section.s-root-cause .act2-dim-miss {
+  background: rgba(124, 108, 232, 0.16) !important;
+  border-color: rgba(124, 108, 232, 0.4) !important;
+  color: var(--shift-lilac) !important;
+  font-weight: 700;
+}
+.how-it-works-page section.s-root-cause .dim-miss-badge {
+  background: rgba(224, 123, 91, 0.18) !important;
+  border-color: rgba(224, 123, 91, 0.45) !important;
+  color: var(--accent-decay) !important;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
    s-root-cause — fix dark-on-dark text inside the headline + cards
    ────────────────────────────────────────────────────────────────────── */
 .how-it-works-page section.s-root-cause .act2-hl-l1 {
