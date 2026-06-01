@@ -1344,9 +1344,10 @@
 
 /* Card frame wrapping the diagram so it reads as its own object */
 .hub-frame {
-  max-width: 720px;
+  width: 100%;
+  max-width: 560px;
   margin: 2rem auto 0;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
@@ -1354,8 +1355,17 @@
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
               0 14px 32px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hub-wrap { position: relative; width: 100%; max-width: 480px; height: 400px; margin: 0 auto }
+.hub-wrap {
+  position: relative;
+  width: 480px;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 100%;
+}
 .hub-center {
   position: absolute;
   top: 50%;
@@ -1421,18 +1431,14 @@
   box-shadow: 0 0 16px rgba(124, 108, 232, 0.30);
 }
 .spoke-name {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: #FFFFFF;
-  letter-spacing: .02em;
-  margin-top: 4px;
+  letter-spacing: .01em;
+  margin-top: 8px;
+  text-align: center;
 }
-.spoke-scope {
-  font-size: 9.5px;
-  color: rgba(255, 255, 255, 0.65);
-  font-family: var(--mono);
-  letter-spacing: .02em;
-}
+.spoke-scope { display: none; }
 .spoke-check {
   font-size: 11px;
   color: var(--shift-lilac);
@@ -1440,7 +1446,7 @@
   opacity: 0;
   transform: scale(0);
   transition: all .5s cubic-bezier(.25, .1, .25, 1);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 .spoke-check.show { opacity: 1; transform: scale(1) }
 .pulse-dot { fill: #BCA6FF; opacity: .9 }
