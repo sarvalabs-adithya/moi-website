@@ -517,12 +517,20 @@ function Act2RevealSection() {
           first-class primitive?
         </h2>
 
-        <p className="subline gs" style={{ margin: "0 auto", textAlign: "center" }}>
-          Not an address. Not a login. Not a session cookie.
-          A persistent, portable existence — one data structure that represents
-          everything about a participant: what they own, what they&apos;ve permitted,
-          what they prefer, and who they trust.
+        <p className="act2-deck gs">
+          Not an <em>address</em>. Not a <em>login</em>. Not a{" "}
+          <em>session cookie</em>.
         </p>
+        <p className="act2-deck act2-deck--lead gs">
+          A persistent, portable existence — one data structure that represents
+          everything about a participant.
+        </p>
+        <ul className="act2-traits gs">
+          <li>what they own</li>
+          <li>what they&apos;ve permitted</li>
+          <li>what they prefer</li>
+          <li>who they trust</li>
+        </ul>
       </div>
     </section>
   );
