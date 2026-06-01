@@ -523,10 +523,17 @@ function Act2RevealSection() {
           everything about a participant: what they own, what they&apos;ve permitted,
           what they prefer, and who they trust.
         </p>
+      </div>
+    </section>
+  );
+}
 
-        {/* Context Superstate — the actual product */}
-        <div className="pill gs" style={{ marginTop: "3rem" }}>The Context Superstate</div>
-        <p className="subline gs" style={{ margin: "0.5rem auto 0", textAlign: "center" }}>
+function ContextSuperstateSection() {
+  return (
+    <section className="s-superstate" id="superstateSection">
+      <div className="sec-inner" style={{ textAlign: "center" }}>
+        <div className="pill gs">The Context Superstate</div>
+        <p className="subline gs" style={{ margin: "0.75rem auto 0", textAlign: "center" }}>
           The cryptographic data structure that represents your entire
           existence in computation. Always current. Always available. Always
           sovereign.
@@ -1319,6 +1326,7 @@ export default function HowItWorksPageV5() {
         <Custody />
         <RootCauseSection />
         <Act2RevealSection />
+        <ContextSuperstateSection />
         <ScopedDelegation />
         <Preferences />
         <Assets />

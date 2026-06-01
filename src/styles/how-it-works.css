@@ -2497,3 +2497,44 @@
   .how-it-works-page section.s6 .hub-stage { margin-top: 2rem; }
   .how-it-works-page section.s6 .s6-impact { margin-top: 2rem; }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   .s-superstate — split out of s-act2-reveal as its own slide
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-superstate {
+  background: transparent !important;
+}
+.how-it-works-page section.s-superstate .headline,
+.how-it-works-page section.s-superstate h2,
+.how-it-works-page section.s-superstate p {
+  color: var(--shift-ink-on-dark) !important;
+}
+.how-it-works-page section.s-superstate .subline {
+  color: var(--shift-muted-on-dark) !important;
+}
+.how-it-works-page section.s-superstate .pill { color: var(--shift-lilac) !important; }
+.how-it-works-page section.s-superstate .pill::before {
+  background: var(--shift-lilac) !important;
+  box-shadow: 0 0 10px rgba(200, 191, 239, 0.6);
+}
+
+@media (min-width: 769px) and (min-height: 700px) {
+  .how-it-works-page section.s-superstate {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem 3rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+@media (min-width: 1100px) {
+  .how-it-works-page section.s-superstate .sec-inner { max-width: 130rem; }
+  .how-it-works-page section.s-superstate .subline {
+    font-size: clamp(13px, 0.95vw, 15px) !important;
+    margin-top: 0.75rem !important;
+    max-width: 60ch !important;
+  }
+}
