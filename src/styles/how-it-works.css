@@ -2270,3 +2270,106 @@
     scroll-snap-stop: normal;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   Generous-scale pass — match s1's wide layout across the page.
+   Applies on desktop only (≥1100px); under that, sections stay at
+   their natural width.
+   ────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1100px) {
+  /* Wider canvas for every demo / argument slide */
+  .how-it-works-page section.s2  .sec-inner,
+  .how-it-works-page section.s3  .sec-inner,
+  .how-it-works-page section.s7  .sec-inner,
+  .how-it-works-page section.s8  .sec-inner,
+  .how-it-works-page section.s9  .sec-inner,
+  .how-it-works-page section.s10 .sec-inner {
+    max-width: 130rem;
+  }
+
+  /* Roomier vertical padding */
+  .how-it-works-page section.s2,
+  .how-it-works-page section.s3,
+  .how-it-works-page section.s7,
+  .how-it-works-page section.s8,
+  .how-it-works-page section.s9,
+  .how-it-works-page section.s10 {
+    padding: 9rem 3rem !important;
+  }
+
+  /* Headlines bump one step up to match s1's clamp */
+  .how-it-works-page section.s2  .headline,
+  .how-it-works-page section.s3  .headline,
+  .how-it-works-page section.s7  .headline,
+  .how-it-works-page section.s8  .headline,
+  .how-it-works-page section.s9  .headline,
+  .how-it-works-page section.s10 .headline {
+    font-size: clamp(2.5rem, 5.4vw, 4.5rem);
+    line-height: 1.06;
+    letter-spacing: -.028em;
+  }
+
+  /* Sublines: bigger, longer measure */
+  .how-it-works-page section.s2  .subline,
+  .how-it-works-page section.s3  .subline,
+  .how-it-works-page section.s7  .subline,
+  .how-it-works-page section.s8  .subline,
+  .how-it-works-page section.s9  .subline,
+  .how-it-works-page section.s10 .subline {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 1.25rem;
+    max-width: 64ch;
+  }
+
+  /* Impact lines: more presence */
+  .how-it-works-page section.s2  .impact-line,
+  .how-it-works-page section.s3  .impact-line,
+  .how-it-works-page section.s7  .impact-line,
+  .how-it-works-page section.s8  .impact-line,
+  .how-it-works-page section.s9  .impact-line,
+  .how-it-works-page section.s10 .impact-line {
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    margin-top: 4rem;
+  }
+
+  /* Captions a touch larger so they don't disappear in the new air */
+  .how-it-works-page section.s2  .caption,
+  .how-it-works-page section.s3  .caption,
+  .how-it-works-page section.s7  .caption,
+  .how-it-works-page section.s8  .caption,
+  .how-it-works-page section.s9  .caption,
+  .how-it-works-page section.s10 .caption {
+    font-size: 14px;
+    margin-top: 2rem;
+  }
+
+  /* Section-specific grid bumps so the actual visuals scale with the
+     extra room, not just the type around them. */
+  .how-it-works-page section.s2 .chat-cards-grid,
+  .how-it-works-page section.s2 .chat-grid,
+  .how-it-works-page section.s2 .cold-meter,
+  .how-it-works-page section.s7 .pref-split,
+  .how-it-works-page section.s8 .assets-split,
+  .how-it-works-page section.s9 .perm-table-wrap,
+  .how-it-works-page section.s10 .arch-split {
+    max-width: none;
+    margin-top: 4.5rem;
+  }
+
+  /* s3 custody comparison */
+  .how-it-works-page section.s3 .custody-compare { margin-top: 4.5rem; }
+
+  /* s8 / s10 split layouts a touch wider on huge screens */
+  .how-it-works-page section.s8 .assets-split,
+  .how-it-works-page section.s10 .arch-split {
+    gap: 3rem;
+  }
+
+  /* s8 stat-center "$2.8B" and surrounding rhythm — match s1's 73% scale */
+  .how-it-works-page section.s8 .stat-center { margin-top: 6rem; padding: 0; }
+  .how-it-works-page section.s8 .stat-center-num,
+  .how-it-works-page section.s3 .stat-center-num {
+    font-size: clamp(4rem, 9vw, 6.5rem);
+  }
+}
