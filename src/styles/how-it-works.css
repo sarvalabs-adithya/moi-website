@@ -213,6 +213,65 @@
 }
 
 /* ──────────────────────────────────────────────────────────────────────
+   s2 — Cold Start chat cards on the dark band: lift contrast
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s2 .chat-chrome {
+  border-bottom-color: rgba(255, 255, 255, 0.10) !important;
+}
+.how-it-works-page section.s2 .chrome-dot {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+.how-it-works-page section.s2 .chrome-name {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 12px;
+  font-weight: 600;
+}
+.how-it-works-page section.s2 .mem-badge {
+  color: var(--accent-decay) !important;
+  font-size: 10px;
+  font-weight: 600;
+}
+.how-it-works-page section.s2 .mem-dot {
+  background: var(--accent-decay) !important;
+  box-shadow: 0 0 6px rgba(224, 123, 91, 0.6);
+}
+/* Bot messages — clearly visible muted on dark */
+.how-it-works-page section.s2 .msg {
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.how-it-works-page section.s2 .msg-agent {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+/* User replies — lilac on a lifted indigo tint */
+.how-it-works-page section.s2 .msg-user {
+  background: rgba(124, 108, 232, 0.22) !important;
+  color: #E8E1FF !important;
+  font-weight: 500;
+}
+.how-it-works-page section.s2 .frust-row {
+  border-top-color: rgba(255, 255, 255, 0.10) !important;
+}
+.how-it-works-page section.s2 .frust-label {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+.how-it-works-page section.s2 .frust-bar {
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+.how-it-works-page section.s2 .frust-bar-fill {
+  background: var(--accent-decay) !important;
+  box-shadow: 0 0 8px rgba(224, 123, 91, 0.55);
+}
+/* Italic caption + impact */
+.how-it-works-page section.s2 .caption {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 13px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
    B — Three slide rhythms (desktop only)
    • STATEMENT slides (s-root-cause / s-act2-reveal / s11): 100vh,
      centered, huge type, minimal chrome — these are billboards.
