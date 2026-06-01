@@ -1699,27 +1699,26 @@
 .ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
 .ss-ctx {
   padding: 18px 20px;
-  background: linear-gradient(180deg,
-    rgba(124, 108, 232, 0.16) 0%,
-    rgba(124, 108, 232, 0.08) 100%);
-  border: 1px solid rgba(200, 191, 239, 0.22);
-  border-radius: 14px;
+  background: transparent;
+  border: 1px solid rgba(200, 191, 239, 0.18);
+  border-left: 2px solid var(--shift-lilac);
+  border-radius: 12px;
   text-align: left;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
 }
 .ss-ctx-wide { grid-column: span 3; text-align: center }
+.ss-ctx-wide { border-left: 1px solid rgba(200, 191, 239, 0.18); border-top: 2px solid var(--shift-lilac); }
 .ss-ctx-name {
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--shift-lilac);
   letter-spacing: -.005em;
   margin-bottom: 6px;
 }
 .ss-ctx-desc {
   font-family: var(--font-sans);
   font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.55;
   letter-spacing: 0;
 }
