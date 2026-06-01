@@ -620,36 +620,33 @@ function ScopedDelegation() {
 
         <div className="hub-frame">
           <div className="hub-wrap gs" id="hubWrap">
-            <div className="hub-ring" />
             <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
 
-            <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400">
-              {/* Equilateral triangle: 3 spokes at distance 155 from center (240,200).
-                  Top-left (210°): (106,123). Top-right (330°): (374,123). Bottom (90°): (240,355). */}
-              <line x1="240" y1="200" x2="106" y2="123" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="240" y1="200" x2="374" y2="123" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="240" y1="200" x2="240" y2="355" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M106,123 L240,200" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M374,123 L240,200" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,355 L240,200" /></circle>
+            <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400" preserveAspectRatio="xMidYMid meet">
+              {/* Equilateral triangle of spokes around center (240, 200), radius 150.
+                  Top-left (210°): (110, 125). Top-right (330°): (370, 125). Bottom (90°): (240, 350). */}
+              <line x1="240" y1="200" x2="110" y2="125" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="240" y1="200" x2="370" y2="125" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="240" y1="200" x2="240" y2="350" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M110,125 L240,200" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M370,125 L240,200" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,350 L240,200" /></circle>
             </svg>
 
-            <div className="spoke-agent" style={{ top: 73, left: 56 }}>
+            {/* spoke-agent positions: top = circleCenterY - circleRadius (25). left = circleCenterX - half-width (50). */}
+            <div className="spoke-agent" style={{ top: 100, left: 60 }}>
               <div className="spoke-circle">✈️</div>
               <span className="spoke-name">Flight Agent</span>
-              <span className="spoke-scope">book_flight: true</span>
               <span className="spoke-check" id="ck1">✓ Verified</span>
             </div>
-            <div className="spoke-agent" style={{ top: 73, right: 56 }}>
+            <div className="spoke-agent" style={{ top: 100, left: 320 }}>
               <div className="spoke-circle">💳</div>
               <span className="spoke-name">Payment Agent</span>
-              <span className="spoke-scope">charge: $500 max</span>
               <span className="spoke-check" id="ck2">✓ Verified</span>
             </div>
-            <div className="spoke-agent" style={{ top: 305, left: "50%", transform: "translateX(-50%)" }}>
+            <div className="spoke-agent" style={{ top: 325, left: 190 }}>
               <div className="spoke-circle">🏦</div>
               <span className="spoke-name">Bank Agent</span>
-              <span className="spoke-scope">confirm_payment</span>
               <span className="spoke-check" id="ck3">✓ Verified</span>
             </div>
           </div>
