@@ -841,12 +841,14 @@ function Permissions() {
 
 /* ContextSuperstate UI lives in Act2RevealSection; classical vs contextual formulas sit under the superstate grid */
 
+/* All-indigo participant palette — varying intensities so the rows are
+   still distinguishable, but the page's 2-accent system is preserved. */
 const ARCH_P = [
-  { name: "Alice", color: "#4B17E5", speed: 0.6 },
-  { name: "Bob", color: "#3A8F6E", speed: 0.8 },
-  { name: "Charlie", color: "#C47A2D", speed: 0.5 },
-  { name: "Diana", color: "#2D7EC4", speed: 0.7 },
-  { name: "Eve", color: "#C44D5A", speed: 0.55 },
+  { name: "Alice",   color: "#9B8FF0", speed: 0.6 },
+  { name: "Bob",     color: "#BCA6FF", speed: 0.8 },
+  { name: "Charlie", color: "#7B6CE8", speed: 0.5 },
+  { name: "Diana",   color: "#A89FC8", speed: 0.7 },
+  { name: "Eve",     color: "#E07B5B", speed: 0.55 },
 ];
 const ARCH_BRIDGES = [
   { from: 0, to: 1, x: 0.35, label: "swap" },
@@ -927,14 +929,14 @@ function ArchitectureSection() {
         ctx.fill();
         ctx.globalAlpha = 1;
         ctx.font = '300 9px "Poppins", system-ui, sans-serif';
-        ctx.fillStyle = "rgba(26,26,26,0.45)";
+        ctx.fillStyle = "rgba(232,228,245,0.45)";
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
         ctx.fillText(p.name, pLeft + 20, py);
         ctx.beginPath();
         ctx.moveTo(pLeft + 38, py);
         ctx.quadraticCurveTo(W * 0.35, py, neckX, neckY + (i - 2) * 3);
-        ctx.strokeStyle = "rgba(10, 5, 26, 0.08)";
+        ctx.strokeStyle = "rgba(232,228,245,0.08)";
         ctx.lineWidth = 1;
         ctx.stroke();
       });
@@ -952,13 +954,13 @@ function ArchitectureSection() {
 
       ctx.beginPath();
       ctx.roundRect(blockX, neckY - blockH / 2, blockW, blockH, 6);
-      ctx.fillStyle = "rgba(26,26,26,0.02)";
-      ctx.strokeStyle = "rgba(26,26,26,0.06)";
+      ctx.fillStyle = "rgba(232,228,245,0.02)";
+      ctx.strokeStyle = "rgba(232,228,245,0.06)";
       ctx.lineWidth = 1;
       ctx.fill();
       ctx.stroke();
       ctx.font = '400 8px "Poppins", system-ui, sans-serif';
-      ctx.fillStyle = "rgba(26,26,26,0.4)";
+      ctx.fillStyle = "rgba(232,228,245,0.4)";
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
       ctx.fillText("Block #" + blockNum, blockX + blockW / 2, neckY - blockH / 2 + 6);
@@ -967,8 +969,8 @@ function ArchitectureSection() {
         const gx = blockX + (blockW + 6) * g;
         ctx.beginPath();
         ctx.roundRect(gx, neckY - blockH / 2 + g * 4, blockW * 0.8, blockH - g * 8, 4);
-        ctx.fillStyle = `rgba(26,26,26,${0.015 / g})`;
-        ctx.strokeStyle = `rgba(26,26,26,${0.03 / g})`;
+        ctx.fillStyle = `rgba(232,228,245,${0.015 / g})`;
+        ctx.strokeStyle = `rgba(232,228,245,${0.03 / g})`;
         ctx.lineWidth = 0.5;
         ctx.fill();
         ctx.stroke();
@@ -1016,17 +1018,17 @@ function ArchitectureSection() {
 
       if (bottleneckCount > 3) {
         ctx.font = '400 9px "Poppins", system-ui, sans-serif';
-        ctx.fillStyle = "rgba(196, 77, 90, 0.45)";
+        ctx.fillStyle = "rgba(224,123,91,0.45)";
         ctx.textAlign = "center";
         ctx.textBaseline = "alphabetic";
         ctx.fillText(bottleneckCount + " txns waiting...", neckX, neckY + 36);
         ctx.font = '500 7px "Poppins", system-ui, sans-serif';
-        ctx.fillStyle = "rgba(196, 77, 90, 0.3)";
+        ctx.fillStyle = "rgba(224,123,91,0.3)";
         ctx.fillText("⚠ HIGH CONTENTION", neckX, neckY + 48);
       }
 
       ctx.font = '300 8px "Poppins", system-ui, sans-serif';
-      ctx.fillStyle = "rgba(10, 5, 26, 0.3)";
+      ctx.fillStyle = "rgba(232,228,245,0.3)";
       ctx.textAlign = "center";
       ctx.textBaseline = "alphabetic";
       ctx.fillText("one block at a time →", blockX + blockW / 2, neckY + blockH / 2 + 16);
@@ -1082,13 +1084,13 @@ function ArchitectureSection() {
         const chipX = lR + 10;
         ctx.beginPath();
         ctx.roundRect(chipX, ly - 12, 44, 24, 4);
-        ctx.fillStyle = "rgba(26,26,26,0.015)";
-        ctx.strokeStyle = "rgba(26,26,26,0.05)";
+        ctx.fillStyle = "rgba(232,228,245,0.015)";
+        ctx.strokeStyle = "rgba(232,228,245,0.05)";
         ctx.lineWidth = 0.5;
         ctx.fill();
         ctx.stroke();
         ctx.font = '400 8px "Poppins", system-ui, sans-serif';
-        ctx.fillStyle = "rgba(26,26,26,0.4)";
+        ctx.fillStyle = "rgba(232,228,245,0.4)";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText("#" + bn, chipX + 22, ly);
