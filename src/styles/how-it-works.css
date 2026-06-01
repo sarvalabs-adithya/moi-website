@@ -75,12 +75,14 @@
    radial gradient over #0A0526.
    ────────────────────────────────────────────────────────────────────── */
 
-/* PROBLEM acts → dark band */
+/* ABAB rhythm — flip every section regardless of act.
+   DARK:  s1, s3, s-act2-reveal, s7, s9, s11
+   LIGHT: s2, s-root-cause, s6, s8, s10                                  */
 .how-it-works-page section.s1,
-.how-it-works-page section.s2,
 .how-it-works-page section.s3,
-.how-it-works-page section.s-root-cause,
-/* CLOSING → dark band */
+.how-it-works-page section.s-act2-reveal,
+.how-it-works-page section.s7,
+.how-it-works-page section.s9,
 .how-it-works-page section.s11 {
   background:
     radial-gradient(60% 50% at 80% 18%, rgba(75, 23, 229, 0.38), transparent 60%),
@@ -88,65 +90,51 @@
     var(--shift-bg-dark) !important;
   color: var(--shift-ink-on-dark);
 }
-/* SOLUTION acts → light lavender */
-.how-it-works-page section.s-act2-reveal,
+.how-it-works-page section.s2,
+.how-it-works-page section.s-root-cause,
 .how-it-works-page section.s6,
-.how-it-works-page section.s7,
 .how-it-works-page section.s8,
-.how-it-works-page section.s9,
 .how-it-works-page section.s10 {
   background: var(--shift-bg) !important;
   color: var(--shift-ink);
 }
 
-/* ── Light bands: full-opacity dark text ── */
-.how-it-works-page section.s-act2-reveal .headline,
-.how-it-works-page section.s-act2-reveal h1,
-.how-it-works-page section.s-act2-reveal h2,
-.how-it-works-page section.s-act2-reveal h3,
-.how-it-works-page section.s-act2-reveal .act2-hl,
-.how-it-works-page section.s-act2-reveal .impact-line,
-.how-it-works-page section.s-act2-reveal p,
+/* ── Light bands (s2 / s-root-cause / s6 / s8 / s10) ── */
+.how-it-works-page section.s2 .headline,
+.how-it-works-page section.s2 h2, .how-it-works-page section.s2 p, .how-it-works-page section.s2 .impact-line,
+.how-it-works-page section.s-root-cause .headline,
+.how-it-works-page section.s-root-cause .act2-hl,
+.how-it-works-page section.s-root-cause h2,
+.how-it-works-page section.s-root-cause p,
+.how-it-works-page section.s-root-cause .impact-line,
 .how-it-works-page section.s6 .headline,
-.how-it-works-page section.s6 h2, .how-it-works-page section.s6 h3, .how-it-works-page section.s6 p,
-.how-it-works-page section.s7 .headline,
-.how-it-works-page section.s7 h2, .how-it-works-page section.s7 h3, .how-it-works-page section.s7 p,
+.how-it-works-page section.s6 h2, .how-it-works-page section.s6 p,
 .how-it-works-page section.s8 .headline,
-.how-it-works-page section.s8 h2, .how-it-works-page section.s8 h3, .how-it-works-page section.s8 p,
-.how-it-works-page section.s9 .headline,
-.how-it-works-page section.s9 h2, .how-it-works-page section.s9 h3, .how-it-works-page section.s9 p,
+.how-it-works-page section.s8 h2, .how-it-works-page section.s8 p,
 .how-it-works-page section.s10 .headline,
-.how-it-works-page section.s10 h2, .how-it-works-page section.s10 h3, .how-it-works-page section.s10 p {
+.how-it-works-page section.s10 h2, .how-it-works-page section.s10 p {
   color: var(--shift-ink) !important;
 }
-.how-it-works-page section.s-act2-reveal .subline,
-.how-it-works-page section.s-act2-reveal .caption,
+.how-it-works-page section.s2 .subline,
+.how-it-works-page section.s2 .caption,
+.how-it-works-page section.s-root-cause .subline,
+.how-it-works-page section.s-root-cause .caption,
+.how-it-works-page section.s-root-cause-thesis,
 .how-it-works-page section.s6 .subline, .how-it-works-page section.s6 .caption,
-.how-it-works-page section.s7 .subline, .how-it-works-page section.s7 .caption,
 .how-it-works-page section.s8 .subline, .how-it-works-page section.s8 .caption,
-.how-it-works-page section.s9 .subline, .how-it-works-page section.s9 .caption,
 .how-it-works-page section.s10 .subline, .how-it-works-page section.s10 .caption {
   color: var(--shift-muted) !important;
 }
-
-/* Light bands: white cards with hairline border */
-.how-it-works-page section.s-act2-reveal .card-s,
-.how-it-works-page section.s-act2-reveal .agent-card,
-.how-it-works-page section.s-act2-reveal .act2-card,
-.how-it-works-page section.s-act2-reveal .custody-card,
-.how-it-works-page section.s-act2-reveal .superstate-card,
-.how-it-works-page section.s-act2-reveal .perm-card,
-.how-it-works-page section.s-act2-reveal .arch-panel,
-.how-it-works-page section.s-act2-reveal .chat-card,
-.how-it-works-page section.s-act2-reveal .stat-center-card,
-.how-it-works-page section.s-act2-reveal .mdag-panel,
-.how-it-works-page section.s6 .agent-card, .how-it-works-page section.s6 .superstate-card,
-.how-it-works-page section.s7 .agent-card, .how-it-works-page section.s7 .superstate-card,
-.how-it-works-page section.s8 .agent-card, .how-it-works-page section.s8 .superstate-card,
-.how-it-works-page section.s8 .custody-card, .how-it-works-page section.s8 .perm-card,
-.how-it-works-page section.s9 .perm-card, .how-it-works-page section.s9 .agent-card,
-.how-it-works-page section.s10 .arch-panel, .how-it-works-page section.s10 .mdag-panel,
-.how-it-works-page section.s10 .agent-card {
+/* Light cards — white surface, hairline border, soft purple lift */
+.how-it-works-page section.s2 .card-s,
+.how-it-works-page section.s2 .chat-card,
+.how-it-works-page section.s-root-cause .act2-card,
+.how-it-works-page section.s-root-cause .card-s,
+.how-it-works-page section.s6 .agent-card,
+.how-it-works-page section.s8 .custody-card,
+.how-it-works-page section.s8 .stat-center-card,
+.how-it-works-page section.s10 .arch-panel,
+.how-it-works-page section.s10 .mdag-panel {
   background: #FFFFFF !important;
   border: 1px solid var(--shift-card-bd) !important;
   backdrop-filter: none !important;
@@ -155,18 +143,19 @@
   color: var(--shift-ink) !important;
 }
 
-/* ── Dark bands: white text, glass cards ── */
+/* ── Dark bands (s1 / s3 / s-act2-reveal / s7 / s9 / s11) ── */
 .how-it-works-page section.s1 .headline,
 .how-it-works-page section.s1 h2, .how-it-works-page section.s1 p, .how-it-works-page section.s1 .impact-line,
-.how-it-works-page section.s2 .headline,
-.how-it-works-page section.s2 h2, .how-it-works-page section.s2 p, .how-it-works-page section.s2 .impact-line,
 .how-it-works-page section.s3 .headline,
 .how-it-works-page section.s3 h2, .how-it-works-page section.s3 p, .how-it-works-page section.s3 .impact-line,
-.how-it-works-page section.s-root-cause .headline,
-.how-it-works-page section.s-root-cause .act2-hl,
-.how-it-works-page section.s-root-cause h2,
-.how-it-works-page section.s-root-cause p,
-.how-it-works-page section.s-root-cause .impact-line,
+.how-it-works-page section.s-act2-reveal .headline,
+.how-it-works-page section.s-act2-reveal h1, .how-it-works-page section.s-act2-reveal h2,
+.how-it-works-page section.s-act2-reveal .act2-hl, .how-it-works-page section.s-act2-reveal .impact-line,
+.how-it-works-page section.s-act2-reveal p,
+.how-it-works-page section.s7 .headline,
+.how-it-works-page section.s7 h2, .how-it-works-page section.s7 p,
+.how-it-works-page section.s9 .headline,
+.how-it-works-page section.s9 h2, .how-it-works-page section.s9 p,
 .how-it-works-page section.s11 .headline,
 .how-it-works-page section.s11 .cta-hl,
 .how-it-works-page section.s11 h2,
@@ -175,68 +164,166 @@
 }
 .how-it-works-page section.s1 .subline,
 .how-it-works-page section.s1 .caption,
-.how-it-works-page section.s2 .subline,
-.how-it-works-page section.s2 .caption,
 .how-it-works-page section.s3 .subline,
 .how-it-works-page section.s3 .caption,
-.how-it-works-page section.s-root-cause .subline,
-.how-it-works-page section.s-root-cause .caption,
-.how-it-works-page section.s-root-cause-thesis,
+.how-it-works-page section.s-act2-reveal .subline,
+.how-it-works-page section.s-act2-reveal .caption,
+.how-it-works-page section.s7 .subline, .how-it-works-page section.s7 .caption,
+.how-it-works-page section.s9 .subline, .how-it-works-page section.s9 .caption,
 .how-it-works-page section.s11 .cta-sub {
   color: var(--shift-muted-on-dark) !important;
 }
 
-/* Dark-band cards: glassy translucent — like the homepage code callout */
+/* Dark-band cards — glass panel lifted off the band */
 .how-it-works-page section.s1 .agent-card,
 .how-it-works-page section.s1 .card-s,
-.how-it-works-page section.s2 .chat-card,
-.how-it-works-page section.s2 .card-s,
-.how-it-works-page section.s2 .agent-card,
 .how-it-works-page section.s3 .custody-card,
 .how-it-works-page section.s3 .card-s,
 .how-it-works-page section.s3 .stat-center-card,
-.how-it-works-page section.s-root-cause .act2-card,
-.how-it-works-page section.s-root-cause .card-s {
-  background: rgba(245, 242, 255, 0.05) !important;
-  border: 1px solid rgba(217, 204, 255, 0.18) !important;
+.how-it-works-page section.s7 .agent-card,
+.how-it-works-page section.s7 .superstate-card,
+.how-it-works-page section.s9 .perm-card,
+.how-it-works-page section.s9 .agent-card,
+.how-it-works-page section.s11 .card-s {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 14px 32px rgba(0, 0, 0, 0.28) !important;
   color: var(--shift-ink-on-dark) !important;
 }
 
-/* Eyebrow pills auto-recolor per band */
+/* Eyebrow pills auto-recolor on dark */
 .how-it-works-page section.s1 .pill,
-.how-it-works-page section.s2 .pill,
 .how-it-works-page section.s3 .pill,
-.how-it-works-page section.s-root-cause .pill,
+.how-it-works-page section.s-act2-reveal .pill,
+.how-it-works-page section.s7 .pill,
+.how-it-works-page section.s9 .pill,
 .how-it-works-page section.s11 .pill { color: var(--shift-lilac) !important; }
 .how-it-works-page section.s1 .pill::before,
-.how-it-works-page section.s2 .pill::before,
 .how-it-works-page section.s3 .pill::before,
-.how-it-works-page section.s-root-cause .pill::before,
+.how-it-works-page section.s-act2-reveal .pill::before,
+.how-it-works-page section.s7 .pill::before,
+.how-it-works-page section.s9 .pill::before,
 .how-it-works-page section.s11 .pill::before {
   background: var(--shift-lilac) !important;
   box-shadow: 0 0 10px rgba(200, 191, 239, 0.6);
 }
 
-/* Italic-emphasis hue stays purple on light, shifts to lilac on dark */
+/* Italic-emphasis lilac on dark sections */
 .how-it-works-page section.s1 .headline em,
 .how-it-works-page section.s1 .impact-line em,
-.how-it-works-page section.s2 .headline em,
-.how-it-works-page section.s2 .impact-line em,
 .how-it-works-page section.s3 .headline em,
 .how-it-works-page section.s3 .impact-line em,
-.how-it-works-page section.s-root-cause .act2-hl em,
-.how-it-works-page section.s-root-cause .impact-line em,
+.how-it-works-page section.s-act2-reveal .headline em,
+.how-it-works-page section.s-act2-reveal .act2-hl em,
+.how-it-works-page section.s7 .headline em,
+.how-it-works-page section.s9 .headline em,
 .how-it-works-page section.s11 .cta-hl em {
   color: var(--shift-lilac) !important;
 }
 
-/* Signal bars + decay accents glow stronger on the dark bg */
-.how-it-works-page section.s1 .signal-bar.on-g,
+/* ──────────────────────────────────────────────────────────────────────
+   Dark-band delegation card contrast (s1 specifically)
+   ────────────────────────────────────────────────────────────────────── */
+
+/* Agent headers (Your Agent / Flight / Payment / Bank) — bright */
+.how-it-works-page section.s1 .agent-name,
+.how-it-works-page section.s1 .agent-header {
+  color: #FFFFFF !important;
+}
+/* Section labels inside the card (IDENTITY / SCOPE / ...) */
+.how-it-works-page section.s1 .signal-label,
+.how-it-works-page section.s1 .field-label {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+/* Healthy values — bright lilac/white */
+.how-it-works-page section.s1 .field-ok {
+  background: rgba(124, 108, 232, 0.18) !important;
+}
+.how-it-works-page section.s1 .field-ok .field-val {
+  color: #E8E1FF !important;
+  font-weight: 600;
+}
+/* Degrading values — clear amber */
+.how-it-works-page section.s1 .field-deg {
+  background: rgba(245, 173, 86, 0.16) !important;
+}
+.how-it-works-page section.s1 .field-deg .field-val {
+  color: #F5AD56 !important;
+  font-style: italic;
+  font-weight: 600;
+}
+/* Live-altered / lost values — clear red */
+.how-it-works-page section.s1 .field-lost {
+  background: rgba(247, 110, 110, 0.16) !important;
+}
+.how-it-works-page section.s1 .field-lost .field-val {
+  color: #F76E6E !important;
+  font-weight: 600;
+}
+/* REDACTED / UNKNOWN — visible muted grey */
+.how-it-works-page section.s1 .field-redacted {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+.how-it-works-page section.s1 .field-redacted .field-val {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-weight: 600;
+}
+
+/* Signal bars — bright on dark */
+.how-it-works-page section.s1 .signal-bar.on-g {
+  background: #C8BFEF !important;
+  box-shadow: 0 0 8px rgba(200, 191, 239, 0.65);
+}
 .how-it-works-page section.s1 .signal-bar.on-a {
-  box-shadow: 0 0 8px rgba(123, 108, 232, 0.5);
+  background: #F5AD56 !important;
+  box-shadow: 0 0 8px rgba(245, 173, 86, 0.55);
+}
+.how-it-works-page section.s1 .signal-bar.off {
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+/* Trust bar fill colored by .trust-bar-fill inline style — boost glow */
+.how-it-works-page section.s1 .trust-bar {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+/* Trust badges */
+.how-it-works-page section.s1 .trust-green {
+  background: rgba(200, 191, 239, 0.18) !important;
+  color: #E8E1FF !important;
+}
+.how-it-works-page section.s1 .trust-amber {
+  background: rgba(245, 173, 86, 0.16) !important;
+  color: #F5AD56 !important;
+}
+.how-it-works-page section.s1 .trust-red {
+  background: rgba(247, 110, 110, 0.16) !important;
+  color: #F76E6E !important;
+}
+/* Italic agent caption ("Full context. Full trust." etc.) */
+.how-it-works-page section.s1 .agent-note {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+/* Chain connector arrows + "data lost" badges */
+.how-it-works-page section.s1 .chain-conn,
+.how-it-works-page section.s1 .conn-arrow {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* 73% stat — large + bright on dark */
+.how-it-works-page section.s1 .stat-center-num,
+.how-it-works-page section.s3 .stat-center-num {
+  color: #FFFFFF !important;
+  font-size: clamp(4.5rem, 10vw, 7rem) !important;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 32px rgba(124, 108, 232, 0.35);
+}
+.how-it-works-page section.s1 .stat-center-desc,
+.how-it-works-page section.s1 .stat-center-source,
+.how-it-works-page section.s3 .stat-center-desc,
+.how-it-works-page section.s3 .stat-center-source {
+  color: rgba(255, 255, 255, 0.68) !important;
 }
 
 /* Section divider — neutral hairline */
