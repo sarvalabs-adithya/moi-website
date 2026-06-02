@@ -353,10 +353,13 @@ a.nav-cta:hover {
 
 ::selection { background: var(--moi-main); color: var(--moi-haze); }
 
-/* Navbar links opt out of the global anchor color so Tailwind's
-   text-white utilities can win. */
+/* Navbar pill is solid dark indigo regardless of page bg;
+   text stays 82% white inactive / 100% white on hover + active. */
 nav.fixed a,
 nav.fixed a:hover {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.82);
   border-bottom-color: transparent;
 }
+nav.fixed a:hover:not(.nav-cta) { color: #FFFFFF; }
+nav.fixed a.nav-cta,
+nav.fixed a.nav-cta:hover { color: #FFFFFF; }
