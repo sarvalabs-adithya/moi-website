@@ -640,30 +640,34 @@ function ScopedDelegation() {
           <div className="hub-wrap gs" id="hubWrap">
             <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
 
-            <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400" preserveAspectRatio="xMidYMid meet">
-              {/* Lines stop short of the circle edges (6px gap each side).
-                  Hub radius 70 + 6 = 76; satellite radius 26 + 6 = 32.
-                  Hub center (240,200), satellites at (110,125), (370,125), (240,350). */}
-              <line x1="174" y1="162" x2="138" y2="141" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="306" y1="162" x2="342" y2="141" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="240" y1="276" x2="240" y2="318" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M138,141 L174,162" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M342,141 L306,162" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,318 L240,276" /></circle>
+            <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 540 480" preserveAspectRatio="xMidYMid meet">
+              {/* Hub center (270, 220). Hub radius 55. Satellite radius 28.
+                  Equilateral satellites at radius 175:
+                    Top-left  (210°): (118, 132)
+                    Top-right (330°): (422, 132)
+                    Bottom    ( 90°): (270, 395)
+                  Lines extend right up to the circle edges (2px gap each). */}
+              <line x1="221" y1="192" x2="143" y2="147" stroke="#BCA6FF" strokeWidth="1.5" opacity=".42" />
+              <line x1="319" y1="192" x2="397" y2="147" stroke="#BCA6FF" strokeWidth="1.5" opacity=".42" />
+              <line x1="270" y1="277" x2="270" y2="365" stroke="#BCA6FF" strokeWidth="1.5" opacity=".42" />
+              <circle className="pulse-dot" r="3.5"><animateMotion dur="1.8s" repeatCount="indefinite" path="M143,147 L221,192" /></circle>
+              <circle className="pulse-dot" r="3.5"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.6s" path="M397,147 L319,192" /></circle>
+              <circle className="pulse-dot" r="3.5"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.2s" path="M270,365 L270,277" /></circle>
             </svg>
 
-            {/* spoke-agent positions: top = circleCenterY - circleRadius (25). left = circleCenterX - half-width (50). */}
-            <div className="spoke-agent" style={{ top: 100, left: 60 }}>
+            {/* Spoke positions in CSS px (1:1 with viewBox).
+                spoke-agent width 110; circle 56 -> top = centerY - 28; left = centerX - 55. */}
+            <div className="spoke-agent" style={{ top: 104, left: 63 }}>
               <div className="spoke-circle">✈️</div>
               <span className="spoke-name">Flight Agent</span>
               <span className="spoke-check" id="ck1">✓ Verified</span>
             </div>
-            <div className="spoke-agent" style={{ top: 100, left: 320 }}>
+            <div className="spoke-agent" style={{ top: 104, left: 367 }}>
               <div className="spoke-circle">💳</div>
               <span className="spoke-name">Payment Agent</span>
               <span className="spoke-check" id="ck2">✓ Verified</span>
             </div>
-            <div className="spoke-agent" style={{ top: 325, left: 190 }}>
+            <div className="spoke-agent" style={{ top: 367, left: 215 }}>
               <div className="spoke-circle">🏦</div>
               <span className="spoke-name">Bank Agent</span>
               <span className="spoke-check" id="ck3">✓ Verified</span>
