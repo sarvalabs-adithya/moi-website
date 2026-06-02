@@ -909,7 +909,7 @@ me.agent("claw-12")
               Not your Agent.
             </h2>
             <p className="kitcta-sub">
-              Identity, not intelligence, is the bottleneck. Anchor yours.
+              Authority, not intelligence, is the bottleneck. Anchor yours.
             </p>
             <div className="kitcta-ctas">
               <a
