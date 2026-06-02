@@ -641,14 +641,15 @@ function ScopedDelegation() {
             <div className="hub-center"><span className="hub-center-label">Alice's<br />Superstate</span></div>
 
             <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1 }} viewBox="0 0 480 400" preserveAspectRatio="xMidYMid meet">
-              {/* Equilateral triangle of spokes around center (240, 200), radius 150.
-                  Top-left (210°): (110, 125). Top-right (330°): (370, 125). Bottom (90°): (240, 350). */}
-              <line x1="240" y1="200" x2="110" y2="125" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="240" y1="200" x2="370" y2="125" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <line x1="240" y1="200" x2="240" y2="350" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M110,125 L240,200" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M370,125 L240,200" /></circle>
-              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,350 L240,200" /></circle>
+              {/* Lines stop short of the circle edges (6px gap each side).
+                  Hub radius 70 + 6 = 76; satellite radius 26 + 6 = 32.
+                  Hub center (240,200), satellites at (110,125), (370,125), (240,350). */}
+              <line x1="174" y1="162" x2="138" y2="141" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="306" y1="162" x2="342" y2="141" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <line x1="240" y1="276" x2="240" y2="318" stroke="#BCA6FF" strokeWidth="1.5" strokeDasharray="5 5" opacity=".55" />
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M138,141 L174,162" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.5s" path="M342,141 L306,162" /></circle>
+              <circle className="pulse-dot" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M240,318 L240,276" /></circle>
             </svg>
 
             {/* spoke-agent positions: top = circleCenterY - circleRadius (25). left = circleCenterX - half-width (50). */}

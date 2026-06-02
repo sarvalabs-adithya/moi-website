@@ -1378,7 +1378,7 @@
 .hub-wrap {
   position: relative;
   width: 480px;
-  height: 400px;
+  height: 460px;
   max-width: 100%;
 }
 .hub-center {
@@ -2511,7 +2511,7 @@
     margin-top: 2.5rem !important;
   }
   .how-it-works-page section.s6 .hub-stage { margin-top: 2rem; }
-  .how-it-works-page section.s6 .s6-impact { margin-top: 2rem; }
+  .how-it-works-page section.s6 .s6-impact { margin-top: 4rem; }
 }
 
 /* ──────────────────────────────────────────────────────────────────────
