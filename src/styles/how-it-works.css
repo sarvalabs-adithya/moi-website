@@ -1377,17 +1377,17 @@
 }
 .hub-wrap {
   position: relative;
-  width: 480px;
-  height: 460px;
+  width: 540px;
+  height: 480px;
   max-width: 100%;
 }
 .hub-center {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 220px;
+  left: 270px;
   transform: translate(-50%, -50%);
-  width: 140px;
-  height: 140px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 40%,
     rgba(188, 166, 255, 0.22) 0%,
@@ -1432,11 +1432,11 @@
   align-items: center;
   gap: 4px;
   z-index: 2;
-  width: 100px;
+  width: 110px;
 }
 .spoke-circle {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 40%,
     rgba(188, 166, 255, 0.18) 0%,
