@@ -613,8 +613,10 @@ function ContextSuperstateSection() {
           </div>
         </div>
 
-        <p className="act2-moi-tag gs" style={{ marginTop: "2.5rem" }}>
-          This is <span className="act2-moi-name">MOI</span>. The Participant Layer of the Internet.
+        <p className="act2-moi-tag gs">
+          <span className="act2-moi-eyebrow">This is</span>
+          <span className="act2-moi-name">MOI</span>
+          <span className="act2-moi-line">The Participant Layer of the Internet.</span>
         </p>
       </div>
     </section>
