@@ -556,18 +556,21 @@ export default function HomePage() {
             <div ref={heroRef} className="hero-copy fade-slide-up">
               <p className="hero-eyebrow">
                 <span className="hero-eyebrow-dot" />
-                <span className="hero-eyebrow-brand">MOI</span>
                 <span className="hero-eyebrow-rest">
-                  · The participant layer
+                  Powered by Contextual Compute
                 </span>
               </p>
               <h1 className="hero-headline">
-                Onchain authority for the agentic economy.
+                The Participant Layer
+                <br />
+                of the Internet
               </h1>
               <p className="hero-sub">
-                Your AI agents act for you at machine speed. MOI keeps your
-                authority on-chain — so you can scope, monitor, and revoke
-                what they do in real time.
+                MOI gives every participant — human or agent — persistent,
+                portable existence in computation.
+              </p>
+              <p className="hero-tagline">
+                <em>Onchain authority</em> for the agentic economy.
               </p>
               <div className="hero-ctas">
                 <Link to="/manifesto" className="hero-btn hero-btn-primary">
