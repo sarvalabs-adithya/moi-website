@@ -27,12 +27,12 @@ export default function Navbar({ activePage = "home" }) {
         className="mx-auto flex max-w-[1200px] items-center justify-between rounded-full px-5 h-[56px]"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.04) 100%)",
-          backdropFilter: "blur(36px) saturate(180%)",
-          WebkitBackdropFilter: "blur(36px) saturate(180%)",
-          border: "1px solid rgba(255, 255, 255, 0.14)",
+            "linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 100%)",
+          backdropFilter: "blur(40px) saturate(120%)",
+          WebkitBackdropFilter: "blur(40px) saturate(120%)",
+          border: "1px solid rgba(255, 255, 255, 0.18)",
           boxShadow:
-            "inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(255, 255, 255, 0.04), 0 12px 36px rgba(10, 5, 38, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.10)",
+            "inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(0, 0, 0, 0.06), 0 14px 40px rgba(10, 5, 38, 0.40)",
         }}
       >
         {/* Logo — MOI planetoid mark */}
