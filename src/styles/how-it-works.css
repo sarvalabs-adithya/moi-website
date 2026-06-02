@@ -2423,6 +2423,7 @@
   .how-it-works-page section.s-act2-reveal .headline,
   .how-it-works-page section.s-act2-reveal .act2-hl,
   .how-it-works-page section.s-root-cause .act2-hl,
+  .how-it-works-page section.s-superstate .headline,
   .how-it-works-page section.s11 .cta-hl {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -2432,6 +2433,20 @@
   .how-it-works-page section.s-root-cause .act2-hl-l2 {
     text-align: center;
   }
+
+  /* s-superstate billboard: inherit the statement type scale. */
+  .how-it-works-page section.s-superstate .headline {
+    font-size: clamp(2.75rem, 6.5vw, 5.25rem) !important;
+    max-width: 18ch;
+  }
+}
+
+/* Kill the Poppins italic on the s-superstate em (it reads as a
+   slanted slab). Lilac color stays. Applies at every viewport. */
+.how-it-works-page section.s-superstate .headline em {
+  font-style: normal !important;
+  color: var(--shift-lilac) !important;
+  font-weight: 700 !important;
 }
 
 .how-it-works-page .subline {
@@ -2602,4 +2617,31 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   s-superstate composition: center every block within the flex column
+   so eyebrow / headline / subline / card stack neatly on the axis.
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-superstate .sec-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.how-it-works-page section.s-superstate .pill {
+  margin-left: auto;
+  margin-right: auto;
+}
+.how-it-works-page section.s-superstate .headline {
+  text-align: center;
+}
+.how-it-works-page section.s-superstate .subline {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+.how-it-works-page section.s-superstate .superstate-card {
+  margin-left: auto;
+  margin-right: auto;
 }
