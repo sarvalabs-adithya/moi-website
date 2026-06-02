@@ -26,13 +26,12 @@ export default function Navbar({ activePage = "home" }) {
       <div
         className="mx-auto flex max-w-[1200px] items-center justify-between rounded-full px-5 h-[56px]"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(20, 12, 48, 0.85) 0%, rgba(13, 7, 38, 0.85) 100%)",
-          backdropFilter: "blur(24px) saturate(160%)",
-          WebkitBackdropFilter: "blur(24px) saturate(160%)",
-          border: "1px solid rgba(200, 191, 239, 0.18)",
+          background: "rgba(255, 255, 255, 0.08)",
+          backdropFilter: "blur(28px) saturate(180%)",
+          WebkitBackdropFilter: "blur(28px) saturate(180%)",
+          border: "1px solid rgba(255, 255, 255, 0.16)",
           boxShadow:
-            "0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.20)",
+            "inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 32px rgba(0, 0, 0, 0.22)",
         }}
       >
         {/* Logo — MOI planetoid mark */}
@@ -103,13 +102,12 @@ export default function Navbar({ activePage = "home" }) {
         <div
           className="md:hidden mt-2 mx-auto max-w-[1200px] rounded-2xl p-6 flex flex-col gap-4"
           style={{
-            background:
-              "linear-gradient(180deg, rgba(20, 12, 48, 0.92) 0%, rgba(13, 7, 38, 0.92) 100%)",
-            backdropFilter: "blur(24px) saturate(160%)",
-            WebkitBackdropFilter: "blur(24px) saturate(160%)",
-            border: "1px solid rgba(200, 191, 239, 0.18)",
+            background: "rgba(255, 255, 255, 0.10)",
+            backdropFilter: "blur(28px) saturate(180%)",
+            WebkitBackdropFilter: "blur(28px) saturate(180%)",
+            border: "1px solid rgba(255, 255, 255, 0.16)",
             boxShadow:
-              "0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 16px 40px rgba(0, 0, 0, 0.45)",
+              "inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 12px 36px rgba(0, 0, 0, 0.28)",
           }}
         >
           <Link to="/" className={linkClass("home")} onClick={() => setMenuOpen(false)}>Participants</Link>
