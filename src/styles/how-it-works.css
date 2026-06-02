@@ -1495,42 +1495,45 @@
 }
 .pref-circle,
 .pref-superstate-circle {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(232, 228, 245, .08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+  background: radial-gradient(circle at 50% 40%,
+    rgba(188, 166, 255, 0.22) 0%,
+    rgba(124, 108, 232, 0.10) 60%,
+    transparent 100%);
+  border: 1px solid rgba(200, 191, 239, 0.32);
+  box-shadow: 0 0 60px rgba(124, 108, 232, 0.32);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .08em;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: #FFFFFF;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 .pref-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   justify-content: center;
-  margin-top: 1rem;
-  max-width: 220px;
+  margin-top: 1.5rem;
+  max-width: 280px;
 }
 .pref-tag {
-  font-size: 9px;
-  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
   border-radius: 9999px;
-  border: 1px solid rgba(91, 71, 224, .15);
-  color: var(--purple);
-  background: rgba(91, 71, 224, .05);
+  border: 1px solid rgba(200, 191, 239, 0.30);
+  color: #FFFFFF;
+  background: rgba(124, 108, 232, 0.18);
   white-space: nowrap;
-  letter-spacing: .04em;
+  letter-spacing: .02em;
 }
 .pref-agents,
 .pref-cards {
