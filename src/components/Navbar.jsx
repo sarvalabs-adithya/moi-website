@@ -15,8 +15,10 @@ export default function Navbar({ activePage = "home" }) {
   };
 
   const linkClass = (page) =>
-    `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] text-[#4B17E5] hover:text-[#320F99] ${
-      activePage === page ? "bg-[#4B17E5]/10" : ""
+    `text-[12px] tracking-[0.04em] font-semibold transition-colors duration-300 rounded-full px-[14px] py-[6px] ${
+      activePage === page
+        ? "text-white bg-white/10"
+        : "text-white/72 hover:text-white"
     }`;
 
   return (
@@ -24,11 +26,13 @@ export default function Navbar({ activePage = "home" }) {
       <div
         className="mx-auto flex max-w-[1200px] items-center justify-between rounded-full px-5 h-[56px]"
         style={{
-          background: "rgba(255,255,255,0.72)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          border: "1px solid rgba(217,204,255,0.5)",
-          boxShadow: "0 2px 12px rgba(50,15,153,0.06)",
+          background:
+            "linear-gradient(180deg, rgba(20, 12, 48, 0.85) 0%, rgba(13, 7, 38, 0.85) 100%)",
+          backdropFilter: "blur(24px) saturate(160%)",
+          WebkitBackdropFilter: "blur(24px) saturate(160%)",
+          border: "1px solid rgba(200, 191, 239, 0.18)",
+          boxShadow:
+            "0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.20)",
         }}
       >
         {/* Logo — MOI planetoid mark */}
@@ -99,11 +103,13 @@ export default function Navbar({ activePage = "home" }) {
         <div
           className="md:hidden mt-2 mx-auto max-w-[1200px] rounded-2xl p-6 flex flex-col gap-4"
           style={{
-            background: "rgba(255,255,255,0.9)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            border: "1px solid rgba(217,204,255,0.5)",
-            boxShadow: "0 4px 24px rgba(50,15,153,0.08)",
+            background:
+              "linear-gradient(180deg, rgba(20, 12, 48, 0.92) 0%, rgba(13, 7, 38, 0.92) 100%)",
+            backdropFilter: "blur(24px) saturate(160%)",
+            WebkitBackdropFilter: "blur(24px) saturate(160%)",
+            border: "1px solid rgba(200, 191, 239, 0.18)",
+            boxShadow:
+              "0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 16px 40px rgba(0, 0, 0, 0.45)",
           }}
         >
           <Link to="/" className={linkClass("home")} onClick={() => setMenuOpen(false)}>Participants</Link>
