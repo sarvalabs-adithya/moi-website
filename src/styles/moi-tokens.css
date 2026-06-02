@@ -352,3 +352,11 @@ a.nav-cta:hover {
 }
 
 ::selection { background: var(--moi-main); color: var(--moi-haze); }
+
+/* Navbar links opt out of the global anchor color so Tailwind's
+   text-white utilities can win. */
+nav.fixed a,
+nav.fixed a:hover {
+  color: inherit;
+  border-bottom-color: transparent;
+}
