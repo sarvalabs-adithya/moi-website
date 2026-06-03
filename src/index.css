@@ -328,17 +328,18 @@ body {
 
 .hero-tagline {
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: clamp(15px, 1.15vw, 18px);
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 14px 0 0;
-  max-width: 48ch;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 22px 0 0;
+  max-width: 32ch;
 }
 .hero-tagline em {
   font-style: italic;
   color: #BCA6FF;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero-ctas {
