@@ -522,6 +522,68 @@ function RootCauseSection() {
   );
 }
 
+/** Evidence — four stats that ground the four keywords */
+function EvidenceStatsSection() {
+  return (
+    <section className="s-evidence" id="evidenceSection">
+      <div className="sec-inner">
+        <p className="pill gs">The evidence</p>
+        <h2 className="headline gs">
+          The numbers behind
+          <br />
+          the four problems.
+        </h2>
+
+        <ul className="ev-grid gs">
+          <li className="ev-card">
+            <div className="ev-num">3,600×</div>
+            <div className="ev-label">Machine-Speed Gap</div>
+            <ul className="ev-bullets">
+              <li>50ms · Agent</li>
+              <li>3min · Human Review</li>
+            </ul>
+            <p className="ev-source">Berkeley AAI 2025</p>
+          </li>
+
+          <li className="ev-card">
+            <div className="ev-num">100:1</div>
+            <div className="ev-label">
+              Non-Human Identities vs Employees in Financial Services
+            </div>
+            <p className="ev-source">Cyentia 2026</p>
+          </li>
+
+          <li className="ev-card">
+            <div className="ev-num">$2.8B+</div>
+            <div className="ev-label">Unanchored Value</div>
+            <ul className="ev-bullets">
+              <li>Cross-Chain bridges</li>
+              <li>Cumulative on-chain</li>
+            </ul>
+          </li>
+
+          <li className="ev-card">
+            <div className="ev-card-head">
+              <div className="ev-num">95M+/mo</div>
+              <span className="ev-date">Mar 2026</span>
+            </div>
+            <div className="ev-label">Revocation Drift</div>
+            <ul className="ev-bullets">
+              <li>LiteLLM Compromise</li>
+              <li>Sonatype</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p className="impact-line gs ev-thesis">
+          One root cause: authority-as-information is{" "}
+          <em>copyable</em>. And what&apos;s copyable cannot stay yours.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /** Act 2 — WHO as a primitive + Context Superstate reveal */
 function Act2RevealSection() {
   return (
@@ -1361,6 +1423,7 @@ export default function HowItWorksPageV5() {
         <ColdStart />
         <Custody />
         <RootCauseSection />
+        <EvidenceStatsSection />
         <Act2RevealSection />
         <ContextSuperstateSection />
         <ScopedDelegation />
