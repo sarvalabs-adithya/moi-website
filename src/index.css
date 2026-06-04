@@ -2352,16 +2352,26 @@ body {
   max-width: 48ch;
 }
 
-/* 5-step horizontal flow with chevron connectors between steps */
+/* 5-step flow split across 2 rows: 3 on top, 2 centered on bottom.
+   Using a 6-col grid so the bottom row can span (col 2-3) and (col 4-5),
+   centering it under the 3-col top row. */
 .flow-steps {
   list-style: none;
   margin: 0;
   padding: 4rem 0 3rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 32px 32px;
   position: relative;
 }
+.flow-step:nth-child(1),
+.flow-step:nth-child(2),
+.flow-step:nth-child(3) {
+  grid-column: span 2;
+}
+.flow-step:nth-child(4) { grid-column: 2 / span 2; }
+.flow-step:nth-child(5) { grid-column: 4 / span 2; }
 .flow-step {
   position: relative;
   padding: 2.25rem 1.75rem;
@@ -2445,7 +2455,8 @@ body {
 /* Filled card text */
 .flow-step--filled .flow-step-name { color: #FFFFFF; }
 .flow-step--filled .flow-step-body { color: rgba(255, 255, 255, 0.85); }
-/* Chevron between each pair of steps — sits in the 32px gap */
+/* Chevron between each pair of steps — sits in the 32px gap.
+   Hide before step 4 (start of row 2) so the row break stays clean. */
 .flow-step + .flow-step::before {
   content: "";
   position: absolute;
@@ -2458,25 +2469,7 @@ body {
   transform: translateY(-50%) rotate(45deg);
   filter: drop-shadow(0 0 8px rgba(200, 191, 239, 0.35));
 }
-/* Faint horizontal track behind the chevrons */
-.flow-steps::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 2rem;
-  right: 2rem;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(200, 191, 239, 0.22) 8%,
-    rgba(200, 191, 239, 0.22) 92%,
-    transparent 100%
-  );
-  transform: translateY(-50%);
-  z-index: 0;
-  pointer-events: none;
-}
+.flow-step:nth-child(4)::before { display: none; }
 .flow-step-name {
   font-family: var(--font-sans);
   font-weight: 700;
