@@ -15,18 +15,18 @@ const PAPERS = [
   {
     key: "tech",
     eyebrow: "02 / Tech Paper",
-    title: "MOI Tech Paper",
+    title: "Contextual Compute: The General Theory of Computation",
     blurb:
-      "Contextual Compute. The paradigm that lets every participant carry its own state, scope its own authority, and act under live, revocable context — without trusting a shared global machine.",
+      "Introduces the K-Machine — a Turing Machine extended with one primitive dimension, WHO, alongside WHAT, WHERE, and HOW. Classical computation is recovered when the participant dimension collapses to the trivial unit, and is strictly subsumed by participant-indexed computation.",
     file: "https://zenodo.org/records/19500491",
     external: true,
   },
   {
     key: "math",
     eyebrow: "03 / Math Paper",
-    title: "MOI Math Paper",
+    title: "Value, Information, and the Cartesian Degeneracy",
     blurb:
-      "The formal layer. Cryptographic primitives, the MDAG construction, accountability proofs, and the math that makes scoped, revocable authority possible.",
+      "Establishes the categorical distinction between value and information, proves no structure-preserving embedding can map value into information, and identifies the Cartesian Degeneracy: the parametric collapse of value into information when the participant dimension reduces to the trivial unit.",
     file: "https://zenodo.org/records/19194877",
     external: true,
   },
