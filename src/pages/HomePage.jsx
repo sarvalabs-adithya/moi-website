@@ -576,6 +576,9 @@ export default function HomePage() {
                 <Link to="/manifesto" className="hero-btn hero-btn-primary">
                   Read our manifesto <span aria-hidden="true">→</span>
                 </Link>
+                <Link to="/why-moi" className="hero-btn hero-btn-ghost">
+                  Read why we built MOI <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
 
