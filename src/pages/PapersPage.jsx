@@ -17,7 +17,7 @@ const PAPERS = [
     eyebrow: "02 / Tech Paper",
     title: "MOI Tech Paper",
     blurb:
-      "Contextual Compute. The runtime that lets every participant carry its own state, scope its own authority, and act under live, revocable context — without trusting a shared global machine.",
+      "Contextual Compute. The paradigm that lets every participant carry its own state, scope its own authority, and act under live, revocable context — without trusting a shared global machine.",
     file: "https://zenodo.org/records/19500491",
     external: true,
   },
