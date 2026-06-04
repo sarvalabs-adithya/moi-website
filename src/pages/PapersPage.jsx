@@ -7,9 +7,9 @@ const PAPERS = [
   {
     key: "white",
     eyebrow: "01 / White Paper",
-    title: "MOI White Paper",
+    title: "The Participant Layer of the Internet",
     blurb:
-      "The full thesis. What the Participant Layer is, why authority is the missing dimension of the internet, and how MOI gives every agent a verifiable identity onchain.",
+      "TCP made messaging a network primitive. HTTP made resources a network primitive. MOI makes participants a network primitive. Three domains — agents, business, tokens — share one root cause: WHO does not exist in the machine. The protocol that puts participants natively inside computation.",
     file: "/papers/moi-white-paper.pdf",
   },
   {
