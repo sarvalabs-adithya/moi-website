@@ -652,8 +652,8 @@ function ContextSuperstateSection() {
               <div className="ss-ctx-desc">Native tokens, balances, metadata</div>
             </div>
             <div className="ss-ctx">
-              <div className="ss-ctx-name">Trust</div>
-              <div className="ss-ctx-desc">Witness sets, delegation chains</div>
+              <div className="ss-ctx-name">Intelligence</div>
+              <div className="ss-ctx-desc">Participant embeddings, interaction patterns</div>
             </div>
             <div className="ss-ctx">
               <div className="ss-ctx-name">Storage</div>
@@ -672,9 +672,9 @@ function ContextSuperstateSection() {
               <div className="ss-ctx-desc">Privacy policies, constraints</div>
             </div>
             <div className="ss-ctx ss-ctx-wide">
-              <div className="ss-ctx-name">Intelligence</div>
+              <div className="ss-ctx-name">Trust</div>
               <div className="ss-ctx-desc">
-                Participant embeddings, interaction patterns
+                Witness sets, delegation chains
               </div>
             </div>
           </div>
