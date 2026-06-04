@@ -18,7 +18,8 @@ const PAPERS = [
     title: "MOI Vision Paper",
     blurb:
       "The world we are building toward. Sovereign participants, scoped authority, contextual compute — and what changes when the internet finally remembers who is acting.",
-    file: "/papers/moi-vision-paper.pdf",
+    file: "https://zenodo.org/records/19500491",
+    external: true,
   },
   {
     key: "math",
@@ -26,7 +27,8 @@ const PAPERS = [
     title: "MOI Math Paper",
     blurb:
       "The formal layer. Cryptographic primitives, the MDAG construction, accountability proofs, and the math that makes scoped, revocable authority possible.",
-    file: "/papers/moi-math-paper.pdf",
+    file: "https://zenodo.org/records/19194877",
+    external: true,
   },
 ];
 
@@ -58,12 +60,20 @@ export default function PapersPage() {
               <p className="paper-blurb">{p.blurb}</p>
               <a
                 href={p.file}
-                download
+                {...(p.external ? {} : { download: true })}
                 className="paper-btn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download PDF <span aria-hidden="true">↓</span>
+                {p.external ? (
+                  <>
+                    Read on Zenodo <span aria-hidden="true">↗</span>
+                  </>
+                ) : (
+                  <>
+                    Download PDF <span aria-hidden="true">↓</span>
+                  </>
+                )}
               </a>
             </article>
           ))}
