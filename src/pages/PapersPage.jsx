@@ -13,11 +13,11 @@ const PAPERS = [
     file: "/papers/moi-white-paper.pdf",
   },
   {
-    key: "vision",
-    eyebrow: "02 / Vision Paper",
-    title: "MOI Vision Paper",
+    key: "tech",
+    eyebrow: "02 / Tech Paper",
+    title: "MOI Tech Paper",
     blurb:
-      "The world we are building toward. Sovereign participants, scoped authority, contextual compute — and what changes when the internet finally remembers who is acting.",
+      "Contextual Compute. The runtime that lets every participant carry its own state, scope its own authority, and act under live, revocable context — without trusting a shared global machine.",
     file: "https://zenodo.org/records/19500491",
     external: true,
   },
