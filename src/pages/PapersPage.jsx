@@ -9,7 +9,7 @@ const PAPERS = [
     eyebrow: "01 / White Paper",
     title: "The Participant Layer of the Internet",
     blurb:
-      "TCP made messaging a network primitive. HTTP made resources a network primitive. MOI makes participants a network primitive. Three domains — agents, business, tokens — share one root cause: WHO does not exist in the machine. The protocol that puts participants natively inside computation.",
+      "Introduces the MOI Protocol — a base protocol where participants exist natively in computation. Argues that three domain problems (agents, business, tokens) collapse to a single absence: the participant has no computational existence inside the machine, and shows what changes when WHO becomes a network primitive.",
     file: "/papers/moi-white-paper.pdf",
   },
   {
