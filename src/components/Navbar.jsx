@@ -52,7 +52,6 @@ export default function Navbar({ activePage = "home" }) {
 
         {/* Center links — desktop */}
         <div className="hidden md:flex items-center gap-1">
-          <Link to="/" className={linkClass("home")}>Participants</Link>
           <Link to="/why-moi" className={linkClass("why-moi")}>The Shift</Link>
           <a
             href="https://docs.moi.technology"
@@ -113,7 +112,6 @@ export default function Navbar({ activePage = "home" }) {
               "inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 12px 36px rgba(0, 0, 0, 0.28)",
           }}
         >
-          <Link to="/" className={linkClass("home")} onClick={() => setMenuOpen(false)}>Participants</Link>
           <Link to="/why-moi" className={linkClass("why-moi")} onClick={() => setMenuOpen(false)}>The Shift</Link>
           <a href="https://docs.moi.technology" target="_blank" rel="noopener noreferrer" className={linkClass("docs")}>Docs</a>
           <Link to="/manifesto" className={linkClass("manifesto")} onClick={() => setMenuOpen(false)}>Manifesto</Link>
