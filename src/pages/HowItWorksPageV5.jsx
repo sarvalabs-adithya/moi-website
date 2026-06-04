@@ -72,6 +72,10 @@ function TrustChain() {
     <section className="s1" id="s1">
       <div className="sec-inner">
         <div className="pill gs">Act 01 — The Problem</div>
+        <p className="problem-tag gs">
+          <span className="problem-tag-num">01</span>
+          <span className="problem-tag-word">Propagation</span>
+        </p>
         <h2 className="headline gs">
           When agents delegate,
           <br />
@@ -279,6 +283,10 @@ function ColdStart() {
   return (
     <section className="s2">
       <div className="sec-inner">
+        <p className="problem-tag gs">
+          <span className="problem-tag-num">02</span>
+          <span className="problem-tag-word">Context Blindness</span>
+        </p>
         <h2 className="headline gs">
           Every agent starts
           <br />
@@ -363,6 +371,10 @@ function Custody() {
   return (
     <section className="s3">
       <div className="sec-inner">
+        <p className="problem-tag gs">
+          <span className="problem-tag-num">03</span>
+          <span className="problem-tag-word">Theft</span>
+        </p>
         <h2 className="headline gs">
           Your tokens live in
           <br />
@@ -471,27 +483,33 @@ function RootCauseSection() {
         </div>
 
         <h2 className="act2-hl gs">
-          <span className="act2-hl-l1">Three problems.</span>
+          <span className="act2-hl-l1">Four problems.</span>
           <span className="act2-hl-l2">One missing dimension.</span>
         </h2>
 
-        <div className="act2-cards gs">
+        <div className="act2-cards gs act2-cards--four">
           <div className="act2-card">
-            <div className="act2-card-label">Trust</div>
+            <div className="act2-card-label">Theft</div>
             <div className="act2-card-text">
-              By the 4th agent, Alice is unknown. No <em>who</em> persists across the chain.
+              Bits work in any hand. A token is just data — the system can&apos;t tell the <em>thief</em> from the user.
             </div>
           </div>
           <div className="act2-card">
-            <div className="act2-card-label">Context</div>
+            <div className="act2-card-label">Propagation</div>
             <div className="act2-card-text">
-              Every agent asks the same questions. No <em>who</em> carries memory between them.
+              The sub-agent holds your <em>full authority</em>. Tokens delegate copies, never just slices.
             </div>
           </div>
           <div className="act2-card">
-            <div className="act2-card-label">Assets</div>
+            <div className="act2-card-label">Revocation Drift</div>
             <div className="act2-card-text">
-              Your tokens live in someone else&apos;s mapping. No <em>who</em> actually owns them.
+              The kill switch is an <em>illusion</em>. Revocation propagates slower than the agent acts.
+            </div>
+          </div>
+          <div className="act2-card">
+            <div className="act2-card-label">Context Blindness</div>
+            <div className="act2-card-text">
+              Bits are static; the world is dynamic. The agent holds the token; the <em>rest has moved on</em>.
             </div>
           </div>
         </div>

@@ -2672,3 +2672,43 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   Problem keyword tag (s1 / s2 / s3 — above the headline)
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page .problem-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 1rem 0 1.25rem !important;
+  padding: 8px 18px 8px 12px;
+  border-radius: 999px;
+  background: rgba(124, 108, 232, 0.12);
+  border: 1px solid rgba(200, 191, 239, 0.28);
+  font-family: var(--font-sans);
+}
+.how-it-works-page .problem-tag-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--shift-lilac);
+  opacity: 0.85;
+}
+.how-it-works-page .problem-tag-word {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: #FFFFFF;
+}
+
+/* Root-cause: 4-card grid on the keyword expansion */
+.how-it-works-page .act2-cards--four {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 92rem !important;
+}
+@media (max-width: 1100px) {
+  .how-it-works-page .act2-cards--four { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .how-it-works-page .act2-cards--four { grid-template-columns: 1fr; }
+}
