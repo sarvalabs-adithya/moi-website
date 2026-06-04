@@ -1017,6 +1017,9 @@ me.agent("claw-12")
               <Link to="/manifesto" className="kitcta-btn kitcta-btn-ghost">
                 Read the manifesto
               </Link>
+              <Link to="/papers" className="kitcta-btn kitcta-btn-ghost">
+                Download the white paper <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </section>

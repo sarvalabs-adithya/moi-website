@@ -63,6 +63,7 @@ export default function Navbar({ activePage = "home" }) {
             Docs
           </a>
           <Link to="/manifesto" className={linkClass("manifesto")}>Manifesto</Link>
+          <Link to="/papers" className={linkClass("papers")}>Papers</Link>
         </div>
 
         {/* Right CTA — desktop */}
@@ -116,6 +117,7 @@ export default function Navbar({ activePage = "home" }) {
           <Link to="/why-moi" className={linkClass("why-moi")} onClick={() => setMenuOpen(false)}>The Shift</Link>
           <a href="https://docs.moi.technology" target="_blank" rel="noopener noreferrer" className={linkClass("docs")}>Docs</a>
           <Link to="/manifesto" className={linkClass("manifesto")} onClick={() => setMenuOpen(false)}>Manifesto</Link>
+          <Link to="/papers" className={linkClass("papers")} onClick={() => setMenuOpen(false)}>Papers</Link>
           <hr className="border-[#0A051A]/8" />
           <a
             href="https://voyage.moi.technology"
