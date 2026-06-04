@@ -875,36 +875,67 @@ me.agent("claw-12")
             </div>
 
             <ol className="flow-steps">
-              <li className="flow-step">
-                <span className="flow-step-pill">Step 1</span>
+              <li className="flow-step flow-step--filled">
+                <div className="flow-step-chip flow-step-chip--on-dark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12l5 5 9-12" />
+                    <circle cx="5" cy="12" r="1.4" fill="currentColor" />
+                  </svg>
+                </div>
+                <span className="flow-step-pill">Step 01</span>
                 <h3 className="flow-step-name">Agent Registers</h3>
                 <p className="flow-step-body">
                   Identifies itself. No credentials handed over.
                 </p>
               </li>
               <li className="flow-step">
-                <span className="flow-step-pill">Step 2</span>
+                <div className="flow-step-chip flow-step-chip--indigo" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="4" width="14" height="16" rx="2" />
+                    <line x1="8" y1="9" x2="16" y2="9" />
+                    <line x1="8" y1="13" x2="14" y2="13" />
+                    <line x1="8" y1="17" x2="12" y2="17" />
+                  </svg>
+                </div>
+                <span className="flow-step-pill">Step 02</span>
                 <h3 className="flow-step-name">Participant defines mandate</h3>
                 <p className="flow-step-body">
                   You scope what it can do, and for how long.
                 </p>
               </li>
-              <li className="flow-step">
-                <span className="flow-step-pill">Step 3</span>
+              <li className="flow-step flow-step--filled">
+                <div className="flow-step-chip flow-step-chip--on-dark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <polyline points="12 7 12 12 16 14" />
+                  </svg>
+                </div>
+                <span className="flow-step-pill">Step 03</span>
                 <h3 className="flow-step-name">Agent requests authority</h3>
                 <p className="flow-step-body">
                   Fresh authority, per call, scoped to the moment.
                 </p>
               </li>
               <li className="flow-step">
-                <span className="flow-step-pill">Step 4</span>
+                <div className="flow-step-chip flow-step-chip--indigo" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2" />
+                  </svg>
+                </div>
+                <span className="flow-step-pill">Step 04</span>
                 <h3 className="flow-step-name">Authority issued, agent acts</h3>
                 <p className="flow-step-body">
                   Sub-100ms proof. Single-use. Live state.
                 </p>
               </li>
-              <li className="flow-step">
-                <span className="flow-step-pill">Step 5</span>
+              <li className="flow-step flow-step--filled">
+                <div className="flow-step-chip flow-step-chip--on-dark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12a9 9 0 1 0 3-6.7" />
+                    <polyline points="3 4 3 9 8 9" />
+                  </svg>
+                </div>
+                <span className="flow-step-pill">Step 05</span>
                 <h3 className="flow-step-name">Revoke anytime</h3>
                 <p className="flow-step-body">
                   One update. Instant, network-wide.
