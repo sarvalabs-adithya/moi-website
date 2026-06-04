@@ -2712,3 +2712,163 @@
 @media (max-width: 600px) {
   .how-it-works-page .act2-cards--four { grid-template-columns: 1fr; }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   .s-evidence — 4-stat grid grounding the four problem keywords
+   ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-evidence {
+  background:
+    radial-gradient(60% 50% at 80% 18%, rgba(75, 23, 229, 0.38), transparent 60%),
+    radial-gradient(50% 55% at 8% 85%, rgba(111, 69, 234, 0.28), transparent 60%),
+    var(--shift-bg-dark) !important;
+  color: var(--shift-ink-on-dark);
+}
+.how-it-works-page section.s-evidence .pill,
+.how-it-works-page section.s-evidence .headline,
+.how-it-works-page section.s-evidence .impact-line {
+  text-align: center;
+}
+.how-it-works-page section.s-evidence .pill {
+  color: var(--shift-lilac) !important;
+  margin: 0 auto 1.25rem;
+}
+.how-it-works-page section.s-evidence .pill::before {
+  background: var(--shift-lilac) !important;
+  box-shadow: 0 0 10px rgba(200, 191, 239, 0.6);
+}
+.how-it-works-page section.s-evidence .headline {
+  color: var(--shift-ink-on-dark) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 22ch;
+}
+
+.ev-grid {
+  list-style: none;
+  margin: 3.5rem auto 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 92rem;
+}
+.ev-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 1.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+              0 14px 32px rgba(0, 0, 0, 0.28);
+}
+.ev-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.ev-num {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.028em;
+  color: #FFFFFF;
+}
+.ev-date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(200, 191, 239, 0.10);
+  border: 1px solid rgba(200, 191, 239, 0.28);
+  color: var(--shift-lilac);
+  white-space: nowrap;
+}
+.ev-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.4;
+}
+.ev-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ev-bullets li {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  padding-left: 18px;
+  position: relative;
+}
+.ev-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--shift-lilac);
+  opacity: 0.7;
+}
+.ev-source {
+  margin: auto 0 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.ev-thesis {
+  margin: 3rem auto 0 !important;
+  max-width: 56rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+.ev-thesis em {
+  color: var(--shift-lilac) !important;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .ev-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .ev-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 769px) and (min-height: 700px) {
+  .how-it-works-page section.s-evidence {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem 3rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+@media (min-width: 1100px) {
+  .how-it-works-page section.s-evidence .sec-inner { max-width: 130rem; }
+  .how-it-works-page section.s-evidence .headline {
+    font-size: clamp(2rem, 3.4vw, 3.25rem) !important;
+    line-height: 1.05 !important;
+  }
+}
