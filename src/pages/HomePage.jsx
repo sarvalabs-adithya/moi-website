@@ -879,66 +879,38 @@ me.agent("claw-12")
                 <span className="flow-step-pill">Step 1</span>
                 <h3 className="flow-step-name">Agent Registers</h3>
                 <p className="flow-step-body">
-                  The agent identifies itself to the participant layer. No
-                  credentials handed over — just a cryptographic handshake.
+                  Identifies itself. No credentials handed over.
                 </p>
               </li>
               <li className="flow-step">
                 <span className="flow-step-pill">Step 2</span>
                 <h3 className="flow-step-name">Participant defines mandate</h3>
                 <p className="flow-step-body">
-                  You scope what the agent can do, for how long, and on which
-                  resources. The mandate lives in your layer — not in the
-                  agent.
+                  You scope what it can do, and for how long.
                 </p>
               </li>
               <li className="flow-step">
                 <span className="flow-step-pill">Step 3</span>
                 <h3 className="flow-step-name">Agent requests authority</h3>
                 <p className="flow-step-body">
-                  Per call. Per action. The agent asks the participant layer
-                  for fresh authority, scoped to the moment.
+                  Fresh authority, per call, scoped to the moment.
                 </p>
               </li>
               <li className="flow-step">
                 <span className="flow-step-pill">Step 4</span>
                 <h3 className="flow-step-name">Authority issued, agent acts</h3>
                 <p className="flow-step-body">
-                  Sub-100ms cryptographic proof. Single-use. Tied to your
-                  real-time state. The agent acts under live, witnessed
-                  authority.
+                  Sub-100ms proof. Single-use. Live state.
                 </p>
               </li>
               <li className="flow-step">
                 <span className="flow-step-pill">Step 5</span>
                 <h3 className="flow-step-name">Revoke anytime</h3>
                 <p className="flow-step-body">
-                  One participant update. Instant network-wide revocation. No
-                  cached tokens, no drift, no propagation delay.
+                  One update. Instant, network-wide.
                 </p>
               </li>
             </ol>
-
-            <div className="flow-summary">
-              <div className="flow-sum-card">
-                <div className="flow-sum-label">Per-call authority</div>
-                <div className="flow-sum-sub">Not per-session. Not cached.</div>
-              </div>
-              <div className="flow-sum-card">
-                <div className="flow-sum-label">Cryptographic proof</div>
-                <div className="flow-sum-sub">Verifiable per action.</div>
-              </div>
-              <div className="flow-sum-card">
-                <div className="flow-sum-label">Live revocation</div>
-                <div className="flow-sum-sub">Update once. Network-wide.</div>
-              </div>
-            </div>
-
-            <p className="flow-foot">
-              No keys held by the agent. No copies of your authority
-              circulating. The participant stays sovereign — the agent stays
-              fast.
-            </p>
           </div>
         </section>
 
