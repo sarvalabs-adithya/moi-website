@@ -252,15 +252,26 @@
 /* ──────────────────────────────────────────────────────────────────────
    s-root-cause — fix dark-on-dark text inside the headline + cards
    ────────────────────────────────────────────────────────────────────── */
+.how-it-works-page section.s-root-cause .sec-inner {
+  text-align: center !important;
+}
+.how-it-works-page section.s-root-cause .act2-dims {
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: none !important;
+  width: auto !important;
+}
 .how-it-works-page section.s-root-cause .act2-hl,
 .how-it-works-page section.s-root-cause .act2-hl-l1,
 .how-it-works-page section.s-root-cause .act2-hl-l2 {
   text-align: center !important;
-}
-.how-it-works-page section.s-root-cause .act2-hl {
   margin-left: auto !important;
   margin-right: auto !important;
   max-width: none !important;
+}
+.how-it-works-page section.s-root-cause .act2-hl {
   width: 100% !important;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -269,12 +280,14 @@
   color: var(--shift-ink-on-dark) !important;
   font-style: normal !important;
   display: block !important;
+  width: 100% !important;
 }
 .how-it-works-page section.s-root-cause .act2-hl-l2 {
   color: var(--shift-lilac) !important;
   font-style: normal !important;
   font-weight: 700 !important;
   display: block !important;
+  width: 100% !important;
 }
 .how-it-works-page section.s-root-cause .act2-card-label {
   color: var(--shift-lilac) !important;
