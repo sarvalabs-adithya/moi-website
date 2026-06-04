@@ -2873,3 +2873,68 @@
     line-height: 1.05 !important;
   }
 }
+
+/* Cleaner 4-card layout for the Root-Cause keyword grid */
+.how-it-works-page section.s-root-cause .act2-cards--four {
+  gap: 24px;
+  margin: 3rem auto 0;
+  max-width: 92rem;
+}
+.how-it-works-page section.s-root-cause .act2-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 2rem 1.75rem;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(200, 191, 239, 0.20) !important;
+  border-radius: 22px !important;
+  text-align: left;
+  min-height: 280px;
+  transition: transform 200ms ease, border-color 200ms ease,
+              box-shadow 200ms ease;
+}
+.how-it-works-page section.s-root-cause .act2-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 191, 239, 0.45) !important;
+  box-shadow: 0 14px 36px rgba(75, 23, 229, 0.28) !important;
+}
+.act2-card-num-glyph {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--shift-lilac);
+  opacity: 0.55;
+  margin-bottom: 4px;
+}
+.how-it-works-page section.s-root-cause .act2-card-label {
+  margin: 0 0 4px !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.012em !important;
+  text-transform: none !important;
+  text-align: left !important;
+  color: #FFFFFF !important;
+}
+.how-it-works-page section.s-root-cause .act2-card-text {
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  text-align: left !important;
+}
+.how-it-works-page section.s-root-cause .act2-card-text em {
+  font-style: italic;
+  color: var(--shift-lilac) !important;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .how-it-works-page section.s-root-cause .act2-cards--four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .how-it-works-page section.s-root-cause .act2-cards--four {
+    grid-template-columns: 1fr;
+  }
+}
