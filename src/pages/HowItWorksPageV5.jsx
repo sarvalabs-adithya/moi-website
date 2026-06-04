@@ -489,27 +489,38 @@ function RootCauseSection() {
 
         <div className="act2-cards gs act2-cards--four">
           <div className="act2-card">
+            <div className="act2-card-num-glyph">01</div>
             <div className="act2-card-label">Theft</div>
             <div className="act2-card-text">
-              Bits work in any hand. A token is just data — the system can&apos;t tell the <em>thief</em> from the user.
+              Bits work in any hand. A token is just data — the system
+              can&apos;t tell the <em>thief</em> from the user.
             </div>
           </div>
+
           <div className="act2-card">
+            <div className="act2-card-num-glyph">02</div>
             <div className="act2-card-label">Propagation</div>
             <div className="act2-card-text">
-              The sub-agent holds your <em>full authority</em>. Tokens delegate copies, never just slices.
+              The sub-agent holds your <em>full authority</em>. Tokens
+              delegate copies, never just slices.
             </div>
           </div>
+
           <div className="act2-card">
+            <div className="act2-card-num-glyph">03</div>
             <div className="act2-card-label">Revocation Drift</div>
             <div className="act2-card-text">
-              The kill switch is an <em>illusion</em>. Revocation propagates slower than the agent acts.
+              The kill switch is an <em>illusion</em>. Revocation propagates
+              slower than the agent acts.
             </div>
           </div>
+
           <div className="act2-card">
+            <div className="act2-card-num-glyph">04</div>
             <div className="act2-card-label">Context Blindness</div>
             <div className="act2-card-text">
-              Bits are static; the world is dynamic. The agent holds the token; the <em>rest has moved on</em>.
+              Bits are static; the world is dynamic. The agent holds the
+              token; the <em>rest has moved on</em>.
             </div>
           </div>
         </div>
@@ -1423,7 +1434,6 @@ export default function HowItWorksPageV5() {
         <ColdStart />
         <Custody />
         <RootCauseSection />
-        <EvidenceStatsSection />
         <Act2RevealSection />
         <ContextSuperstateSection />
         <ScopedDelegation />
