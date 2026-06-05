@@ -69,10 +69,10 @@ export default function PapersPage() {
               <p className="paper-blurb">{p.blurb}</p>
               <a
                 href={p.file}
-                {...(p.external ? {} : { download: true })}
                 className="paper-btn"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(p.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : { download: "MOI-White-Paper.pdf" })}
               >
                 {p.external ? (
                   <>
