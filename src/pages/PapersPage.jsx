@@ -30,6 +30,15 @@ const PAPERS = [
     file: "https://zenodo.org/records/19194877",
     external: true,
   },
+  {
+    key: "pic",
+    eyebrow: "04 / Semantics Paper",
+    title: "PIC: Operational Semantics of Participant-Indexed Computation",
+    blurb:
+      "Derives the operational semantics of Contextual Compute from the K-Machine. Formalises the Participant–Interaction–Context (PIC) model and shows that six axioms — Conservation, Consent, Linearity, Witness Sufficiency, Composability, Commutativity — follow necessarily from its structure, defining the PIC value category and introducing Network Objects as a network-level linear-type primitive.",
+    file: "https://zenodo.org/records/19241004",
+    external: true,
+  },
 ];
 
 export default function PapersPage() {
@@ -47,8 +56,8 @@ export default function PapersPage() {
             Read the work behind <em>MOI</em>.
           </h1>
           <p className="papers-sub">
-            Three documents. The thesis, the vision, the math — everything that
-            grounds the Participant Layer of the internet.
+            Four documents. The thesis, the theory, the math, the semantics —
+            everything that grounds the Participant Layer of the internet.
           </p>
         </section>
 
