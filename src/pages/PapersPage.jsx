@@ -36,7 +36,7 @@ const PAPERS = [
     title: "PIC: Operational Semantics of Participant-Indexed Computation",
     blurb:
       "Derives the operational semantics of Contextual Compute from the K-Machine. Formalises the Participant–Interaction–Context (PIC) model and shows that six axioms — Conservation, Consent, Linearity, Witness Sufficiency, Composability, Commutativity — follow necessarily from its structure, defining the PIC value category and introducing Network Objects as a network-level linear-type primitive.",
-    file: "https://zenodo.org/records/19241004",
+    file: "https://doi.org/10.5281/zenodo.19189687",
     external: true,
   },
 ];
