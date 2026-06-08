@@ -754,14 +754,16 @@ me.agent("claw-12")
           </div>
         </section>
 
-        {/* Ask chatbot */}
-        <section className="s-ask">
-          <div ref={askRef} className="ask-center fade-slide-up">
-            <h2 className="ask-hl">Ask the protocol.</h2>
-            <p className="ask-sub">MOI answers, in its own voice.</p>
-            <AskChat />
-          </div>
-        </section>
+        {/* Ask chatbot — temporarily hidden, backend not responding */}
+        {false && (
+          <section className="s-ask">
+            <div ref={askRef} className="ask-center fade-slide-up">
+              <h2 className="ask-hl">Ask the protocol.</h2>
+              <p className="ask-sub">MOI answers, in its own voice.</p>
+              <AskChat />
+            </div>
+          </section>
+        )}
 
         {/* Community — calendar + socials, between chatbot and CTA */}
         <section className="s-community">
